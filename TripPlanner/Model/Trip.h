@@ -1,0 +1,31 @@
+//
+//  Trip.h
+//  TripPlanner
+//
+//  Created by Matteo Di Giorgio on 10/05/21.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface Trip : NSObject
+
+- (instancetype)initWithDestination:(NSString *)destination
+                          ImageTrip:(NSObject *)imageTrip
+                          StartTrip:(NSString *)startTrip
+                          FinishTrip:(NSString *)finishTrip;
+
+- (instancetype)initWithDestination:(NSString *)destination
+                          Departure:(NSString *)departure
+                          ImageTrip:(NSObject *)imageTrip
+                          DateDeparture:(NSString *)datedeparture;
+                          
+
+@property (nonatomic, strong) NSString *destination;
+@property (nonatomic, strong) NSObject *imageTrip;
+@property (nonatomic, strong) NSString *startTrip;
+@property (nonatomic, strong) NSString *finishTrip;
+@property (nonatomic, strong) NSString *departure;
+@property (nonatomic, strong) NSString *datedeparture;
+
+
+@end

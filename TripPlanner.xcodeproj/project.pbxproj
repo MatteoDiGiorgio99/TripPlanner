@@ -14,6 +14,14 @@
 		512B3409264938F300597957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 512B3408264938F300597957 /* Assets.xcassets */; };
 		512B340C264938F300597957 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 512B340A264938F300597957 /* LaunchScreen.storyboard */; };
 		512B340F264938F300597957 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 512B340E264938F300597957 /* main.m */; };
+		512B341E264962D200597957 /* TripListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 512B341D264962D200597957 /* TripListTableViewController.m */; };
+		514CAC402649C12200F21E6D /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 514CAC3F2649C12200F21E6D /* Trip.m */; };
+		514CAC452649D70C00F21E6D /* TripList.m in Sources */ = {isa = PBXBuildFile; fileRef = 514CAC442649D70C00F21E6D /* TripList.m */; };
+		514CAC472649DEFC00F21E6D /* Location.png in Resources */ = {isa = PBXBuildFile; fileRef = 514CAC462649DEFC00F21E6D /* Location.png */; };
+		514CAC492649DF0700F21E6D /* People.png in Resources */ = {isa = PBXBuildFile; fileRef = 514CAC482649DF0700F21E6D /* People.png */; };
+		514CAC4D2649E47F00F21E6D /* Parigi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514CAC4C2649E47F00F21E6D /* Parigi.jpg */; };
+		51704DD7264A772D004B8A85 /* NewTripTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51704DD6264A772D004B8A85 /* NewTripTableViewController.m */; };
+		51906EB0264AAEF6000B7522 /* ExampleTripDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 51906EAF264AAEF6000B7522 /* ExampleTripDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +37,20 @@
 		512B340B264938F300597957 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		512B340D264938F300597957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		512B340E264938F300597957 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		512B341C264962D200597957 /* TripListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TripListTableViewController.h; sourceTree = "<group>"; };
+		512B341D264962D200597957 /* TripListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TripListTableViewController.m; sourceTree = "<group>"; };
+		514CAC3E2649C12200F21E6D /* Trip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
+		514CAC3F2649C12200F21E6D /* Trip.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
+		514CAC432649D70C00F21E6D /* TripList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TripList.h; sourceTree = "<group>"; };
+		514CAC442649D70C00F21E6D /* TripList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TripList.m; sourceTree = "<group>"; };
+		514CAC462649DEFC00F21E6D /* Location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Location.png; sourceTree = "<group>"; };
+		514CAC482649DF0700F21E6D /* People.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = People.png; sourceTree = "<group>"; };
+		514CAC4C2649E47F00F21E6D /* Parigi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Parigi.jpg; sourceTree = "<group>"; };
+		51704DD5264A772D004B8A85 /* NewTripTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewTripTableViewController.h; sourceTree = "<group>"; };
+		51704DD6264A772D004B8A85 /* NewTripTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewTripTableViewController.m; sourceTree = "<group>"; };
+		51906EAD264AAE67000B7522 /* TripDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TripDataSource.h; sourceTree = "<group>"; };
+		51906EAE264AAEF6000B7522 /* ExampleTripDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleTripDataSource.h; sourceTree = "<group>"; };
+		51906EAF264AAEF6000B7522 /* ExampleTripDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTripDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +83,8 @@
 		512B33FB264938F200597957 /* TripPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				514CAC3D2649C0EE00F21E6D /* Model */,
+				512B34152649556A00597957 /* Image */,
 				512B33FC264938F200597957 /* AppDelegate.h */,
 				512B33FD264938F200597957 /* AppDelegate.m */,
 				512B33FF264938F200597957 /* SceneDelegate.h */,
@@ -72,8 +96,44 @@
 				512B340A264938F300597957 /* LaunchScreen.storyboard */,
 				512B340D264938F300597957 /* Info.plist */,
 				512B340E264938F300597957 /* main.m */,
+				51906EB2264AB8A2000B7522 /* Views */,
 			);
 			path = TripPlanner;
+			sourceTree = "<group>";
+		};
+		512B34152649556A00597957 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				514CAC4C2649E47F00F21E6D /* Parigi.jpg */,
+				514CAC482649DF0700F21E6D /* People.png */,
+				514CAC462649DEFC00F21E6D /* Location.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		514CAC3D2649C0EE00F21E6D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				514CAC3E2649C12200F21E6D /* Trip.h */,
+				514CAC3F2649C12200F21E6D /* Trip.m */,
+				514CAC432649D70C00F21E6D /* TripList.h */,
+				514CAC442649D70C00F21E6D /* TripList.m */,
+				51906EAD264AAE67000B7522 /* TripDataSource.h */,
+				51906EAE264AAEF6000B7522 /* ExampleTripDataSource.h */,
+				51906EAF264AAEF6000B7522 /* ExampleTripDataSource.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		51906EB2264AB8A2000B7522 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				512B341C264962D200597957 /* TripListTableViewController.h */,
+				512B341D264962D200597957 /* TripListTableViewController.m */,
+				51704DD5264A772D004B8A85 /* NewTripTableViewController.h */,
+				51704DD6264A772D004B8A85 /* NewTripTableViewController.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,8 +193,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				512B340C264938F300597957 /* LaunchScreen.storyboard in Resources */,
+				514CAC472649DEFC00F21E6D /* Location.png in Resources */,
 				512B3409264938F300597957 /* Assets.xcassets in Resources */,
+				514CAC492649DF0700F21E6D /* People.png in Resources */,
 				512B3407264938F200597957 /* Main.storyboard in Resources */,
+				514CAC4D2649E47F00F21E6D /* Parigi.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +210,13 @@
 			files = (
 				512B3404264938F200597957 /* ViewController.m in Sources */,
 				512B33FE264938F200597957 /* AppDelegate.m in Sources */,
+				514CAC452649D70C00F21E6D /* TripList.m in Sources */,
+				514CAC402649C12200F21E6D /* Trip.m in Sources */,
 				512B340F264938F300597957 /* main.m in Sources */,
+				51906EB0264AAEF6000B7522 /* ExampleTripDataSource.m in Sources */,
 				512B3401264938F200597957 /* SceneDelegate.m in Sources */,
+				512B341E264962D200597957 /* TripListTableViewController.m in Sources */,
+				51704DD7264A772D004B8A85 /* NewTripTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
