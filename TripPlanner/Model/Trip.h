@@ -10,9 +10,11 @@
 @interface Trip : NSObject
 
 - (instancetype)initWithDestination:(NSString *)destination
-                          ImageTrip:(NSObject *)imageTrip
-                          StartTrip:(NSString *)startTrip
-                          FinishTrip:(NSString *)finishTrip;
+                         NameTrip:(NSString *)nameTrip
+                         DescriptionTrip:(NSString *)descriptionTrip
+                         ImageTrip:(NSObject *)imageTrip
+                         StartTrip:(NSString *)startTrip
+                         FinishTrip:(NSString *)finishTrip;
 
 - (instancetype)initWithDestination:(NSString *)destination
                           Departure:(NSString *)departure
@@ -21,6 +23,8 @@
                           
 
 @property (nonatomic, strong) NSString *destination;
+@property (nonatomic, strong) NSString *nameTrip;
+@property (nonatomic, strong) NSString *descriptionTrip;
 @property (nonatomic, strong) NSObject *imageTrip;
 @property (nonatomic, strong) NSString *startTrip;
 @property (nonatomic, strong) NSString *finishTrip;

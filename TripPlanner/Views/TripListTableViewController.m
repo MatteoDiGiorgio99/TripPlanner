@@ -46,8 +46,23 @@
     [super viewWillAppear:animated];
     
     if([[self.tripDataSource getTrips] size] > 0) {
-       
-        self.thetrip = [[self.tripDataSource getTrips] getAtIndex:0];
+        
+        for (int i = 0; i < [[self.tripDataSource getTrips] size] ; i++) {
+            
+            for (int j = 0; j < [[self.tripDataSource getTrips] size] ; j++) {
+                
+                if([[self.tripDataSource getTrips] getAtIndex:j].startTrip < [[self.tripDataSource getTrips] getAtIndex:i].startTrip )
+                {
+                    self.thetrip = [[self.tripDataSource getTrips] getAtIndex:j];
+                }
+                else
+                {
+                    self.thetrip = [[self.tripDataSource getTrips] getAtIndex:i];
+                }
+            }
+            
+        }
+        
         self.destinationTripLabel.text = [self.thetrip destination];
         self.dateTripLabel.text=[NSString stringWithFormat:@"%@ to %@",[self.thetrip startTrip],[self.thetrip finishTrip]];
         self.MyTripsLabel.text=[NSString stringWithFormat:@"My Trips (%li)",[[self.tripDataSource getTrips]size]];

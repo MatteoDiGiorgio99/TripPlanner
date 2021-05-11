@@ -8,6 +8,8 @@
 #import "NewTripTableViewController.h"
 #import "TripListTableViewController.h"
 @interface NewTripTableViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *descriptionTrip;
+@property (weak, nonatomic) IBOutlet UITextField *nameTrip;
 @property (weak, nonatomic) IBOutlet UITextField *departureCity;
 @property (weak, nonatomic) IBOutlet UITextField *destinationCity;
 @property (weak, nonatomic) IBOutlet UIDatePicker *startDate;
@@ -62,6 +64,8 @@
         [formatter setDateStyle:NSDateFormatterShortStyle];
         [formatter setTimeStyle:NSDateFormatterNoStyle];
 
+        self.trip.nameTrip = self.nameTrip.text;
+        self.trip.descriptionTrip = self.descriptionTrip.text;
         self.trip.departure = self.departureCity.text;
         self.trip.destination = self.destinationCity.text;
         self.trip.startTrip=[formatter stringFromDate:self.startDate.date];

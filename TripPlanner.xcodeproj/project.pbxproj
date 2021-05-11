@@ -22,6 +22,10 @@
 		514CAC4D2649E47F00F21E6D /* Parigi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514CAC4C2649E47F00F21E6D /* Parigi.jpg */; };
 		51704DD7264A772D004B8A85 /* NewTripTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51704DD6264A772D004B8A85 /* NewTripTableViewController.m */; };
 		51906EB0264AAEF6000B7522 /* ExampleTripDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 51906EAF264AAEF6000B7522 /* ExampleTripDataSource.m */; };
+		51DFF7FF264B16980003B481 /* MyLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF7FE264B16980003B481 /* MyLocationTableViewController.m */; };
+		51DFF802264B1A0A0003B481 /* Poi.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF801264B1A0A0003B481 /* Poi.m */; };
+		51DFF805264B1B1F0003B481 /* GeoTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF804264B1B1F0003B481 /* GeoTrip.m */; };
+		51DFF80E264B1D1F0003B481 /* GeoTrip+MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF80D264B1D1F0003B481 /* GeoTrip+MapAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +55,14 @@
 		51906EAD264AAE67000B7522 /* TripDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TripDataSource.h; sourceTree = "<group>"; };
 		51906EAE264AAEF6000B7522 /* ExampleTripDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleTripDataSource.h; sourceTree = "<group>"; };
 		51906EAF264AAEF6000B7522 /* ExampleTripDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTripDataSource.m; sourceTree = "<group>"; };
+		51DFF7FD264B16980003B481 /* MyLocationTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyLocationTableViewController.h; sourceTree = "<group>"; };
+		51DFF7FE264B16980003B481 /* MyLocationTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLocationTableViewController.m; sourceTree = "<group>"; };
+		51DFF800264B1A0A0003B481 /* Poi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Poi.h; sourceTree = "<group>"; };
+		51DFF801264B1A0A0003B481 /* Poi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Poi.m; sourceTree = "<group>"; };
+		51DFF803264B1B1F0003B481 /* GeoTrip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeoTrip.h; sourceTree = "<group>"; };
+		51DFF804264B1B1F0003B481 /* GeoTrip.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeoTrip.m; sourceTree = "<group>"; };
+		51DFF80C264B1D1F0003B481 /* GeoTrip+MapAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GeoTrip+MapAnnotation.h"; sourceTree = "<group>"; };
+		51DFF80D264B1D1F0003B481 /* GeoTrip+MapAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GeoTrip+MapAnnotation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +133,12 @@
 				51906EAD264AAE67000B7522 /* TripDataSource.h */,
 				51906EAE264AAEF6000B7522 /* ExampleTripDataSource.h */,
 				51906EAF264AAEF6000B7522 /* ExampleTripDataSource.m */,
+				51DFF800264B1A0A0003B481 /* Poi.h */,
+				51DFF801264B1A0A0003B481 /* Poi.m */,
+				51DFF803264B1B1F0003B481 /* GeoTrip.h */,
+				51DFF804264B1B1F0003B481 /* GeoTrip.m */,
+				51DFF80C264B1D1F0003B481 /* GeoTrip+MapAnnotation.h */,
+				51DFF80D264B1D1F0003B481 /* GeoTrip+MapAnnotation.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -132,6 +150,8 @@
 				512B341D264962D200597957 /* TripListTableViewController.m */,
 				51704DD5264A772D004B8A85 /* NewTripTableViewController.h */,
 				51704DD6264A772D004B8A85 /* NewTripTableViewController.m */,
+				51DFF7FD264B16980003B481 /* MyLocationTableViewController.h */,
+				51DFF7FE264B16980003B481 /* MyLocationTableViewController.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,7 +228,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51DFF802264B1A0A0003B481 /* Poi.m in Sources */,
 				512B3404264938F200597957 /* ViewController.m in Sources */,
+				51DFF805264B1B1F0003B481 /* GeoTrip.m in Sources */,
+				51DFF80E264B1D1F0003B481 /* GeoTrip+MapAnnotation.m in Sources */,
 				512B33FE264938F200597957 /* AppDelegate.m in Sources */,
 				514CAC452649D70C00F21E6D /* TripList.m in Sources */,
 				514CAC402649C12200F21E6D /* Trip.m in Sources */,
@@ -216,6 +239,7 @@
 				51906EB0264AAEF6000B7522 /* ExampleTripDataSource.m in Sources */,
 				512B3401264938F200597957 /* SceneDelegate.m in Sources */,
 				512B341E264962D200597957 /* TripListTableViewController.m in Sources */,
+				51DFF7FF264B16980003B481 /* MyLocationTableViewController.m in Sources */,
 				51704DD7264A772D004B8A85 /* NewTripTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
