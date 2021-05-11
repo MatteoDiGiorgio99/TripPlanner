@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *MyTripsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *MyLocationLabel;
 
--(void)loadImage;
+
 
 
 @end
@@ -46,14 +46,19 @@
     [super viewWillAppear:animated];
     
     if([[self.tripDataSource getTrips] size] > 0) {
+       
         self.thetrip = [[self.tripDataSource getTrips] getAtIndex:0];
         self.destinationTripLabel.text = [self.thetrip destination];
+        self.dateTripLabel.text=[NSString stringWithFormat:@"%@ to %@",[self.thetrip startTrip],[self.thetrip finishTrip]];
+        self.MyTripsLabel.text=[NSString stringWithFormat:@"My Trips (%li)",[[self.tripDataSource getTrips]size]];
+        self.imageNextTrip.image=[self.thetrip imageTrip];
     }
 }
 
+/*
 - (void) loadImage{
     if(self.thetrip.imageTrip != nil){
-        dispatch_async(dispatch_queue_create("avatarDownload", NULL), ^{
+        dispatch_async(dispatch_queue_create("imageDownload", NULL), ^{
             NSURL *url = [NSURL URLWithString:self.thetrip.imageTrip];
             NSData *data = [NSData dataWithContentsOfURL:url];
             UIImage *image = [UIImage imageWithData:data];
@@ -62,7 +67,7 @@
             });
         });
     }
-}
+}*/
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {

@@ -10,8 +10,8 @@
 @interface NewTripTableViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *departureCity;
 @property (weak, nonatomic) IBOutlet UITextField *destinationCity;
-@property (weak, nonatomic) IBOutlet UITextField *startDate;
-@property (weak, nonatomic) IBOutlet UITextField *finishDate;
+@property (weak, nonatomic) IBOutlet UIDatePicker *startDate;
+@property (weak, nonatomic) IBOutlet UIDatePicker *finishDate;
 @property (weak, nonatomic) IBOutlet UITextField *meanOfTransport;
 @property (weak, nonatomic) IBOutlet UITextField *hotelName;
 @property (weak, nonatomic) IBOutlet UITextField *pointOfInterest1;
@@ -27,22 +27,25 @@
     [super viewDidLoad];
     
     self.title=@"New Trip";
-
+    
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return @"Destination";
+            return @"Info";
             break;
         case 1:
-            return @"Means of transport";
+            return @"Destination";
             break;
         case 2:
-            return @"Hotel";
+            return @"Means of transport";
             break;
         case 3:
+            return @"Hotel";
+            break;
+        case 4:
             return @"Point of Interest";
             break;
         default:
@@ -54,11 +57,17 @@
 - (IBAction)saveButton:(id)sender {
     if(self.trip == nil) {
         self.trip = [[Trip alloc] init];
-        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+        [formatter setDateStyle:NSDateFormatterShortStyle];
+        [formatter setTimeStyle:NSDateFormatterNoStyle];
+
         self.trip.departure = self.departureCity.text;
-        self.trip.datedeparture = self.startDate.text;
         self.trip.destination = self.destinationCity.text;
-        self.trip.finishTrip = self.finishDate.text;
+        self.trip.startTrip=[formatter stringFromDate:self.startDate.date];
+        self.trip.finishTrip = [formatter stringFromDate:self.finishDate.date];
+        self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"/Volumes/Transcend/UNIPR/3 ANNO/PROGRAMMAZIONE MOBILE (Ciriani)/IOS/Project/TripPlanner/TripPlanner/Image/%@.jpg",self.destinationCity.text]];
+
         
         [[self.tripDataSource getTrips] add:self.trip];
     }

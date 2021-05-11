@@ -30,7 +30,7 @@
 -(instancetype)initWithDestination:(NSString *)destination
                          Departure:(NSString *)departure
                          ImageTrip:(NSObject *)imageTrip
-                     DateDeparture:(NSString *)datedeparture{
+                         DateDeparture:(NSString *)datedeparture{
                        
     return [ self initWithDestination:destination Departure:departure ImageTrip:imageTrip DateDeparture:datedeparture];
 }

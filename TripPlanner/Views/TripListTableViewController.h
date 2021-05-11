@@ -9,7 +9,7 @@
 #import "Trip.h"
 #import "TripDataSource.h"
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface TripListTableViewController : UITableViewController
 
@@ -18,4 +18,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END
+
