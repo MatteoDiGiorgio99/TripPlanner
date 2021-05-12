@@ -33,21 +33,27 @@
 - (void) centerMapToLocationLatitude:(double)locaLat
                         LocationLongitude:(double)locaLon
                         zoom:(double)zoom{
+    
     MKCoordinateRegion mapRegion;
     CLLocationCoordinate2D location;
+    MKPointAnnotation *annotation;
+    
     location.latitude=locaLat;
     location.longitude=locaLon;
     mapRegion.center = location;
+    annotation.coordinate=location;
     mapRegion.span.latitudeDelta =zoom;
     mapRegion.span.longitudeDelta =zoom;
+ 
     [self.locationMap setRegion:mapRegion];
+    [self.locationMap addAnnotation:annotation];
 }
 - (IBAction)refreshButton:(id)sender {
     self.latitudeText.text= @"";
     self.longitudeText.text=@"";
 }
 - (IBAction)currentLocButton:(id)sender {
-    [self centerMapToLocationLatitude:[self.latitudeText.text doubleValue] LocationLongitude:[self.longitudeText.text doubleValue] zoom:0.1];
+    [self centerMapToLocationLatitude:[self.latitudeText.text doubleValue] LocationLongitude:[self.longitudeText.text doubleValue] zoom:0.2];
  
 }
 

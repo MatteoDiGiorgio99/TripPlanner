@@ -9,6 +9,7 @@
 #import "TripList.h"
 #import "ExampleTripDataSource.h"
 #import "NewTripTableViewController.h"
+#import "MyTripsTableViewController.h"
 
 @interface TripListTableViewController ()
 
@@ -17,8 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateTripLabel;
 @property (weak, nonatomic) IBOutlet UILabel *MyTripsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *MyLocationLabel;
-
-
 
 
 @end
@@ -46,28 +45,35 @@
     [super viewWillAppear:animated];
     
     if([[self.tripDataSource getTrips] size] > 0) {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"MM/dd/yy"];
         
-        for (int i = 0; i < [[self.tripDataSource getTrips] size] ; i++) {
+        self.thetrip = [[self.tripDataSource getTrips] getAtIndex:0];
+        
+        for (NSInteger i = 0; i < [[self.tripDataSource getTrips] size]; i++) {
+            Trip *element = [[self.tripDataSource getTrips] getAtIndex:i];
             
-            for (int j = 0; j < [[self.tripDataSource getTrips] size] ; j++) {
-                
-                if([[self.tripDataSource getTrips] getAtIndex:j].startTrip < [[self.tripDataSource getTrips] getAtIndex:i].startTrip )
-                {
-                    self.thetrip = [[self.tripDataSource getTrips] getAtIndex:j];
-                }
-                else
-                {
-                    self.thetrip = [[self.tripDataSource getTrips] getAtIndex:i];
-                }
+            NSDate *dateArrayElement = [dateFormatter dateFromString:element.startTrip];
+            NSDate *dateSelectedTrip = [dateFormatter dateFromString:self.thetrip.startTrip];
+            
+            NSComparisonResult result = [dateSelectedTrip compare:dateArrayElement];
+            
+            switch (result) {
+                case NSOrderedAscending:
+                    break;
+                case NSOrderedDescending:
+                    self.thetrip = element;
+                    break;
+                case NSOrderedSame:
+                    break;
             }
-            
         }
-        
-        self.destinationTripLabel.text = [self.thetrip destination];
-        self.dateTripLabel.text=[NSString stringWithFormat:@"%@ to %@",[self.thetrip startTrip],[self.thetrip finishTrip]];
-        self.MyTripsLabel.text=[NSString stringWithFormat:@"My Trips (%li)",[[self.tripDataSource getTrips]size]];
-        self.imageNextTrip.image=[self.thetrip imageTrip];
     }
+    
+    self.destinationTripLabel.text = [self.thetrip destination];
+    self.dateTripLabel.text=[NSString stringWithFormat:@"%@ to %@",[self.thetrip startTrip],[self.thetrip finishTrip]];
+    self.MyTripsLabel.text=[NSString stringWithFormat:@"My Trips (%li)",[[self.tripDataSource getTrips]size]];
+    self.imageNextTrip.image=[self.thetrip imageTrip];
 }
 
 /*
@@ -107,6 +113,13 @@
             
             vc.trip = nil;
             vc.tripDataSource = self.tripDataSource;
+        }
+    }
+    if([segue.identifier isEqualToString:@"MyTrips"]){
+        if([segue.destinationViewController isKindOfClass:[MyTripsTableViewController class]]) {
+            MyTripsTableViewController *vc = (MyTripsTableViewController *)segue.destinationViewController;
+            
+            vc.tripDataSource=self.tripDataSource;
         }
     }
     

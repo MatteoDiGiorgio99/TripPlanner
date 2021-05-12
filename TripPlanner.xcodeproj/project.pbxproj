@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		511B74F2264BC39D00AF637F /* MyTripsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 511B74F1264BC39D00AF637F /* MyTripsTableViewController.m */; };
+		511B74F4264BFA8E00AF637F /* Amsterdam.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 511B74F3264BFA8E00AF637F /* Amsterdam.jpg */; };
+		511B7500264BFB4600AF637F /* Vienna.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 511B74FF264BFB4600AF637F /* Vienna.jpg */; };
+		511B7502264BFB4C00AF637F /* Roma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 511B7501264BFB4C00AF637F /* Roma.jpg */; };
+		511B7504264BFB5700AF637F /* Oslo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 511B7503264BFB5700AF637F /* Oslo.jpg */; };
+		511B7506264BFB6100AF637F /* Madrid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 511B7505264BFB6100AF637F /* Madrid.jpg */; };
+		511B7508264BFB7000AF637F /* Londra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 511B7507264BFB7000AF637F /* Londra.jpg */; };
+		511B750A264BFB7F00AF637F /* Istanbul.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 511B7509264BFB7F00AF637F /* Istanbul.jpg */; };
+		511B750C264BFB8600AF637F /* Copenaghen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 511B750B264BFB8600AF637F /* Copenaghen.jpg */; };
 		512B33FE264938F200597957 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 512B33FD264938F200597957 /* AppDelegate.m */; };
 		512B3401264938F200597957 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 512B3400264938F200597957 /* SceneDelegate.m */; };
 		512B3404264938F200597957 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 512B3403264938F200597957 /* ViewController.m */; };
@@ -29,6 +38,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		511B74F0264BC39D00AF637F /* MyTripsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTripsTableViewController.h; sourceTree = "<group>"; };
+		511B74F1264BC39D00AF637F /* MyTripsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTripsTableViewController.m; sourceTree = "<group>"; };
+		511B74F3264BFA8E00AF637F /* Amsterdam.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Amsterdam.jpg; sourceTree = "<group>"; };
+		511B74FF264BFB4600AF637F /* Vienna.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Vienna.jpg; sourceTree = "<group>"; };
+		511B7501264BFB4C00AF637F /* Roma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Roma.jpg; sourceTree = "<group>"; };
+		511B7503264BFB5700AF637F /* Oslo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Oslo.jpg; sourceTree = "<group>"; };
+		511B7505264BFB6100AF637F /* Madrid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Madrid.jpg; sourceTree = "<group>"; };
+		511B7507264BFB7000AF637F /* Londra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Londra.jpg; sourceTree = "<group>"; };
+		511B7509264BFB7F00AF637F /* Istanbul.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Istanbul.jpg; sourceTree = "<group>"; };
+		511B750B264BFB8600AF637F /* Copenaghen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Copenaghen.jpg; sourceTree = "<group>"; };
 		512B33F9264938F200597957 /* TripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		512B33FC264938F200597957 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		512B33FD264938F200597957 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -116,6 +135,14 @@
 		512B34152649556A00597957 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				511B7501264BFB4C00AF637F /* Roma.jpg */,
+				511B74F3264BFA8E00AF637F /* Amsterdam.jpg */,
+				511B7505264BFB6100AF637F /* Madrid.jpg */,
+				511B7503264BFB5700AF637F /* Oslo.jpg */,
+				511B750B264BFB8600AF637F /* Copenaghen.jpg */,
+				511B7509264BFB7F00AF637F /* Istanbul.jpg */,
+				511B7507264BFB7000AF637F /* Londra.jpg */,
+				511B74FF264BFB4600AF637F /* Vienna.jpg */,
 				514CAC4C2649E47F00F21E6D /* Parigi.jpg */,
 				514CAC482649DF0700F21E6D /* People.png */,
 				514CAC462649DEFC00F21E6D /* Location.png */,
@@ -152,6 +179,8 @@
 				51704DD6264A772D004B8A85 /* NewTripTableViewController.m */,
 				51DFF7FD264B16980003B481 /* MyLocationTableViewController.h */,
 				51DFF7FE264B16980003B481 /* MyLocationTableViewController.m */,
+				511B74F0264BC39D00AF637F /* MyTripsTableViewController.h */,
+				511B74F1264BC39D00AF637F /* MyTripsTableViewController.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,10 +241,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				511B74F4264BFA8E00AF637F /* Amsterdam.jpg in Resources */,
 				512B340C264938F300597957 /* LaunchScreen.storyboard in Resources */,
+				511B7504264BFB5700AF637F /* Oslo.jpg in Resources */,
+				511B7502264BFB4C00AF637F /* Roma.jpg in Resources */,
+				511B7500264BFB4600AF637F /* Vienna.jpg in Resources */,
 				514CAC472649DEFC00F21E6D /* Location.png in Resources */,
 				512B3409264938F300597957 /* Assets.xcassets in Resources */,
+				511B7506264BFB6100AF637F /* Madrid.jpg in Resources */,
 				514CAC492649DF0700F21E6D /* People.png in Resources */,
+				511B750C264BFB8600AF637F /* Copenaghen.jpg in Resources */,
+				511B7508264BFB7000AF637F /* Londra.jpg in Resources */,
+				511B750A264BFB7F00AF637F /* Istanbul.jpg in Resources */,
 				512B3407264938F200597957 /* Main.storyboard in Resources */,
 				514CAC4D2649E47F00F21E6D /* Parigi.jpg in Resources */,
 			);
@@ -234,6 +271,7 @@
 				51DFF80E264B1D1F0003B481 /* GeoTrip+MapAnnotation.m in Sources */,
 				512B33FE264938F200597957 /* AppDelegate.m in Sources */,
 				514CAC452649D70C00F21E6D /* TripList.m in Sources */,
+				511B74F2264BC39D00AF637F /* MyTripsTableViewController.m in Sources */,
 				514CAC402649C12200F21E6D /* Trip.m in Sources */,
 				512B340F264938F300597957 /* main.m in Sources */,
 				51906EB0264AAEF6000B7522 /* ExampleTripDataSource.m in Sources */,

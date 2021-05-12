@@ -70,7 +70,7 @@
         self.trip.destination = self.destinationCity.text;
         self.trip.startTrip=[formatter stringFromDate:self.startDate.date];
         self.trip.finishTrip = [formatter stringFromDate:self.finishDate.date];
-        self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"/Volumes/Transcend/UNIPR/3 ANNO/PROGRAMMAZIONE MOBILE (Ciriani)/IOS/Project/TripPlanner/TripPlanner/Image/%@.jpg",self.destinationCity.text]];
+        self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",self.destinationCity.text]];
 
         
         [[self.tripDataSource getTrips] add:self.trip];
