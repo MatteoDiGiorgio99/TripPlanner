@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *pointOfInterest2;
 @property (weak, nonatomic) IBOutlet UITextField *pointOfInterest3;
 @property (weak, nonatomic) IBOutlet UITextField *pointOfInterest4;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *deleteButton;
+
 
 @end
 
@@ -28,8 +30,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title=@"New Trip";
-    
+    if(self.trip != nil) {
+        // TODO: Carico dati dalla classe alla View
+        self.title=@"Edit Trip";
+        
+        self.departureCity.text = self.trip.departure;
+        self.destinationCity.text = self.trip.destination;
+    } else {
+        self.title=@"New Trip";
+        self.deleteButton.enabled = false;
+    }
 }
 
 
@@ -56,6 +66,12 @@
     }
 }
 
+- (IBAction)deleteTrip:(id)sender {
+    if(self.trip != nil) {
+        // TODO: Gestire eliminazione dalla List
+    }
+}
+
 - (IBAction)saveButton:(id)sender {
     if(self.trip == nil) {
         self.trip = [[Trip alloc] init];
@@ -74,6 +90,8 @@
 
         
         [[self.tripDataSource getTrips] add:self.trip];
+    } else {
+        // TODO: GESTIRE AGGIORNAMENTO
     }
 }
 

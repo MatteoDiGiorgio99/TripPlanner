@@ -68,12 +68,12 @@
                     break;
             }
         }
+        
+        self.destinationTripLabel.text = [self.thetrip destination];
+        self.dateTripLabel.text=[NSString stringWithFormat:@"%@ to %@",[self.thetrip startTrip],[self.thetrip finishTrip]];
+        self.MyTripsLabel.text=[NSString stringWithFormat:@"My Trips (%li)",[[self.tripDataSource getTrips]size]];
+        self.imageNextTrip.image=[self.thetrip imageTrip];
     }
-    
-    self.destinationTripLabel.text = [self.thetrip destination];
-    self.dateTripLabel.text=[NSString stringWithFormat:@"%@ to %@",[self.thetrip startTrip],[self.thetrip finishTrip]];
-    self.MyTripsLabel.text=[NSString stringWithFormat:@"My Trips (%li)",[[self.tripDataSource getTrips]size]];
-    self.imageNextTrip.image=[self.thetrip imageTrip];
 }
 
 /*
@@ -122,7 +122,6 @@
             vc.tripDataSource=self.tripDataSource;
         }
     }
-    
 }
 
 @end

@@ -305,7 +305,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="5G1-Rn-qHx">
-                                                    <rect key="frame" x="138" y="-60" width="277" height="162"/>
+                                                    <rect key="frame" x="138" y="-60" width="276" height="162"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 </datePicker>
                                             </subviews>
@@ -442,13 +442,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="YaS-Gl-AvW">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="640-UF-MaZ">
-                            <connections>
-                                <action selector="saveButton:" destination="w63-er-l1i" id="IIU-6V-nWh"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Save" id="640-UF-MaZ">
+                                <connections>
+                                    <action selector="saveButton:" destination="w63-er-l1i" id="IIU-6V-nWh"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="trash" catalog="system" id="9b5-zG-KMH">
+                                <connections>
+                                    <action selector="deleteTrip:" destination="w63-er-l1i" id="Ktq-AM-CKN"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="deleteButton" destination="9b5-zG-KMH" id="q4z-5C-NNy"/>
                         <outlet property="departureCity" destination="nLR-dN-Pwx" id="Fwa-Ma-nvd"/>
                         <outlet property="descriptionTrip" destination="YeD-nv-fqA" id="UPx-eD-YT4"/>
                         <outlet property="destinationCity" destination="RIf-rL-glY" id="UFR-i7-eIv"/>
@@ -476,11 +484,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TripCell" textLabel="xqi-pj-fGV" detailTextLabel="gmj-eu-dWp" imageView="PHh-q9-VcO" rowHeight="146" style="IBUITableViewCellStyleSubtitle" id="IX7-cw-m7H">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="TripCell" textLabel="xqi-pj-fGV" detailTextLabel="gmj-eu-dWp" imageView="PHh-q9-VcO" rowHeight="146" style="IBUITableViewCellStyleSubtitle" id="IX7-cw-m7H">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="146"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IX7-cw-m7H" id="Tp4-1e-lRK">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="146"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="356" height="146"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xqi-pj-fGV">
@@ -503,6 +511,9 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="w63-er-l1i" kind="show" identifier="EditTrip" id="rVn-l7-I7a"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -635,9 +646,13 @@
             <point key="canvasLocation" x="2478" y="834"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="rVn-l7-I7a"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Location.png" width="512" height="512"/>
         <image name="People.png" width="708.923095703125" height="708.923095703125"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
