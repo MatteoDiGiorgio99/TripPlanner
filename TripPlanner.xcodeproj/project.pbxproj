@@ -24,6 +24,28 @@
 		512B340C264938F300597957 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 512B340A264938F300597957 /* LaunchScreen.storyboard */; };
 		512B340F264938F300597957 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 512B340E264938F300597957 /* main.m */; };
 		512B341E264962D200597957 /* TripListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 512B341D264962D200597957 /* TripListTableViewController.m */; };
+		514B632F264D452F0034BFC6 /* Atene.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B632E264D452F0034BFC6 /* Atene.jpg */; };
+		514B6331264D45350034BFC6 /* Belfast.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B6330264D45350034BFC6 /* Belfast.jpg */; };
+		514B6333264D453D0034BFC6 /* Berlino.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B6332264D453D0034BFC6 /* Berlino.jpg */; };
+		514B6335264D45410034BFC6 /* Bratislava.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B6334264D45410034BFC6 /* Bratislava.jpg */; };
+		514B6337264D45490034BFC6 /* Bruxelles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B6336264D45490034BFC6 /* Bruxelles.jpg */; };
+		514B6339264D454F0034BFC6 /* Budapest.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B6338264D454F0034BFC6 /* Budapest.jpg */; };
+		514B633B264D45560034BFC6 /* Cardiff.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B633A264D45560034BFC6 /* Cardiff.jpg */; };
+		514B633D264D455E0034BFC6 /* Dublino.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B633C264D455E0034BFC6 /* Dublino.jpg */; };
+		514B633F264D45630034BFC6 /* Edimburgo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B633E264D45630034BFC6 /* Edimburgo.jpg */; };
+		514B6341264D45690034BFC6 /* Firenze.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B6340264D45690034BFC6 /* Firenze.jpg */; };
+		514B6343264D456E0034BFC6 /* Helsinki.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B6342264D456E0034BFC6 /* Helsinki.jpg */; };
+		514B6345264D457A0034BFC6 /* Kiev.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B6344264D457A0034BFC6 /* Kiev.jpg */; };
+		514B6347264D45830034BFC6 /* Lisbona.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B6346264D45830034BFC6 /* Lisbona.jpg */; };
+		514B6349264D458C0034BFC6 /* Lubiana.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B6348264D458C0034BFC6 /* Lubiana.jpg */; };
+		514B634B264D45960034BFC6 /* Milano.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B634A264D45960034BFC6 /* Milano.jpg */; };
+		514B634D264D459A0034BFC6 /* Montecarlo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B634C264D459A0034BFC6 /* Montecarlo.jpg */; };
+		514B634F264D459E0034BFC6 /* Mosca.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B634E264D459E0034BFC6 /* Mosca.jpg */; };
+		514B6351264D45AA0034BFC6 /* Napoli.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B6350264D45AA0034BFC6 /* Napoli.jpg */; };
+		514B6353264D45B10034BFC6 /* Praga.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B6352264D45B10034BFC6 /* Praga.jpg */; };
+		514B6355264D45B70034BFC6 /* Reykjavik.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B6354264D45B70034BFC6 /* Reykjavik.jpg */; };
+		514B6357264D45BF0034BFC6 /* Stoccolma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B6356264D45BF0034BFC6 /* Stoccolma.jpg */; };
+		514B6359264D45C30034BFC6 /* Torino.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514B6358264D45C30034BFC6 /* Torino.jpg */; };
 		514CAC402649C12200F21E6D /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 514CAC3F2649C12200F21E6D /* Trip.m */; };
 		514CAC452649D70C00F21E6D /* TripList.m in Sources */ = {isa = PBXBuildFile; fileRef = 514CAC442649D70C00F21E6D /* TripList.m */; };
 		514CAC472649DEFC00F21E6D /* Location.png in Resources */ = {isa = PBXBuildFile; fileRef = 514CAC462649DEFC00F21E6D /* Location.png */; };
@@ -62,6 +84,28 @@
 		512B340E264938F300597957 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		512B341C264962D200597957 /* TripListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TripListTableViewController.h; sourceTree = "<group>"; };
 		512B341D264962D200597957 /* TripListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TripListTableViewController.m; sourceTree = "<group>"; };
+		514B632E264D452F0034BFC6 /* Atene.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Atene.jpg; sourceTree = "<group>"; };
+		514B6330264D45350034BFC6 /* Belfast.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Belfast.jpg; sourceTree = "<group>"; };
+		514B6332264D453D0034BFC6 /* Berlino.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Berlino.jpg; sourceTree = "<group>"; };
+		514B6334264D45410034BFC6 /* Bratislava.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Bratislava.jpg; sourceTree = "<group>"; };
+		514B6336264D45490034BFC6 /* Bruxelles.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Bruxelles.jpg; sourceTree = "<group>"; };
+		514B6338264D454F0034BFC6 /* Budapest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Budapest.jpg; sourceTree = "<group>"; };
+		514B633A264D45560034BFC6 /* Cardiff.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cardiff.jpg; sourceTree = "<group>"; };
+		514B633C264D455E0034BFC6 /* Dublino.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Dublino.jpg; sourceTree = "<group>"; };
+		514B633E264D45630034BFC6 /* Edimburgo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Edimburgo.jpg; sourceTree = "<group>"; };
+		514B6340264D45690034BFC6 /* Firenze.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Firenze.jpg; sourceTree = "<group>"; };
+		514B6342264D456E0034BFC6 /* Helsinki.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Helsinki.jpg; sourceTree = "<group>"; };
+		514B6344264D457A0034BFC6 /* Kiev.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Kiev.jpg; sourceTree = "<group>"; };
+		514B6346264D45830034BFC6 /* Lisbona.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lisbona.jpg; sourceTree = "<group>"; };
+		514B6348264D458C0034BFC6 /* Lubiana.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lubiana.jpg; sourceTree = "<group>"; };
+		514B634A264D45960034BFC6 /* Milano.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Milano.jpg; sourceTree = "<group>"; };
+		514B634C264D459A0034BFC6 /* Montecarlo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Montecarlo.jpg; sourceTree = "<group>"; };
+		514B634E264D459E0034BFC6 /* Mosca.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mosca.jpg; sourceTree = "<group>"; };
+		514B6350264D45AA0034BFC6 /* Napoli.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Napoli.jpg; sourceTree = "<group>"; };
+		514B6352264D45B10034BFC6 /* Praga.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Praga.jpg; sourceTree = "<group>"; };
+		514B6354264D45B70034BFC6 /* Reykjavik.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Reykjavik.jpg; sourceTree = "<group>"; };
+		514B6356264D45BF0034BFC6 /* Stoccolma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Stoccolma.jpg; sourceTree = "<group>"; };
+		514B6358264D45C30034BFC6 /* Torino.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Torino.jpg; sourceTree = "<group>"; };
 		514CAC3E2649C12200F21E6D /* Trip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
 		514CAC3F2649C12200F21E6D /* Trip.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
 		514CAC432649D70C00F21E6D /* TripList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TripList.h; sourceTree = "<group>"; };
@@ -137,6 +181,28 @@
 			children = (
 				511B7501264BFB4C00AF637F /* Roma.jpg */,
 				511B74F3264BFA8E00AF637F /* Amsterdam.jpg */,
+				514B6332264D453D0034BFC6 /* Berlino.jpg */,
+				514B633A264D45560034BFC6 /* Cardiff.jpg */,
+				514B6340264D45690034BFC6 /* Firenze.jpg */,
+				514B6346264D45830034BFC6 /* Lisbona.jpg */,
+				514B6338264D454F0034BFC6 /* Budapest.jpg */,
+				514B6350264D45AA0034BFC6 /* Napoli.jpg */,
+				514B6348264D458C0034BFC6 /* Lubiana.jpg */,
+				514B6352264D45B10034BFC6 /* Praga.jpg */,
+				514B634A264D45960034BFC6 /* Milano.jpg */,
+				514B634E264D459E0034BFC6 /* Mosca.jpg */,
+				514B634C264D459A0034BFC6 /* Montecarlo.jpg */,
+				514B6344264D457A0034BFC6 /* Kiev.jpg */,
+				514B6342264D456E0034BFC6 /* Helsinki.jpg */,
+				514B633E264D45630034BFC6 /* Edimburgo.jpg */,
+				514B633C264D455E0034BFC6 /* Dublino.jpg */,
+				514B6334264D45410034BFC6 /* Bratislava.jpg */,
+				514B6354264D45B70034BFC6 /* Reykjavik.jpg */,
+				514B632E264D452F0034BFC6 /* Atene.jpg */,
+				514B6336264D45490034BFC6 /* Bruxelles.jpg */,
+				514B6358264D45C30034BFC6 /* Torino.jpg */,
+				514B6356264D45BF0034BFC6 /* Stoccolma.jpg */,
+				514B6330264D45350034BFC6 /* Belfast.jpg */,
 				511B7505264BFB6100AF637F /* Madrid.jpg */,
 				511B7503264BFB5700AF637F /* Oslo.jpg */,
 				511B750B264BFB8600AF637F /* Copenaghen.jpg */,
@@ -241,9 +307,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				514B6345264D457A0034BFC6 /* Kiev.jpg in Resources */,
+				514B6347264D45830034BFC6 /* Lisbona.jpg in Resources */,
+				514B6335264D45410034BFC6 /* Bratislava.jpg in Resources */,
 				511B74F4264BFA8E00AF637F /* Amsterdam.jpg in Resources */,
 				512B340C264938F300597957 /* LaunchScreen.storyboard in Resources */,
 				511B7504264BFB5700AF637F /* Oslo.jpg in Resources */,
+				514B6337264D45490034BFC6 /* Bruxelles.jpg in Resources */,
 				511B7502264BFB4C00AF637F /* Roma.jpg in Resources */,
 				511B7500264BFB4600AF637F /* Vienna.jpg in Resources */,
 				514CAC472649DEFC00F21E6D /* Location.png in Resources */,
@@ -251,10 +321,28 @@
 				511B7506264BFB6100AF637F /* Madrid.jpg in Resources */,
 				514CAC492649DF0700F21E6D /* People.png in Resources */,
 				511B750C264BFB8600AF637F /* Copenaghen.jpg in Resources */,
+				514B6343264D456E0034BFC6 /* Helsinki.jpg in Resources */,
+				514B6333264D453D0034BFC6 /* Berlino.jpg in Resources */,
+				514B634B264D45960034BFC6 /* Milano.jpg in Resources */,
+				514B6341264D45690034BFC6 /* Firenze.jpg in Resources */,
 				511B7508264BFB7000AF637F /* Londra.jpg in Resources */,
+				514B6331264D45350034BFC6 /* Belfast.jpg in Resources */,
+				514B6359264D45C30034BFC6 /* Torino.jpg in Resources */,
+				514B6355264D45B70034BFC6 /* Reykjavik.jpg in Resources */,
+				514B633B264D45560034BFC6 /* Cardiff.jpg in Resources */,
+				514B6339264D454F0034BFC6 /* Budapest.jpg in Resources */,
+				514B633D264D455E0034BFC6 /* Dublino.jpg in Resources */,
+				514B634F264D459E0034BFC6 /* Mosca.jpg in Resources */,
+				514B6349264D458C0034BFC6 /* Lubiana.jpg in Resources */,
+				514B632F264D452F0034BFC6 /* Atene.jpg in Resources */,
 				511B750A264BFB7F00AF637F /* Istanbul.jpg in Resources */,
+				514B633F264D45630034BFC6 /* Edimburgo.jpg in Resources */,
+				514B6351264D45AA0034BFC6 /* Napoli.jpg in Resources */,
 				512B3407264938F200597957 /* Main.storyboard in Resources */,
+				514B6353264D45B10034BFC6 /* Praga.jpg in Resources */,
+				514B6357264D45BF0034BFC6 /* Stoccolma.jpg in Resources */,
 				514CAC4D2649E47F00F21E6D /* Parigi.jpg in Resources */,
+				514B634D264D459A0034BFC6 /* Montecarlo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

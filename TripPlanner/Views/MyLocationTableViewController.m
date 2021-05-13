@@ -28,6 +28,8 @@
     
     self.title = @"My Location";
     self.locationMap.delegate = self;
+    [self.locationMap setShowsUserLocation:YES];
+    
 }
 
 - (void) centerMapToLocationLatitude:(double)locaLat
@@ -36,7 +38,7 @@
     
     MKCoordinateRegion mapRegion;
     CLLocationCoordinate2D location;
-    MKPointAnnotation *annotation;
+    MKPointAnnotation *annotation =[[MKPointAnnotation alloc] init];
     
     location.latitude=locaLat;
     location.longitude=locaLon;

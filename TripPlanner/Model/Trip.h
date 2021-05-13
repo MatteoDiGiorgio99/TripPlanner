@@ -14,7 +14,9 @@
                          DescriptionTrip:(NSString *)descriptionTrip
                          ImageTrip:(NSObject *)imageTrip
                          StartTrip:(NSString *)startTrip
-                         FinishTrip:(NSString *)finishTrip;
+                         FinishTrip:(NSString *)finishTrip
+                         HotelName:(NSString *)hotelName
+                         MeanTransport:(NSString *)meanTransport;
 
 - (instancetype)initWithDestination:(NSString *)destination
                           Departure:(NSString *)departure
@@ -30,6 +32,8 @@
 @property (nonatomic, strong) NSString *finishTrip;
 @property (nonatomic, strong) NSString *departure;
 @property (nonatomic, strong) NSString *datedeparture;
+@property (nonatomic, strong) NSString *hotelName;
+@property (nonatomic, strong) NSString *meanTransport;
 
 
 @end

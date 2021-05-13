@@ -9,7 +9,7 @@
 #import "TripDataSource.h"
 #import "Trip.h"
 
-@interface NewTripTableViewController : UITableViewController
+@interface NewTripTableViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (nonatomic, strong) id<TripDataSource> tripDataSource;
 @property (nonatomic, strong) Trip *trip;

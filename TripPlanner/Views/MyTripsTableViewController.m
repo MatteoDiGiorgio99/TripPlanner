@@ -37,6 +37,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TripCell" forIndexPath:indexPath];
+    if (cell == nil) {
+          cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TripCell"];
+        }
     Trip *t = [[self.tripDataSource getTrips] getAtIndex:indexPath.row];
     
     cell.textLabel.text=[NSString stringWithFormat:@"%@",t.destination];
@@ -50,7 +53,6 @@
     [cell.imageView.image drawInRect:imageRect];
     cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
     
     return cell;
 }

@@ -43,7 +43,7 @@
 
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+
     if([[self.tripDataSource getTrips] size] > 0) {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"MM/dd/yy"];
@@ -73,6 +73,14 @@
         self.dateTripLabel.text=[NSString stringWithFormat:@"%@ to %@",[self.thetrip startTrip],[self.thetrip finishTrip]];
         self.MyTripsLabel.text=[NSString stringWithFormat:@"My Trips (%li)",[[self.tripDataSource getTrips]size]];
         self.imageNextTrip.image=[self.thetrip imageTrip];
+    }
+    else
+    {
+        _destinationTripLabel.text=@"No trips saved";
+        _dateTripLabel.text=@"-----";
+        _MyTripsLabel.text=@"My Trips (0)";
+        _MyLocationLabel.text=@"My Location";
+        _imageNextTrip.image=nil;
     }
 }
 

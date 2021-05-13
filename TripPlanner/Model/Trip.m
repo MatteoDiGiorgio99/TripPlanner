@@ -13,7 +13,9 @@
                          DescriptionTrip:(NSString *)descriptionTrip
                          ImageTrip:(NSObject *)imageTrip
                          StartTrip:(NSString *)startTrip
-                         FinishTrip:(NSString *)finishTrip{
+                         FinishTrip:(NSString *)finishTrip
+                         HotelName:(NSString *)hotelName
+                         MeanTransport:(NSString *)meanTransport{
     if(self = [super init]){
         _destination = [destination copy];
         _nameTrip=[nameTrip copy];
@@ -21,6 +23,8 @@
         _imageTrip = [imageTrip copy];
         _startTrip = [startTrip copy];
         _finishTrip = [finishTrip copy];
+        _hotelName=[hotelName copy];
+        _meanTransport=[meanTransport copy];
     }
     return self;
 }
