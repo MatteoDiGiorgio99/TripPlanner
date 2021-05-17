@@ -7,6 +7,10 @@
 
 #import "ExampleTripDataSource.h"
 #import "TripList.h"
+#import "Permanence.h"
+#import "Displacement.h"
+
+#import <UIKit/UIKit.h>
 
 @interface ExampleTripDataSource()
 
@@ -28,7 +32,11 @@
 }
 
 - (void) addTrips {
+    NSMutableArray *array = [NSArray arrayWithObjects:
+                             [[Permanence alloc] initWithDestination:@"Parigi" ArrivalDate:[[NSDate alloc] init] DepartureDate:[[NSDate alloc] init]],
+                             [[Displacement alloc] initWithDeparture:@"Londra" Destination:@"Berlino" ArrivalDate:[[NSDate alloc] init]], nil];
     
+    [self.trips add: [[Trip alloc] initWithDestination:@"Londra" Departure:@"Roma" ImageTrip:[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",@"Londra"]] DateDeparture:@"05/02/2021" DateArrival:@"07/02/2021" Stages:array]];
 }
 
 - (TripList *) getTrips {

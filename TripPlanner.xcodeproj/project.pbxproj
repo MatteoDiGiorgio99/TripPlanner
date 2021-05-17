@@ -53,6 +53,9 @@
 		514CAC4D2649E47F00F21E6D /* Parigi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514CAC4C2649E47F00F21E6D /* Parigi.jpg */; };
 		51704DD7264A772D004B8A85 /* NewTripTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51704DD6264A772D004B8A85 /* NewTripTableViewController.m */; };
 		51906EB0264AAEF6000B7522 /* ExampleTripDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 51906EAF264AAEF6000B7522 /* ExampleTripDataSource.m */; };
+		51D96699265269F500B6296D /* StagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D96698265269F500B6296D /* StagesTableViewController.m */; };
+		51D966A126526BCE00B6296D /* Permanence.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D966A026526BCE00B6296D /* Permanence.m */; };
+		51D966A426526FAA00B6296D /* Displacement.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D966A326526FAA00B6296D /* Displacement.m */; };
 		51DFF7FF264B16980003B481 /* MyLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF7FE264B16980003B481 /* MyLocationTableViewController.m */; };
 		51DFF802264B1A0A0003B481 /* Poi.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF801264B1A0A0003B481 /* Poi.m */; };
 		51DFF805264B1B1F0003B481 /* GeoTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF804264B1B1F0003B481 /* GeoTrip.m */; };
@@ -118,6 +121,13 @@
 		51906EAD264AAE67000B7522 /* TripDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TripDataSource.h; sourceTree = "<group>"; };
 		51906EAE264AAEF6000B7522 /* ExampleTripDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleTripDataSource.h; sourceTree = "<group>"; };
 		51906EAF264AAEF6000B7522 /* ExampleTripDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTripDataSource.m; sourceTree = "<group>"; };
+		51D96697265269F500B6296D /* StagesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StagesTableViewController.h; sourceTree = "<group>"; };
+		51D96698265269F500B6296D /* StagesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StagesTableViewController.m; sourceTree = "<group>"; };
+		51D9669F26526BCE00B6296D /* Permanence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Permanence.h; sourceTree = "<group>"; };
+		51D966A026526BCE00B6296D /* Permanence.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Permanence.m; sourceTree = "<group>"; };
+		51D966A226526FAA00B6296D /* Displacement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Displacement.h; sourceTree = "<group>"; };
+		51D966A326526FAA00B6296D /* Displacement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Displacement.m; sourceTree = "<group>"; };
+		51D966A6265277F400B6296D /* Stage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stage.h; sourceTree = "<group>"; };
 		51DFF7FD264B16980003B481 /* MyLocationTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyLocationTableViewController.h; sourceTree = "<group>"; };
 		51DFF7FE264B16980003B481 /* MyLocationTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLocationTableViewController.m; sourceTree = "<group>"; };
 		51DFF800264B1A0A0003B481 /* Poi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Poi.h; sourceTree = "<group>"; };
@@ -232,6 +242,11 @@
 				51DFF804264B1B1F0003B481 /* GeoTrip.m */,
 				51DFF80C264B1D1F0003B481 /* GeoTrip+MapAnnotation.h */,
 				51DFF80D264B1D1F0003B481 /* GeoTrip+MapAnnotation.m */,
+				51D9669F26526BCE00B6296D /* Permanence.h */,
+				51D966A026526BCE00B6296D /* Permanence.m */,
+				51D966A226526FAA00B6296D /* Displacement.h */,
+				51D966A326526FAA00B6296D /* Displacement.m */,
+				51D966A6265277F400B6296D /* Stage.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,6 +262,8 @@
 				51DFF7FE264B16980003B481 /* MyLocationTableViewController.m */,
 				511B74F0264BC39D00AF637F /* MyTripsTableViewController.h */,
 				511B74F1264BC39D00AF637F /* MyTripsTableViewController.m */,
+				51D96697265269F500B6296D /* StagesTableViewController.h */,
+				51D96698265269F500B6296D /* StagesTableViewController.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -357,6 +374,8 @@
 				512B3404264938F200597957 /* ViewController.m in Sources */,
 				51DFF805264B1B1F0003B481 /* GeoTrip.m in Sources */,
 				51DFF80E264B1D1F0003B481 /* GeoTrip+MapAnnotation.m in Sources */,
+				51D96699265269F500B6296D /* StagesTableViewController.m in Sources */,
+				51D966A126526BCE00B6296D /* Permanence.m in Sources */,
 				512B33FE264938F200597957 /* AppDelegate.m in Sources */,
 				514CAC452649D70C00F21E6D /* TripList.m in Sources */,
 				511B74F2264BC39D00AF637F /* MyTripsTableViewController.m in Sources */,
@@ -364,6 +383,7 @@
 				512B340F264938F300597957 /* main.m in Sources */,
 				51906EB0264AAEF6000B7522 /* ExampleTripDataSource.m in Sources */,
 				512B3401264938F200597957 /* SceneDelegate.m in Sources */,
+				51D966A426526FAA00B6296D /* Displacement.m in Sources */,
 				512B341E264962D200597957 /* TripListTableViewController.m in Sources */,
 				51DFF7FF264B16980003B481 /* MyLocationTableViewController.m in Sources */,
 				51704DD7264A772D004B8A85 /* NewTripTableViewController.m in Sources */,

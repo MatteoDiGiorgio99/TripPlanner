@@ -7,6 +7,7 @@
 
 #import "NewTripTableViewController.h"
 #import "TripListTableViewController.h"
+#import "StagesTableViewController.h"
 
 @interface NewTripTableViewController ()
 @property (nonnull, nonatomic, strong) NSArray *transportation;
@@ -35,6 +36,8 @@
     
     self.transportation = @[@"Car", @"Bike", @"Motorbike", @"Train", @"Boat", @"Airplane"];
     
+    self.selectedTransport = self.transportation[0];
+    
     self.meanOfTransport.dataSource = self;
     self.meanOfTransport.delegate = self;
     
@@ -48,8 +51,10 @@
         self.destinationCity.text = self.trip.destination;
         self.hotelName.text=self.trip.hotelName;
         
-        NSInteger index = [self.transportation indexOfObject:self.trip.meanTransport];
-        [self.meanOfTransport selectRow:index inComponent:0 animated:YES];
+        if(self.trip.meanTransport != nil) {
+            NSInteger index = [self.transportation indexOfObject:self.trip.meanTransport];
+            [self.meanOfTransport selectRow:index inComponent:0 animated:YES];
+        }
         
     } else {
         self.title=@"New Trip";
@@ -90,7 +95,7 @@
             return @"Hotel";
             break;
         case 4:
-            return @"Point of Interest";
+            return @"Tappe Intermedie";
             break;
         default:
             return nil;
@@ -149,6 +154,20 @@
         self.trip.hotelName=self.hotelName.text;
         self.trip.meanTransport=self.selectedTransport;
         [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
+    }
+}
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"StagesTableView"]){
+        if([segue.destinationViewController isKindOfClass:[StagesTableViewController class]]) {
+            StagesTableViewController *vc = (StagesTableViewController *)segue.destinationViewController;
+            
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+            
+            vc.trip = [[self.tripDataSource getTrips] getAtIndex:indexPath.row];
+            vc.tripDataSource=self.tripDataSource;
+        }
     }
 }
 
