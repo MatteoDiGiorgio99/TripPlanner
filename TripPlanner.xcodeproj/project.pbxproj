@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		510E508B265297FC00A736CC /* DetailStagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510E508A265297FC00A736CC /* DetailStagesTableViewController.m */; };
 		511B74F2264BC39D00AF637F /* MyTripsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 511B74F1264BC39D00AF637F /* MyTripsTableViewController.m */; };
 		511B74F4264BFA8E00AF637F /* Amsterdam.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 511B74F3264BFA8E00AF637F /* Amsterdam.jpg */; };
 		511B7500264BFB4600AF637F /* Vienna.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 511B74FF264BFB4600AF637F /* Vienna.jpg */; };
@@ -63,6 +64,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		510E5089265297FC00A736CC /* DetailStagesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailStagesTableViewController.h; sourceTree = "<group>"; };
+		510E508A265297FC00A736CC /* DetailStagesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailStagesTableViewController.m; sourceTree = "<group>"; };
 		511B74F0264BC39D00AF637F /* MyTripsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTripsTableViewController.h; sourceTree = "<group>"; };
 		511B74F1264BC39D00AF637F /* MyTripsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTripsTableViewController.m; sourceTree = "<group>"; };
 		511B74F3264BFA8E00AF637F /* Amsterdam.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Amsterdam.jpg; sourceTree = "<group>"; };
@@ -264,6 +267,8 @@
 				511B74F1264BC39D00AF637F /* MyTripsTableViewController.m */,
 				51D96697265269F500B6296D /* StagesTableViewController.h */,
 				51D96698265269F500B6296D /* StagesTableViewController.m */,
+				510E5089265297FC00A736CC /* DetailStagesTableViewController.h */,
+				510E508A265297FC00A736CC /* DetailStagesTableViewController.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 				512B3401264938F200597957 /* SceneDelegate.m in Sources */,
 				51D966A426526FAA00B6296D /* Displacement.m in Sources */,
 				512B341E264962D200597957 /* TripListTableViewController.m in Sources */,
+				510E508B265297FC00A736CC /* DetailStagesTableViewController.m in Sources */,
 				51DFF7FF264B16980003B481 /* MyLocationTableViewController.m in Sources */,
 				51704DD7264A772D004B8A85 /* NewTripTableViewController.m in Sources */,
 			);

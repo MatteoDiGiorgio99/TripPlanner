@@ -6,6 +6,7 @@
 //
 
 #import "StagesTableViewController.h"
+#import "DetailStagesTableViewController.h"
 #import "Stage.h"
 
 @interface StagesTableViewController ()
@@ -16,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title=@"Stages";
 }
 
 #pragma mark - Table view data source
@@ -38,6 +41,27 @@
     cell.detailTextLabel.text = [stage displayDate];
     
     return cell;
+}
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"NewStage"]){
+        if([segue.destinationViewController isKindOfClass:[DetailStagesTableViewController class]]) {
+            DetailStagesTableViewController *vc = (DetailStagesTableViewController *)segue.destinationViewController;
+            
+            vc.stage = nil;
+        }
+    }
+    
+    if([segue.identifier isEqualToString:@"EditStage"]){
+        if([segue.destinationViewController isKindOfClass:[DetailStagesTableViewController class]]) {
+            DetailStagesTableViewController *vc = (DetailStagesTableViewController *)segue.destinationViewController;
+            
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+            
+            vc.stage = [self.trip.stages objectAtIndex:indexPath.row];
+        }
+    }
 }
 
 @end
