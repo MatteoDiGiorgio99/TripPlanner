@@ -16,7 +16,7 @@
                          FinishTrip:(NSString *)finishTrip
                          HotelName:(NSString *)hotelName
                          MeanTransport:(NSString *)meanTransport
-                             Stages:(NSMutableArray *) stages {
+                             Stages:(NSMutableArray<Stage> *) stages {
     if(self = [super init]){
         _destination = [destination copy];
         _nameTrip=[nameTrip copy];
@@ -26,7 +26,7 @@
         _finishTrip = [finishTrip copy];
         _hotelName=[hotelName copy];
         _meanTransport=[meanTransport copy];
-        _stages=[stages copy];
+        _stages=stages;
     }
     return self;
 }
@@ -36,7 +36,7 @@
                          ImageTrip:(NSObject *)imageTrip
                          DateDeparture:(NSString *)datedeparture
                      DateArrival:(NSString *)datearrival
-                            Stages:(NSMutableArray *) stages{
+                            Stages:(NSMutableArray<Stage> *) stages{
                        
     return [self initWithDestination:destination NameTrip:@"" DescriptionTrip:@"" ImageTrip:imageTrip StartTrip:datedeparture FinishTrip:datearrival HotelName:@"" MeanTransport:nil Stages:stages];
 }

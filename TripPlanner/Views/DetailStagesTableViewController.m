@@ -8,6 +8,7 @@
 #import "DetailStagesTableViewController.h"
 #import "Displacement.h"
 #import "Permanence.h"
+#import "Stage.h"
 
 @interface DetailStagesTableViewController ()
 @property (weak, nonatomic) IBOutlet UISwitch *chooseTipeStages;
@@ -25,6 +26,8 @@
     [super viewDidLoad];
  
     self.title=@"Edit Stage";
+    
+    [self setPermanenceSettings];
     
     if(self.stage == nil) {
         self.deleteItem.enabled = NO;
@@ -89,11 +92,32 @@
 }
 
 - (IBAction)deleteItemClick:(id)sender {
-    
+    if(self.stage != nil) {
+        [self.stagesList removeObject:self.stage];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (IBAction)saveItem:(id)sender {
-    
+    if(self.stage == nil) {
+        if(self.chooseTipeStages.on == YES)
+        {
+            Permanence *stageP= [[Permanence alloc] initWithDestination:self.destinationCity.text ArrivalDate:self.arrivalDate.date DepartureDate:self.startDate.date];
+           
+            [self.stagesList addObject:stageP];
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        }
+        else
+        {
+            Displacement *stageD = [[Displacement alloc] initWithDeparture:self.departureCity.text Destination:self.destinationCity.text ArrivalDate:self.arrivalDate.date];
+            
+            [self.stagesList addObject:stageD];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    } else {
+        
+    }
 }
 
 @end

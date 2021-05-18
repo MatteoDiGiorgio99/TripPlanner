@@ -21,6 +21,12 @@
     self.title=@"Stages";
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    [self.tableView reloadData];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -50,6 +56,7 @@
             DetailStagesTableViewController *vc = (DetailStagesTableViewController *)segue.destinationViewController;
             
             vc.stage = nil;
+            vc.stagesList = self.trip.stages;
         }
     }
     
@@ -60,6 +67,7 @@
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
             
             vc.stage = [self.trip.stages objectAtIndex:indexPath.row];
+            vc.stagesList = self.trip.stages;
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Stage.h"
 
 @interface Trip : NSObject
 
@@ -17,14 +18,14 @@
                          FinishTrip:(NSString *)finishTrip
                          HotelName:(NSString *)hotelName
                          MeanTransport:(NSString *)meanTransport
-                             Stages:(NSMutableArray *) stages;
+                             Stages:(NSMutableArray<Stage> *) stages;
 
 -(instancetype)initWithDestination:(NSString *)destination
                          Departure:(NSString *)departure
                          ImageTrip:(NSObject *)imageTrip
                          DateDeparture:(NSString *)datedeparture
                      DateArrival:(NSString *)datearrival
-                            Stages:(NSMutableArray *) stages;
+                            Stages:(NSMutableArray<Stage> *) stages;
                           
 
 @property (nonatomic, strong) NSString *destination;
@@ -37,6 +38,6 @@
 @property (nonatomic, strong) NSString *datedeparture;
 @property (nonatomic, strong) NSString *hotelName;
 @property (nonatomic, strong) NSString *meanTransport;
-@property (nonatomic, strong) NSMutableArray *stages;
+@property (nonatomic, strong) NSMutableArray<Stage> *stages;
 
 @end

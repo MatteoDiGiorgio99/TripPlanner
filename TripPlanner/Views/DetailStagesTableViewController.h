@@ -11,5 +11,6 @@
 @interface DetailStagesTableViewController : UITableViewController
 
 @property (nonatomic, strong) id<Stage> stage;
+@property (nonatomic, strong) NSMutableArray<Stage> *stagesList;
 
 @end

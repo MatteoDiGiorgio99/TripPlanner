@@ -32,7 +32,7 @@
 }
 
 - (void) addTrips {
-    NSMutableArray *array = [NSArray arrayWithObjects:
+    NSMutableArray<Stage> *array = [NSMutableArray<Stage> arrayWithObjects:
                              [[Permanence alloc] initWithDestination:@"Parigi" ArrivalDate:[[NSDate alloc] init] DepartureDate:[[NSDate alloc] init]],
                              [[Displacement alloc] initWithDeparture:@"Londra" Destination:@"Berlino" ArrivalDate:[[NSDate alloc] init]], nil];
     
