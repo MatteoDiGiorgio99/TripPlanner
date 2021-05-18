@@ -8,10 +8,12 @@
 #import "NewTripTableViewController.h"
 #import "TripListTableViewController.h"
 #import "StagesTableViewController.h"
+#import "Stage.h"
 
 @interface NewTripTableViewController ()
 @property (nonnull, nonatomic, strong) NSArray *transportation;
 @property (nonatomic, strong) NSString *selectedTransport;
+@property (nonatomic, strong) NSMutableArray<Stage> *protoStage;
 
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTrip;
 @property (weak, nonatomic) IBOutlet UITextField *nameTrip;
@@ -40,6 +42,8 @@
     
     self.meanOfTransport.dataSource = self;
     self.meanOfTransport.delegate = self;
+    
+    self.protoStage = [[NSMutableArray<Stage> alloc] init];
     
     if(self.trip != nil) {
         // TODO: Carico dati dalla classe alla View
@@ -135,6 +139,7 @@
         self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",self.destinationCity.text]];
         self.trip.hotelName=self.hotelName.text;
         self.trip.meanTransport=self.selectedTransport;
+        self.trip.stages = self.protoStage;
         [[self.tripDataSource getTrips] add:self.trip];
         [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
     } else {
@@ -163,9 +168,12 @@
         if([segue.destinationViewController isKindOfClass:[StagesTableViewController class]]) {
             StagesTableViewController *vc = (StagesTableViewController *)segue.destinationViewController;
             
-            NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+            if(self.trip != nil) {
+                vc.stages = self.trip.stages;
+            } else {
+                vc.stages = self.protoStage;
+            }
             
-            vc.trip = [[self.tripDataSource getTrips] getAtIndex:indexPath.row];
             vc.tripDataSource=self.tripDataSource;
         }
     }

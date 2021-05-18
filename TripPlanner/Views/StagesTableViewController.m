@@ -18,13 +18,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self sortStages];
+    
     self.title=@"Stages";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
+    
+    [self sortStages];
+    
     [self.tableView reloadData];
+}
+
+-(void) sortStages {
+    for (int i = 0; i < [self.stages count]; i++) {
+        for (int j = 0; j < [self.stages count] - 1; j++) {
+            NSObject<Stage> *a = [self.stages objectAtIndex:j];
+            NSObject<Stage> *b = [self.stages objectAtIndex:j + 1];
+            
+            NSComparisonResult result = [a.getDateToCompare compare:b.getDateToCompare];
+            
+            switch (result) {
+                case NSOrderedAscending:
+                    break;
+                case NSOrderedDescending:
+                    self.stages[j] = b;
+                    self.stages[j + 1] = a;
+                    break;
+                case NSOrderedSame:
+                    break;
+            }
+        }
+    }
 }
 
 #pragma mark - Table view data source
@@ -34,14 +60,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.trip.stages.count;
+    return self.stages.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StageCell" forIndexPath:indexPath];
     
-    NSObject<Stage> *stage = [self.trip.stages objectAtIndex:indexPath.row];
+    NSObject<Stage> *stage = [self.stages objectAtIndex:indexPath.row];
     
     cell.textLabel.text = [stage displayName];
     cell.detailTextLabel.text = [stage displayDate];
@@ -56,7 +82,7 @@
             DetailStagesTableViewController *vc = (DetailStagesTableViewController *)segue.destinationViewController;
             
             vc.stage = nil;
-            vc.stagesList = self.trip.stages;
+            vc.stagesList = self.stages;
         }
     }
     
@@ -66,8 +92,8 @@
             
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
             
-            vc.stage = [self.trip.stages objectAtIndex:indexPath.row];
-            vc.stagesList = self.trip.stages;
+            vc.stage = [self.stages objectAtIndex:indexPath.row];
+            vc.stagesList = self.stages;
         }
     }
 }

@@ -32,9 +32,11 @@
 }
 
 - (void) addTrips {
-    NSMutableArray<Stage> *array = [NSMutableArray<Stage> arrayWithObjects:
-                             [[Permanence alloc] initWithDestination:@"Parigi" ArrivalDate:[[NSDate alloc] init] DepartureDate:[[NSDate alloc] init]],
-                             [[Displacement alloc] initWithDeparture:@"Londra" Destination:@"Berlino" ArrivalDate:[[NSDate alloc] init]], nil];
+    NSMutableArray<Stage> *array = [[NSMutableArray<Stage> alloc] init];
+    
+    [array addObject:[[Permanence alloc] initWithDestination:@"Parigi" ArrivalDate:[[NSDate alloc] init] DepartureDate:[[NSDate alloc] init]]];
+    
+    [array addObject:[[Displacement alloc] initWithDeparture:@"Londra" Destination:@"Berlino" ArrivalDate:[[NSDate alloc] init]]];
     
     [self.trips add: [[Trip alloc] initWithDestination:@"Londra" Departure:@"Roma" ImageTrip:[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",@"Londra"]] DateDeparture:@"05/02/2021" DateArrival:@"07/02/2021" Stages:array]];
 }

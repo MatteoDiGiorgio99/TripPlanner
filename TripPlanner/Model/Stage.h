@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(NSString *) displayName;
 -(NSString *) displayDate;
+-(NSDate *) getDateToCompare;
 
 @end
 

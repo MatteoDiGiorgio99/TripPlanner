@@ -27,4 +27,9 @@
 -(NSString *) displayDate {
     return [NSString stringWithFormat:@"%@", self.displacementDate];
 }
+
+-(NSDate *) getDateToCompare {
+    return self.displacementDate;
+}
+
 @end

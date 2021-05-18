@@ -7,14 +7,14 @@
 
 #import <UIKit/UIKit.h>
 #import "TripDataSource.h"
-#import "Trip.h"
+#import "Stage.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface StagesTableViewController : UITableViewController
 
 @property (nonatomic, strong) id<TripDataSource> tripDataSource;
-@property (nonatomic, strong) Trip *trip;
+@property (nonatomic, strong) NSMutableArray<Stage> *stages;
 
 @end
 

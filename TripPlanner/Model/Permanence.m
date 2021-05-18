@@ -30,4 +30,9 @@
     
     return [NSString stringWithFormat:@"%@ - %@", [dateFormatter stringFromDate:self.departureDate], [dateFormatter stringFromDate:self.arrivalDate]];
 }
+
+-(NSDate *) getDateToCompare {
+    return self.departureDate;
+}
+
 @end
