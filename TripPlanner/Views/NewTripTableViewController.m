@@ -99,7 +99,7 @@
             return @"Hotel";
             break;
         case 4:
-            return @"Tappe Intermedie";
+            return @"Stages";
             break;
         default:
             return nil;

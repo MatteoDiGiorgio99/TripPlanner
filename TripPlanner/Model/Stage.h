@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol Stage <NSObject>
 
 -(NSString *) displayName;
+-(NSString *) displayDestination;
 -(NSString *) displayDate;
 -(NSDate *) getDateToCompare;
 

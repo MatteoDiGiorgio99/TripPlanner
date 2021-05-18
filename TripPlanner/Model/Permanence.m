@@ -24,6 +24,10 @@
     return self.destination;
 }
 
+-(NSString *) displayDestination {
+    return self.destination;
+}
+
 -(NSString *) displayDate {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM/dd/yy"];

@@ -7,6 +7,7 @@
 
 #import "StagesTableViewController.h"
 #import "DetailStagesTableViewController.h"
+#import "StagesMapViewController.h"
 #import "Stage.h"
 
 @interface StagesTableViewController ()
@@ -95,6 +96,16 @@
             vc.stage = [self.stages objectAtIndex:indexPath.row];
             vc.stagesList = self.stages;
         }
+    }
+    if([segue.identifier isEqualToString:@"ShowMap"]){
+        if([segue.destinationViewController isKindOfClass:[StagesMapViewController class]]) {
+            StagesMapViewController *vc = (StagesMapViewController *)segue.destinationViewController;
+            
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        
+            vc.stages = self.stages;
+        }
+        
     }
 }
 

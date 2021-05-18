@@ -61,6 +61,7 @@
 		51DFF802264B1A0A0003B481 /* Poi.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF801264B1A0A0003B481 /* Poi.m */; };
 		51DFF805264B1B1F0003B481 /* GeoTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF804264B1B1F0003B481 /* GeoTrip.m */; };
 		51DFF80E264B1D1F0003B481 /* GeoTrip+MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF80D264B1D1F0003B481 /* GeoTrip+MapAnnotation.m */; };
+		51FE6978265405C100BDA06E /* StagesMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FE6977265405C100BDA06E /* StagesMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +140,8 @@
 		51DFF804264B1B1F0003B481 /* GeoTrip.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeoTrip.m; sourceTree = "<group>"; };
 		51DFF80C264B1D1F0003B481 /* GeoTrip+MapAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GeoTrip+MapAnnotation.h"; sourceTree = "<group>"; };
 		51DFF80D264B1D1F0003B481 /* GeoTrip+MapAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GeoTrip+MapAnnotation.m"; sourceTree = "<group>"; };
+		51FE6976265405C100BDA06E /* StagesMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StagesMapViewController.h; sourceTree = "<group>"; };
+		51FE6977265405C100BDA06E /* StagesMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StagesMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +272,8 @@
 				51D96698265269F500B6296D /* StagesTableViewController.m */,
 				510E5089265297FC00A736CC /* DetailStagesTableViewController.h */,
 				510E508A265297FC00A736CC /* DetailStagesTableViewController.m */,
+				51FE6976265405C100BDA06E /* StagesMapViewController.h */,
+				51FE6977265405C100BDA06E /* StagesMapViewController.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 				514CAC452649D70C00F21E6D /* TripList.m in Sources */,
 				511B74F2264BC39D00AF637F /* MyTripsTableViewController.m in Sources */,
 				514CAC402649C12200F21E6D /* Trip.m in Sources */,
+				51FE6978265405C100BDA06E /* StagesMapViewController.m in Sources */,
 				512B340F264938F300597957 /* main.m in Sources */,
 				51906EB0264AAEF6000B7522 /* ExampleTripDataSource.m in Sources */,
 				512B3401264938F200597957 /* SceneDelegate.m in Sources */,

@@ -24,6 +24,10 @@
     return [NSString stringWithFormat:@"%@ - %@", self.departure, self.destination];
 }
 
+-(NSString *) displayDestination {
+    return self.destination;
+}
+
 -(NSString *) displayDate {
     return [NSString stringWithFormat:@"%@", self.displacementDate];
 }
