@@ -22,10 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *startDate;
 @property (weak, nonatomic) IBOutlet UIDatePicker *finishDate;
 @property (weak, nonatomic) IBOutlet UITextField *hotelName;
-@property (weak, nonatomic) IBOutlet UITextField *pointOfInterest1;
-@property (weak, nonatomic) IBOutlet UITextField *pointOfInterest2;
-@property (weak, nonatomic) IBOutlet UITextField *pointOfInterest3;
-@property (weak, nonatomic) IBOutlet UITextField *pointOfInterest4;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *deleteButton;
 @property (weak, nonatomic) IBOutlet UIPickerView *meanOfTransport;
 
@@ -35,6 +31,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.startDate.minimumDate=[NSDate date];
+    self.finishDate.minimumDate=[NSDate date];
     
     self.transportation = @[@"Car", @"Bike", @"Motorbike", @"Train", @"Boat", @"Airplane"];
     
@@ -48,11 +47,18 @@
     if(self.trip != nil) {
         // TODO: Carico dati dalla classe alla View
         self.title=@"Edit Trip";
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+        [formatter setDateStyle:NSDateFormatterShortStyle];
+        [formatter setTimeStyle:NSDateFormatterNoStyle];
+        [formatter setDateFormat:@"MM/dd/yy HH:mm"];
         
         self.nameTrip.text=self.trip.nameTrip;
         self.descriptionTrip.text=self.trip.descriptionTrip;
         self.departureCity.text = self.trip.departure;
         self.destinationCity.text = self.trip.destination;
+        self.startDate.date=[formatter dateFromString:self.trip.startTrip];
+        self.finishDate.date=[formatter dateFromString:self.trip.finishTrip];
         self.hotelName.text=self.trip.hotelName;
         
         if(self.trip.meanTransport != nil) {
@@ -129,6 +135,8 @@
         [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
         [formatter setDateStyle:NSDateFormatterShortStyle];
         [formatter setTimeStyle:NSDateFormatterNoStyle];
+        [formatter setDateFormat:@"MM/dd/yy HH:mm"];
+       
 
         self.trip.nameTrip = self.nameTrip.text;
         self.trip.descriptionTrip = self.descriptionTrip.text;
@@ -148,6 +156,7 @@
         [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
         [formatter setDateStyle:NSDateFormatterShortStyle];
         [formatter setTimeStyle:NSDateFormatterNoStyle];
+        [formatter setDateFormat:@"MM/dd/yy HH:mm"];
 
         self.trip.nameTrip = self.nameTrip.text;
         self.trip.descriptionTrip = self.descriptionTrip.text;
@@ -174,7 +183,7 @@
                 vc.stages = self.protoStage;
             }
             
-            vc.tripDataSource=self.tripDataSource;
+            vc.trip=self.trip;
         }
     }
 }

@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong) NSString *departure;
 @property(nonatomic, strong) NSString *destination;
 @property(nonatomic, strong) NSDate *displacementDate;
+@property(nonatomic,strong) Poi *coordinatePOI;
 
 @end
 

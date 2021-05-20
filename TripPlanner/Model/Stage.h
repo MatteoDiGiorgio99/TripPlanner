@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Poi.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *) displayDestination;
 -(NSString *) displayDate;
 -(NSDate *) getDateToCompare;
+-(Poi *) coordinate;
+- (void) setCoordinates:(Poi *) poi;
 
 @end
 

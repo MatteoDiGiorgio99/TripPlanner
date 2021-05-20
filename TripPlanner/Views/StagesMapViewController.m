@@ -10,6 +10,8 @@
 
 @interface StagesMapViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *stagesMapPoint;
+@property MKPolyline *polyline;
+@property MKPolylineRenderer *lineView;
 
 @end
 
@@ -20,41 +22,91 @@
   
     self.title=@"Stages Map";
     
-    for (NSObject<Stage> *obj in self.stages) {
-        [self searchLocation:obj];
+    [self.stagesMapPoint removeOverlay:self.polyline];
+    self.stagesMapPoint.delegate = self;
+    
+    MKPointAnnotation *annotation =[[MKPointAnnotation alloc] init];
+    
+    annotation.coordinate=self.departureTripCoordinates;
+    annotation.title= [NSString stringWithFormat:@"%@",self.trip.departure];
+
+    [self.stagesMapPoint addAnnotation:annotation];
+    
+    [self drawPOI];
+}
+
+-(void) drawPOI {
+    CLLocationCoordinate2D points[self.stages.count + 1];
+    points[0] = self.departureTripCoordinates;
+    
+    NSInteger i = 1;
+    for (NSObject<Stage> *stage in self.stages) {
+        points[i] = CLLocationCoordinate2DMake(stage.coordinate.latitude, stage.coordinate.longitude);
+        
+        NSLog(@"%f", [[stage coordinate] latitude]);
+        
+        [self annotationLocation:stage];
+        
+        i++;
+    }
+    
+    for (NSInteger k=1; k < self.stages.count + 1; k++) {
+        MKDirectionsRequest *directions = [[MKDirectionsRequest alloc] init];
+        directions.source = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:points[k - 1]]];
+        directions.destination = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:points[k]]];
+        
+        directions.requestsAlternateRoutes = NO;
+        directions.transportType = MKDirectionsTransportTypeAutomobile;
+        
+        MKDirections *dir = [[MKDirections alloc] initWithRequest:directions];
+        
+        [dir calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
+            if (!error) {
+                for (MKRoute *route in [response routes]) {
+                    [self.stagesMapPoint addOverlay:[route polyline]];
+                    [self.stagesMapPoint setVisibleMapRect:route.polyline.boundingMapRect];
+                }
+            }
+        }];
     }
 }
 
--(void)searchLocation:(id<Stage>) stage {
-    MKLocalSearchRequest *searchRequest = [[MKLocalSearchRequest alloc] init];
-    [searchRequest setNaturalLanguageQuery:stage.displayDestination];
-
-    // Create the local search to perform the search
-    MKLocalSearch *localSearch = [[MKLocalSearch alloc] initWithRequest:searchRequest];
-    [localSearch startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
-        if (!error) {
-            for (MKMapItem *mapItem in [response mapItems]) {
-                NSLog(@"Name: %@, Placemark title: %@", [mapItem name], [[mapItem placemark] title]);
-                [self annotationLocation:mapItem];
-            }
-        }
-    }];
-}
--(void) annotationLocation:(MKMapItem *)item {
-    
-    MKCoordinateRegion mapRegion;
+-(void) annotationLocation:(NSObject<Stage> *)item {
     CLLocationCoordinate2D location;
-    MKPointAnnotation *annotation =[[MKPointAnnotation alloc] init];
     
-    location.latitude=item.placemark.location.coordinate.latitude;
-    location.longitude=item.placemark.location.coordinate.longitude;
-   // mapRegion.center = location;
+    location.latitude=item.coordinate.latitude;
+    location.longitude=item.coordinate.longitude;
+   
+    MKPointAnnotation *annotation =[[MKPointAnnotation alloc] init];
+    NSInteger position = [self.stages indexOfObject:item];
+    
     annotation.coordinate=location;
-   // mapRegion.span.latitudeDelta =-0.2;
-   // mapRegion.span.longitudeDelta =-0.2;
- 
-   // [self.stagesMapPoint setRegion:mapRegion];
+    annotation.title= [NSString stringWithFormat:@"%li-%@",(long)position,item.displayName];
+
     [self.stagesMapPoint addAnnotation:annotation];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    static NSString *AnnotationIdentifer = @"MapAnnotationView";
+    
+    MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationIdentifer];
+    
+    if(!view){
+        view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+                                               reuseIdentifier:AnnotationIdentifer];
+        view.canShowCallout = YES;
+    }
+    
+    return view;
+}
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
+{
+    MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithOverlay:overlay];
+    renderer.strokeColor = UIColor.blueColor;
+    renderer.lineWidth = 5.0;
+    
+    return renderer;
 }
 
 @end

@@ -10,6 +10,7 @@
 #import "ExampleTripDataSource.h"
 #import "NewTripTableViewController.h"
 #import "MyTripsTableViewController.h"
+#import "AppDelegate.h"
 
 @interface TripListTableViewController ()
 
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateTripLabel;
 @property (weak, nonatomic) IBOutlet UILabel *MyTripsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *MyLocationLabel;
+@property bool notificationGranted;
 
 
 @end
@@ -26,6 +28,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        UNAuthorizationOptions options = UNAuthorizationOptionAlert+UNAuthorizationOptionSound;
+        [center requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            self.notificationGranted = granted;
+        }];
     
     self.title=@"My Profile";
     
@@ -39,6 +47,40 @@
     _dateTripLabel.text=@"-----";
     _MyTripsLabel.text=@"My Trips (0)";
     _MyLocationLabel.text=@"My Location";
+    
+        
+        if([[self.tripDataSource getTrips] size] > 0) {
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"MM/dd/yy"];
+            
+            self.thetrip = [[self.tripDataSource getTrips] getAtIndex:0];
+            
+            for (NSInteger i = 0; i < [[self.tripDataSource getTrips] size]; i++) {
+               
+                NSDate *today = [NSDate date];
+                NSDate *oneDaysPlus = [today dateByAddingTimeInterval:+1*24*60*60];
+                NSDate *dateSelectedTrip = [dateFormatter dateFromString:self.thetrip.startTrip];
+                
+                NSComparisonResult result = [oneDaysPlus compare:dateSelectedTrip];
+                NSComparisonResult result2 = [today compare:dateSelectedTrip];
+               if(result == NSOrderedDescending && result2== NSOrderedAscending)
+               {
+                   if(self.notificationGranted) {
+                        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+                       UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+                       content.title = @"Trip Next to Start";
+                       content.body = [NSString stringWithFormat:@"the %@-%@ trip is about to start in less than 24 hours",self.thetrip.departure,self.thetrip.destination];
+                       content.sound = [UNNotificationSound defaultSound];
+                           
+                       UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1 repeats:NO];
+                           
+                       UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:self.thetrip.nameTrip content:content trigger:trigger];
+                           
+                       [center addNotificationRequest:request withCompletionHandler:nil];
+                   }
+               }
+            }
+    }
 }
 
 - (void) viewWillAppear:(BOOL)animated{
@@ -46,24 +88,25 @@
 
     if([[self.tripDataSource getTrips] size] > 0) {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"MM/dd/yy"];
+        [dateFormatter setDateFormat:@"MM/dd/yy HH:mm"];
         
         self.thetrip = [[self.tripDataSource getTrips] getAtIndex:0];
         
         for (NSInteger i = 0; i < [[self.tripDataSource getTrips] size]; i++) {
             Trip *element = [[self.tripDataSource getTrips] getAtIndex:i];
             
+            
             NSDate *dateArrayElement = [dateFormatter dateFromString:element.startTrip];
             NSDate *dateSelectedTrip = [dateFormatter dateFromString:self.thetrip.startTrip];
             
             NSComparisonResult result = [dateSelectedTrip compare:dateArrayElement];
+            
             
             switch (result) {
                 case NSOrderedAscending:
                     break;
                 case NSOrderedDescending:
                     self.thetrip = element;
-                    break;
                 case NSOrderedSame:
                     break;
             }
@@ -73,6 +116,35 @@
         self.dateTripLabel.text=[NSString stringWithFormat:@"%@ to %@",[self.thetrip startTrip],[self.thetrip finishTrip]];
         self.MyTripsLabel.text=[NSString stringWithFormat:@"My Trips (%li)",[[self.tripDataSource getTrips]size]];
         self.imageNextTrip.image=[self.thetrip imageTrip];
+        
+        for (NSInteger i = 0; i < [[self.tripDataSource getTrips] size]; i++) {
+            
+            Trip *element = [[self.tripDataSource getTrips] getAtIndex:i];
+            NSDate *dateArrayElementNot = [dateFormatter dateFromString:element.startTrip];
+            
+            NSDate *today = [NSDate date];
+            NSDate *oneDaysPlus = [today dateByAddingTimeInterval:+1*24*60*60];
+            
+            NSComparisonResult result = [oneDaysPlus compare:dateArrayElementNot];
+            NSComparisonResult result2 = [ today compare:dateArrayElementNot];
+            
+            if(result == NSOrderedDescending && result2== NSOrderedAscending)
+              {
+                 if(self.notificationGranted) {
+                        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+                        UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+                        content.title = @"Trip Next to Start";
+                        content.body = [NSString stringWithFormat:@"the %@-%@ trip is about to start in less than 24 hours",self.thetrip.departure,self.thetrip.destination];
+                        content.sound = [UNNotificationSound defaultSound];
+                           
+                        UNTimeIntervalNotificationTrigger *trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1 repeats:NO];
+                           
+                        UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:self.thetrip.nameTrip content:content trigger:trigger];
+                           
+                        [center addNotificationRequest:request withCompletionHandler:nil];
+            }
+        }
+      }
     }
     else
     {

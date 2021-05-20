@@ -24,7 +24,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
- 
+    
+    self.startDate.minimumDate=[NSDate date];
+    self.arrivalDate.minimumDate=[NSDate date];
+    
     self.title=@"Edit Stage";
     
     [self setPermanenceSettings];
@@ -116,6 +119,22 @@
             [self.navigationController popViewControllerAnimated:YES];
         }
     } else {
+        
+        if(self.chooseTipeStages.on == YES)
+        {
+            Permanence *stageP= [[Permanence alloc] initWithDestination:self.destinationCity.text ArrivalDate:self.arrivalDate.date DepartureDate:self.startDate.date];
+           
+            [self.stagesList addObject:stageP];
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        }
+        else
+        {
+            Displacement *stageD = [[Displacement alloc] initWithDeparture:self.departureCity.text Destination:self.destinationCity.text ArrivalDate:self.arrivalDate.date];
+            
+            [self.stagesList addObject:stageD];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
         
     }
 }

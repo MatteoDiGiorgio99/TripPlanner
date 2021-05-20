@@ -7,13 +7,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Stage.h"
+#import "Trip.h"
+#import <MapKit/MapKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@interface StagesMapViewController : UIViewController<MKMapViewDelegate>
 
-@interface StagesMapViewController : UIViewController
-
+@property CLLocationCoordinate2D departureTripCoordinates;
+@property (nonatomic, strong) Trip *trip;
 @property (nonatomic, strong) NSMutableArray<Stage> *stages;
 
 @end
-
-NS_ASSUME_NONNULL_END

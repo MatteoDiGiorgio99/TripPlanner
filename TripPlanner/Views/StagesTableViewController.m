@@ -20,6 +20,11 @@
     [super viewDidLoad];
     
     [self sortStages];
+    [self searchLocationStartTrip];
+    
+    for (NSObject<Stage> *obj in self.stages) {
+        [self searchLocation:obj];
+    }
     
     self.title=@"Stages";
 }
@@ -28,6 +33,10 @@
     [super viewWillAppear:animated];
     
     [self sortStages];
+    
+    for (NSObject<Stage> *obj in self.stages) {
+        [self searchLocation:obj];
+    }
     
     [self.tableView reloadData];
 }
@@ -54,6 +63,45 @@
     }
 }
 
+-(void)searchLocation:(id<Stage>) stage {
+    
+    MKLocalSearchRequest *searchRequest = [[MKLocalSearchRequest alloc] init];
+    [searchRequest setNaturalLanguageQuery:stage.displayDestination];
+   
+    MKLocalSearch *localSearch = [[MKLocalSearch alloc] initWithRequest:searchRequest];
+    [localSearch startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+       
+        if (!error) {
+            NSObject<Stage> *stage;
+            for (NSObject<Stage> *currentStage in self.stages) {
+                if([currentStage.displayDestination containsString:response.mapItems.firstObject.name]) {
+                    stage = currentStage;
+                    break;
+                }
+            }
+            
+            if(response.mapItems.count > 0) {
+                [stage setCoordinates:[[Poi alloc] initWithlatitude:response.mapItems.firstObject.placemark.coordinate.latitude longitude:response.mapItems.firstObject.placemark.coordinate.longitude]];
+            }
+        }
+    }];
+}
+
+-(void)searchLocationStartTrip {
+    MKLocalSearchRequest *searchRequest = [[MKLocalSearchRequest alloc] init];
+    [searchRequest setNaturalLanguageQuery:self.trip.departure];
+   
+    MKLocalSearch *localSearch = [[MKLocalSearch alloc] initWithRequest:searchRequest];
+    [localSearch startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+       
+        if (!error) {
+            if(response.mapItems.count > 0) {
+                self.departureTripCoordinates = response.mapItems.firstObject.placemark.coordinate;
+            }
+        }
+    }];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -75,6 +123,7 @@
     
     return cell;
 }
+
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -101,9 +150,11 @@
         if([segue.destinationViewController isKindOfClass:[StagesMapViewController class]]) {
             StagesMapViewController *vc = (StagesMapViewController *)segue.destinationViewController;
             
-            NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+           // NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         
             vc.stages = self.stages;
+            vc.trip = self.trip;
+            vc.departureTripCoordinates = self.departureTripCoordinates;
         }
         
     }

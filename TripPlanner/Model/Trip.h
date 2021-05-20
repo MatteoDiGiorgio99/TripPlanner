@@ -11,6 +11,7 @@
 @interface Trip : NSObject
 
 - (instancetype)initWithDestination:(NSString *)destination
+                          Departure:(NSString *)departure
                          NameTrip:(NSString *)nameTrip
                          DescriptionTrip:(NSString *)descriptionTrip
                          ImageTrip:(NSObject *)imageTrip

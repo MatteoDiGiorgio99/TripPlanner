@@ -9,6 +9,7 @@
 
 @implementation Trip
 - (instancetype)initWithDestination:(NSString *)destination
+                          Departure:(NSString *)departure
                          NameTrip:(NSString *)nameTrip
                          DescriptionTrip:(NSString *)descriptionTrip
                          ImageTrip:(NSObject *)imageTrip
@@ -19,6 +20,7 @@
                              Stages:(NSMutableArray<Stage> *) stages {
     if(self = [super init]){
         _destination = [destination copy];
+        _departure = [departure copy];
         _nameTrip=[nameTrip copy];
         _descriptionTrip=[descriptionTrip copy];
         _imageTrip = [imageTrip copy];
@@ -38,6 +40,6 @@
                      DateArrival:(NSString *)datearrival
                             Stages:(NSMutableArray<Stage> *) stages{
                        
-    return [self initWithDestination:destination NameTrip:@"" DescriptionTrip:@"" ImageTrip:imageTrip StartTrip:datedeparture FinishTrip:datearrival HotelName:@"" MeanTransport:nil Stages:stages];
+    return [self initWithDestination:destination Departure:departure NameTrip:@"" DescriptionTrip:@"" ImageTrip:imageTrip StartTrip:datedeparture FinishTrip:datearrival HotelName:@"" MeanTransport:@"Car" Stages:stages];
 }
 @end

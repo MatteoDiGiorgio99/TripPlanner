@@ -35,5 +35,12 @@
 -(NSDate *) getDateToCompare {
     return self.displacementDate;
 }
+-(Poi *) coordinate{
+    return self.coordinatePOI;
+}
+
+- (void) setCoordinates:(Poi *) poi {
+    self.coordinatePOI = poi;
+}
 
 @end
