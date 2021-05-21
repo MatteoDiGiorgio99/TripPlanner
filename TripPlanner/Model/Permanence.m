@@ -10,11 +10,14 @@
 @implementation Permanence
 - (instancetype) initWithDestination:(NSString *)destination
                          ArrivalDate:(NSDate *) arrivalDate
-                       DepartureDate:(NSDate *) departureDate {
+                         DepartureDate:(NSDate *) departureDate
+                         MeanTransport:(NSString *)meanTransport{
     if(self = [super init]) {
+  
         _destination = destination;
         _arrivalDate = arrivalDate;
         _departureDate = departureDate;
+        _meanTransport = meanTransport;
     }
     
     return self;
@@ -44,6 +47,9 @@
 
 - (void) setCoordinates:(Poi *) poi {
     self.coordinatePOI = poi;
+}
+-(NSString *) meanofTransportSelected{
+    return self.meanTransport;
 }
 
 @end

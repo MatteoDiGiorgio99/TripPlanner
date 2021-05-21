@@ -132,6 +132,7 @@
             DetailStagesTableViewController *vc = (DetailStagesTableViewController *)segue.destinationViewController;
             
             vc.stage = nil;
+            vc.trip = self.trip;
             vc.stagesList = self.stages;
         }
     }
@@ -143,6 +144,7 @@
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
             
             vc.stage = [self.stages objectAtIndex:indexPath.row];
+            vc.trip = self.trip;
             vc.stagesList = self.stages;
         }
     }

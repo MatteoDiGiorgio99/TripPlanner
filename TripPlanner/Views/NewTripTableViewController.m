@@ -130,26 +130,77 @@
 
 - (IBAction)saveButton:(id)sender {
     if(self.trip == nil) {
-        self.trip = [[Trip alloc] init];
+        
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
         [formatter setDateStyle:NSDateFormatterShortStyle];
         [formatter setTimeStyle:NSDateFormatterNoStyle];
         [formatter setDateFormat:@"MM/dd/yy HH:mm"];
-       
-
-        self.trip.nameTrip = self.nameTrip.text;
-        self.trip.descriptionTrip = self.descriptionTrip.text;
-        self.trip.departure = self.departureCity.text;
-        self.trip.destination = self.destinationCity.text;
-        self.trip.startTrip=[formatter stringFromDate:self.startDate.date];
-        self.trip.finishTrip = [formatter stringFromDate:self.finishDate.date];
-        self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",self.destinationCity.text]];
-        self.trip.hotelName=self.hotelName.text;
-        self.trip.meanTransport=self.selectedTransport;
-        self.trip.stages = self.protoStage;
-        [[self.tripDataSource getTrips] add:self.trip];
-        [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Date not valid"
+                         message:@"The finish trip date is not valid"
+                         preferredStyle:UIAlertControllerStyleAlert];
+       //We add buttons to the alert controller by creating UIAlertActions:
+       UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok"
+                                                  style:UIAlertActionStyleDefault
+                                                  handler:nil];
+        NSComparisonResult result=[self.finishDate.date compare:self.startDate.date];
+        
+        if([self.departureCity.text isEqual:@""] || [self.destinationCity.text isEqual:@""] || [self.nameTrip.text isEqual:@""])
+        {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Information Trip Not Valid"
+                             message:@"You are missed important information of trip"
+                             preferredStyle:UIAlertControllerStyleAlert];
+           //We add buttons to the alert controller by creating UIAlertActions:
+           UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok"
+                                                      style:UIAlertActionStyleDefault
+                                                      handler:nil];
+            
+            [alertController addAction:actionOk];
+            [self presentViewController:alertController animated:YES completion:nil];
+            
+        }
+        else{
+            switch(result){
+                case NSOrderedAscending:
+                    
+                       [alertController addAction:actionOk];
+                       [self presentViewController:alertController animated:YES completion:nil];
+                    break;
+                case NSOrderedDescending:
+                            
+                    self.trip = [[Trip alloc] init];
+                    self.trip.nameTrip = self.nameTrip.text;
+                    self.trip.descriptionTrip = self.descriptionTrip.text;
+                    self.trip.departure = self.departureCity.text;
+                    self.trip.destination = self.destinationCity.text;
+                    self.trip.startTrip=[formatter stringFromDate:self.startDate.date];
+                    self.trip.finishTrip = [formatter stringFromDate:self.finishDate.date];
+                    self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",self.destinationCity.text]];
+                    self.trip.hotelName=self.hotelName.text;
+                    self.trip.meanTransport=self.selectedTransport;
+                    self.trip.stages = self.protoStage;
+                    [[self.tripDataSource getTrips] add:self.trip];
+                    [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
+                    break;
+                case NSOrderedSame:
+                    
+                    self.trip = [[Trip alloc] init];
+                    self.trip.nameTrip = self.nameTrip.text;
+                    self.trip.descriptionTrip = self.descriptionTrip.text;
+                    self.trip.departure = self.departureCity.text;
+                    self.trip.destination = self.destinationCity.text;
+                    self.trip.startTrip=[formatter stringFromDate:self.startDate.date];
+                    self.trip.finishTrip = [formatter stringFromDate:self.finishDate.date];
+                    self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",self.destinationCity.text]];
+                    self.trip.hotelName=self.hotelName.text;
+                    self.trip.meanTransport=self.selectedTransport;
+                    self.trip.stages = self.protoStage;
+                    [[self.tripDataSource getTrips] add:self.trip];
+                    [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
+                    break;
+            }
+        }
     } else {
         //Aggiornamento
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -158,16 +209,69 @@
         [formatter setTimeStyle:NSDateFormatterNoStyle];
         [formatter setDateFormat:@"MM/dd/yy HH:mm"];
 
-        self.trip.nameTrip = self.nameTrip.text;
-        self.trip.descriptionTrip = self.descriptionTrip.text;
-        self.trip.departure = self.departureCity.text;
-        self.trip.destination = self.destinationCity.text;
-        self.trip.startTrip=[formatter stringFromDate:self.startDate.date];
-        self.trip.finishTrip = [formatter stringFromDate:self.finishDate.date];
-        self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",self.destinationCity.text]];
-        self.trip.hotelName=self.hotelName.text;
-        self.trip.meanTransport=self.selectedTransport;
-        [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Date not valid"
+                         message:@"The finish trip date is not valid"
+                         preferredStyle:UIAlertControllerStyleAlert];
+       //We add buttons to the alert controller by creating UIAlertActions:
+       UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok"
+                                                  style:UIAlertActionStyleDefault
+                                                  handler:nil];
+        NSComparisonResult result=[self.finishDate.date compare:self.startDate.date];
+        if([self.departureCity.text isEqual:@""] || [self.destinationCity.text isEqual:@""] || [self.nameTrip.text isEqual:@""])
+        {
+            UIAlertController *alertController2 = [UIAlertController alertControllerWithTitle:@"Information Trip Not Valid"
+                             message:@"You are missed important information of trip"
+                             preferredStyle:UIAlertControllerStyleAlert];
+           //We add buttons to the alert controller by creating UIAlertActions:
+           UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok"
+                                                      style:UIAlertActionStyleDefault
+                                                      handler:nil];
+            
+            [alertController2 addAction:actionOk];
+            [self presentViewController:alertController2 animated:YES completion:nil];
+            
+        }
+        else{
+        switch(result){
+            case NSOrderedAscending:
+                
+                [alertController addAction:actionOk];
+                [self presentViewController:alertController animated:YES completion:nil];
+                break;
+            case NSOrderedDescending:
+                        
+                
+                self.trip.nameTrip = self.nameTrip.text;
+                self.trip.descriptionTrip = self.descriptionTrip.text;
+                self.trip.departure = self.departureCity.text;
+                self.trip.destination = self.destinationCity.text;
+                self.trip.startTrip=[formatter stringFromDate:self.startDate.date];
+                self.trip.finishTrip = [formatter stringFromDate:self.finishDate.date];
+                self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",self.destinationCity.text]];
+                self.trip.hotelName=self.hotelName.text;
+                self.trip.meanTransport=self.selectedTransport;
+                self.trip.stages = self.protoStage;
+               
+                [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
+                break;
+            case NSOrderedSame:
+                
+                
+                self.trip.nameTrip = self.nameTrip.text;
+                self.trip.descriptionTrip = self.descriptionTrip.text;
+                self.trip.departure = self.departureCity.text;
+                self.trip.destination = self.destinationCity.text;
+                self.trip.startTrip=[formatter stringFromDate:self.startDate.date];
+                self.trip.finishTrip = [formatter stringFromDate:self.finishDate.date];
+                self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",self.destinationCity.text]];
+                self.trip.hotelName=self.hotelName.text;
+                self.trip.meanTransport=self.selectedTransport;
+                self.trip.stages = self.protoStage;
+                
+                [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
+                break;
+        }
+        }
     }
 }
 

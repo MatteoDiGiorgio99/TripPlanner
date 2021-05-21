@@ -7,10 +7,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Stage.h"
+#import "Trip.h"
 
-@interface DetailStagesTableViewController : UITableViewController
+@interface DetailStagesTableViewController : UITableViewController <UIPickerViewDataSource,UIPickerViewDelegate>
 
 @property (nonatomic, strong) id<Stage> stage;
 @property (nonatomic, strong) NSMutableArray<Stage> *stagesList;
+@property (nonatomic, strong) Trip *trip;
 
 @end

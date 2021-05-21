@@ -12,6 +12,7 @@
 
 @interface StagesMapViewController : UIViewController<MKMapViewDelegate>
 
+
 @property CLLocationCoordinate2D departureTripCoordinates;
 @property (nonatomic, strong) Trip *trip;
 @property (nonatomic, strong) NSMutableArray<Stage> *stages;

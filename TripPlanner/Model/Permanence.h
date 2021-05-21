@@ -11,13 +11,17 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Permanence : NSObject<Stage>
+
 - (instancetype) initWithDestination:(NSString *)destination
                          ArrivalDate:(NSDate *) arrivalDate
-                       DepartureDate:(NSDate *) departureDate;
+                         DepartureDate:(NSDate *) departureDate
+                         MeanTransport:(NSString *)meanTransport;
+  
 
 @property(nonatomic, strong) NSString *destination;
 @property(nonatomic, strong) NSDate *arrivalDate;
 @property(nonatomic, strong) NSDate *departureDate;
+@property(nonatomic,strong) NSString *meanTransport;
 @property(nonatomic,strong) Poi *coordinatePOI;
 
 @end

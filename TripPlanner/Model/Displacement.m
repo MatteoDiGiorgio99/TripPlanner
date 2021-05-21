@@ -9,12 +9,14 @@
 
 @implementation Displacement
 - (instancetype) initWithDeparture:(NSString *) departure
-                    Destination:(NSString *) destination
-                       ArrivalDate:(NSDate *) displacementDate {
+                         Destination:(NSString *) destination
+                         ArrivalDate:(NSDate *) displacementDate
+                         MeanTransport:(NSString *)meanTransport{
     if(self = [super init]) {
         _departure = departure;
         _destination = destination;
         _displacementDate = displacementDate;
+        _meanTransport = meanTransport;
     }
     
     return self;
@@ -41,6 +43,9 @@
 
 - (void) setCoordinates:(Poi *) poi {
     self.coordinatePOI = poi;
+}
+-(NSString *) meanofTransportSelected{
+    return self.meanTransport;
 }
 
 @end
