@@ -57,7 +57,7 @@
     }
     
     for (NSInteger k=1; k < i; k++) {
-        if([TypeTransport[k] isEqual:@"Car"] ||[TypeTransport[k] isEqual:@"Bike"] || [TypeTransport[k] isEqual:@"MotorBike"] )
+        if([TypeTransport[k] isEqual:@"Car"] ||[TypeTransport[k] isEqual:@"Bike"] || [TypeTransport[k] isEqual:@"Motorbike"] )
         {
             MKDirectionsRequest *directions = [[MKDirectionsRequest alloc] init];
             directions.source = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:points[k - 1]]];
@@ -79,11 +79,16 @@
             [dir calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
                 if (!error) {
                     for (MKRoute *route in [response routes]) {
+                        
+                       // CLLocationDistance distance = route.distance;
+                        
                         [self.stagesMapPoint addOverlay:[route polyline]];
+                       
                         [self.stagesMapPoint setVisibleMapRect:route.polyline.boundingMapRect];
                     }
                 }
             }];
+            
         } else {
             CLLocationCoordinate2D arr[2] = { points[k - 1], points[k] };
             

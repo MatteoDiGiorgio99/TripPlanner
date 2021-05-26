@@ -7,13 +7,14 @@
 
 #import "MyLocationTableViewController.h"
 #import <MapKit/MapKit.h>
-#import "GeoTrip+MapAnnotation.h"
+
 
 
 @interface MyLocationTableViewController ()<MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *latitudeText;
 @property (weak, nonatomic) IBOutlet UITextField *longitudeText;
 @property (weak, nonatomic) IBOutlet MKMapView *locationMap;
+
 
 - (void) centerMapToLocationLatitude:(double)locaLat
                    LocationLongitude:(double)locaLon
@@ -27,9 +28,10 @@
     [super viewDidLoad];
     
     self.title = @"My Location";
-    self.locationMap.delegate = self;
-    [self.locationMap setShowsUserLocation:YES];
     
+    self.locationMap.showsUserLocation = YES;
+    self.locationMap.delegate = self;
+ 
 }
 
 - (void) centerMapToLocationLatitude:(double)locaLat
@@ -50,6 +52,8 @@
     [self.locationMap setRegion:mapRegion];
     [self.locationMap addAnnotation:annotation];
 }
+
+
 - (IBAction)refreshButton:(id)sender {
     self.latitudeText.text= @"";
     self.longitudeText.text=@"";

@@ -21,12 +21,12 @@
                          MeanTransport:(NSString *)meanTransport
                              Stages:(NSMutableArray<Stage> *) stages;
 
--(instancetype)initWithDestination:(NSString *)destination
+/*-(instancetype)initWithDestination:(NSString *)destination
                          Departure:(NSString *)departure
                          ImageTrip:(NSObject *)imageTrip
                          DateDeparture:(NSString *)datedeparture
-                     DateArrival:(NSString *)datearrival
-                            Stages:(NSMutableArray<Stage> *) stages;
+                         DateArrival:(NSString *)datearrival
+                         Stages:(NSMutableArray<Stage> *) stages;*/
                           
 
 @property (nonatomic, strong) NSString *destination;
@@ -36,7 +36,7 @@
 @property (nonatomic, strong) NSString *startTrip;
 @property (nonatomic, strong) NSString *finishTrip;
 @property (nonatomic, strong) NSString *departure;
-@property (nonatomic, strong) NSString *datedeparture;
+/*@property (nonatomic, strong) NSString *datedeparture;*/
 @property (nonatomic, strong) NSString *hotelName;
 @property (nonatomic, strong) NSString *meanTransport;
 @property (nonatomic, strong) NSMutableArray<Stage> *stages;

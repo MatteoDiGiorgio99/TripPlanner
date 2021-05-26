@@ -23,7 +23,6 @@
     
     self.title =@"My Trips";
     
-    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

@@ -42,7 +42,7 @@
     self.arrivalDate.minimumDate= [formatter dateFromString:self.trip.startTrip];
     self.arrivalDate.maximumDate=[formatter dateFromString:self.trip.finishTrip];
     
-    self.transportation = @[@"Car", @"Bike", @"Motorbike", @"Train", @"Boat", @"Airplane"];
+    self.transportation = @[@"Car", @"Bike", @"Motorbike", @"Airplane"];
     
     self.selectedTransport = self.transportation[0];
     
@@ -231,6 +231,8 @@
             }
         }
     } else {
+        
+        //Aggiornamento
         
         if(self.chooseTipeStages.on == YES)
         {

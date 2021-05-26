@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		510D17AB265E746D00A1BEB0 /* TripPlannerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 510D17A9265E746D00A1BEB0 /* TripPlannerModel.xcdatamodeld */; };
 		510E508B265297FC00A736CC /* DetailStagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 510E508A265297FC00A736CC /* DetailStagesTableViewController.m */; };
 		511B74F2264BC39D00AF637F /* MyTripsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 511B74F1264BC39D00AF637F /* MyTripsTableViewController.m */; };
 		511B74F4264BFA8E00AF637F /* Amsterdam.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 511B74F3264BFA8E00AF637F /* Amsterdam.jpg */; };
@@ -52,19 +53,26 @@
 		514CAC472649DEFC00F21E6D /* Location.png in Resources */ = {isa = PBXBuildFile; fileRef = 514CAC462649DEFC00F21E6D /* Location.png */; };
 		514CAC492649DF0700F21E6D /* People.png in Resources */ = {isa = PBXBuildFile; fileRef = 514CAC482649DF0700F21E6D /* People.png */; };
 		514CAC4D2649E47F00F21E6D /* Parigi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514CAC4C2649E47F00F21E6D /* Parigi.jpg */; };
+		5165672926593A9700B02108 /* images-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 5165672826593A9700B02108 /* images-40.png */; };
+		5165672B26593E9100B02108 /* Piacenza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5165672A26593E9100B02108 /* Piacenza.jpg */; };
 		51704DD7264A772D004B8A85 /* NewTripTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51704DD6264A772D004B8A85 /* NewTripTableViewController.m */; };
 		51906EB0264AAEF6000B7522 /* ExampleTripDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 51906EAF264AAEF6000B7522 /* ExampleTripDataSource.m */; };
+		51B57280265809E400EC1819 /* Piazza Armerina.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 51B5727F265809E400EC1819 /* Piazza Armerina.jpg */; };
+		51B5728726580A1300EC1819 /* New York.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 51B5728126580A1200EC1819 /* New York.jpg */; };
+		51B5728826580A1300EC1819 /* Parma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 51B5728226580A1200EC1819 /* Parma.jpg */; };
+		51B5728926580A1300EC1819 /* Trapani.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 51B5728326580A1200EC1819 /* Trapani.jpg */; };
+		51B5728A26580A1300EC1819 /* Venezia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 51B5728426580A1300EC1819 /* Venezia.jpg */; };
+		51B5728B26580A1300EC1819 /* Palermo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 51B5728526580A1300EC1819 /* Palermo.jpg */; };
 		51D96699265269F500B6296D /* StagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D96698265269F500B6296D /* StagesTableViewController.m */; };
 		51D966A126526BCE00B6296D /* Permanence.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D966A026526BCE00B6296D /* Permanence.m */; };
 		51D966A426526FAA00B6296D /* Displacement.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D966A326526FAA00B6296D /* Displacement.m */; };
 		51DFF7FF264B16980003B481 /* MyLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF7FE264B16980003B481 /* MyLocationTableViewController.m */; };
 		51DFF802264B1A0A0003B481 /* Poi.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF801264B1A0A0003B481 /* Poi.m */; };
-		51DFF805264B1B1F0003B481 /* GeoTrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF804264B1B1F0003B481 /* GeoTrip.m */; };
-		51DFF80E264B1D1F0003B481 /* GeoTrip+MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DFF80D264B1D1F0003B481 /* GeoTrip+MapAnnotation.m */; };
 		51FE6978265405C100BDA06E /* StagesMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51FE6977265405C100BDA06E /* StagesMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		510D17AA265E746D00A1BEB0 /* TripPlannerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TripPlannerModel.xcdatamodel; sourceTree = "<group>"; };
 		510E5089265297FC00A736CC /* DetailStagesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailStagesTableViewController.h; sourceTree = "<group>"; };
 		510E508A265297FC00A736CC /* DetailStagesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailStagesTableViewController.m; sourceTree = "<group>"; };
 		511B74F0264BC39D00AF637F /* MyTripsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTripsTableViewController.h; sourceTree = "<group>"; };
@@ -120,11 +128,19 @@
 		514CAC462649DEFC00F21E6D /* Location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Location.png; sourceTree = "<group>"; };
 		514CAC482649DF0700F21E6D /* People.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = People.png; sourceTree = "<group>"; };
 		514CAC4C2649E47F00F21E6D /* Parigi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Parigi.jpg; sourceTree = "<group>"; };
+		5165672826593A9700B02108 /* images-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "images-40.png"; path = "../../../../../../../../../../Users/matteodigiorgio/Desktop/iOS icon/AppIcon.appiconset/images-40.png"; sourceTree = "<group>"; };
+		5165672A26593E9100B02108 /* Piacenza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Piacenza.jpg; sourceTree = "<group>"; };
 		51704DD5264A772D004B8A85 /* NewTripTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewTripTableViewController.h; sourceTree = "<group>"; };
 		51704DD6264A772D004B8A85 /* NewTripTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewTripTableViewController.m; sourceTree = "<group>"; };
 		51906EAD264AAE67000B7522 /* TripDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TripDataSource.h; sourceTree = "<group>"; };
 		51906EAE264AAEF6000B7522 /* ExampleTripDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleTripDataSource.h; sourceTree = "<group>"; };
 		51906EAF264AAEF6000B7522 /* ExampleTripDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTripDataSource.m; sourceTree = "<group>"; };
+		51B5727F265809E400EC1819 /* Piazza Armerina.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Piazza Armerina.jpg"; sourceTree = "<group>"; };
+		51B5728126580A1200EC1819 /* New York.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "New York.jpg"; sourceTree = "<group>"; };
+		51B5728226580A1200EC1819 /* Parma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Parma.jpg; sourceTree = "<group>"; };
+		51B5728326580A1200EC1819 /* Trapani.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Trapani.jpg; sourceTree = "<group>"; };
+		51B5728426580A1300EC1819 /* Venezia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Venezia.jpg; sourceTree = "<group>"; };
+		51B5728526580A1300EC1819 /* Palermo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Palermo.jpg; sourceTree = "<group>"; };
 		51D96697265269F500B6296D /* StagesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StagesTableViewController.h; sourceTree = "<group>"; };
 		51D96698265269F500B6296D /* StagesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StagesTableViewController.m; sourceTree = "<group>"; };
 		51D9669F26526BCE00B6296D /* Permanence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Permanence.h; sourceTree = "<group>"; };
@@ -136,10 +152,6 @@
 		51DFF7FE264B16980003B481 /* MyLocationTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLocationTableViewController.m; sourceTree = "<group>"; };
 		51DFF800264B1A0A0003B481 /* Poi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Poi.h; sourceTree = "<group>"; };
 		51DFF801264B1A0A0003B481 /* Poi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Poi.m; sourceTree = "<group>"; };
-		51DFF803264B1B1F0003B481 /* GeoTrip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeoTrip.h; sourceTree = "<group>"; };
-		51DFF804264B1B1F0003B481 /* GeoTrip.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeoTrip.m; sourceTree = "<group>"; };
-		51DFF80C264B1D1F0003B481 /* GeoTrip+MapAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GeoTrip+MapAnnotation.h"; sourceTree = "<group>"; };
-		51DFF80D264B1D1F0003B481 /* GeoTrip+MapAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GeoTrip+MapAnnotation.m"; sourceTree = "<group>"; };
 		51FE6976265405C100BDA06E /* StagesMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StagesMapViewController.h; sourceTree = "<group>"; };
 		51FE6977265405C100BDA06E /* StagesMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StagesMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +207,7 @@
 		512B34152649556A00597957 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				5165672826593A9700B02108 /* images-40.png */,
 				511B7501264BFB4C00AF637F /* Roma.jpg */,
 				511B74F3264BFA8E00AF637F /* Amsterdam.jpg */,
 				514B6332264D453D0034BFC6 /* Berlino.jpg */,
@@ -212,12 +225,19 @@
 				514B6342264D456E0034BFC6 /* Helsinki.jpg */,
 				514B633E264D45630034BFC6 /* Edimburgo.jpg */,
 				514B633C264D455E0034BFC6 /* Dublino.jpg */,
+				51B5728126580A1200EC1819 /* New York.jpg */,
+				51B5728526580A1300EC1819 /* Palermo.jpg */,
+				51B5728226580A1200EC1819 /* Parma.jpg */,
+				51B5728326580A1200EC1819 /* Trapani.jpg */,
+				5165672A26593E9100B02108 /* Piacenza.jpg */,
+				51B5728426580A1300EC1819 /* Venezia.jpg */,
 				514B6334264D45410034BFC6 /* Bratislava.jpg */,
 				514B6354264D45B70034BFC6 /* Reykjavik.jpg */,
 				514B632E264D452F0034BFC6 /* Atene.jpg */,
 				514B6336264D45490034BFC6 /* Bruxelles.jpg */,
 				514B6358264D45C30034BFC6 /* Torino.jpg */,
 				514B6356264D45BF0034BFC6 /* Stoccolma.jpg */,
+				51B5727F265809E400EC1819 /* Piazza Armerina.jpg */,
 				514B6330264D45350034BFC6 /* Belfast.jpg */,
 				511B7505264BFB6100AF637F /* Madrid.jpg */,
 				511B7503264BFB5700AF637F /* Oslo.jpg */,
@@ -244,15 +264,12 @@
 				51906EAF264AAEF6000B7522 /* ExampleTripDataSource.m */,
 				51DFF800264B1A0A0003B481 /* Poi.h */,
 				51DFF801264B1A0A0003B481 /* Poi.m */,
-				51DFF803264B1B1F0003B481 /* GeoTrip.h */,
-				51DFF804264B1B1F0003B481 /* GeoTrip.m */,
-				51DFF80C264B1D1F0003B481 /* GeoTrip+MapAnnotation.h */,
-				51DFF80D264B1D1F0003B481 /* GeoTrip+MapAnnotation.m */,
 				51D9669F26526BCE00B6296D /* Permanence.h */,
 				51D966A026526BCE00B6296D /* Permanence.m */,
 				51D966A226526FAA00B6296D /* Displacement.h */,
 				51D966A326526FAA00B6296D /* Displacement.m */,
 				51D966A6265277F400B6296D /* Stage.h */,
+				510D17A9265E746D00A1BEB0 /* TripPlannerModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -344,6 +361,7 @@
 				511B7502264BFB4C00AF637F /* Roma.jpg in Resources */,
 				511B7500264BFB4600AF637F /* Vienna.jpg in Resources */,
 				514CAC472649DEFC00F21E6D /* Location.png in Resources */,
+				51B5728B26580A1300EC1819 /* Palermo.jpg in Resources */,
 				512B3409264938F300597957 /* Assets.xcassets in Resources */,
 				511B7506264BFB6100AF637F /* Madrid.jpg in Resources */,
 				514CAC492649DF0700F21E6D /* People.png in Resources */,
@@ -351,16 +369,23 @@
 				514B6343264D456E0034BFC6 /* Helsinki.jpg in Resources */,
 				514B6333264D453D0034BFC6 /* Berlino.jpg in Resources */,
 				514B634B264D45960034BFC6 /* Milano.jpg in Resources */,
+				5165672B26593E9100B02108 /* Piacenza.jpg in Resources */,
 				514B6341264D45690034BFC6 /* Firenze.jpg in Resources */,
+				5165672926593A9700B02108 /* images-40.png in Resources */,
+				51B5728A26580A1300EC1819 /* Venezia.jpg in Resources */,
 				511B7508264BFB7000AF637F /* Londra.jpg in Resources */,
 				514B6331264D45350034BFC6 /* Belfast.jpg in Resources */,
 				514B6359264D45C30034BFC6 /* Torino.jpg in Resources */,
 				514B6355264D45B70034BFC6 /* Reykjavik.jpg in Resources */,
+				51B5728726580A1300EC1819 /* New York.jpg in Resources */,
 				514B633B264D45560034BFC6 /* Cardiff.jpg in Resources */,
 				514B6339264D454F0034BFC6 /* Budapest.jpg in Resources */,
+				51B5728926580A1300EC1819 /* Trapani.jpg in Resources */,
 				514B633D264D455E0034BFC6 /* Dublino.jpg in Resources */,
 				514B634F264D459E0034BFC6 /* Mosca.jpg in Resources */,
+				51B5728826580A1300EC1819 /* Parma.jpg in Resources */,
 				514B6349264D458C0034BFC6 /* Lubiana.jpg in Resources */,
+				51B57280265809E400EC1819 /* Piazza Armerina.jpg in Resources */,
 				514B632F264D452F0034BFC6 /* Atene.jpg in Resources */,
 				511B750A264BFB7F00AF637F /* Istanbul.jpg in Resources */,
 				514B633F264D45630034BFC6 /* Edimburgo.jpg in Resources */,
@@ -382,8 +407,6 @@
 			files = (
 				51DFF802264B1A0A0003B481 /* Poi.m in Sources */,
 				512B3404264938F200597957 /* ViewController.m in Sources */,
-				51DFF805264B1B1F0003B481 /* GeoTrip.m in Sources */,
-				51DFF80E264B1D1F0003B481 /* GeoTrip+MapAnnotation.m in Sources */,
 				51D96699265269F500B6296D /* StagesTableViewController.m in Sources */,
 				51D966A126526BCE00B6296D /* Permanence.m in Sources */,
 				512B33FE264938F200597957 /* AppDelegate.m in Sources */,
@@ -399,6 +422,7 @@
 				510E508B265297FC00A736CC /* DetailStagesTableViewController.m in Sources */,
 				51DFF7FF264B16980003B481 /* MyLocationTableViewController.m in Sources */,
 				51704DD7264A772D004B8A85 /* NewTripTableViewController.m in Sources */,
+				510D17AB265E746D00A1BEB0 /* TripPlannerModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +618,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		510D17A9265E746D00A1BEB0 /* TripPlannerModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				510D17AA265E746D00A1BEB0 /* TripPlannerModel.xcdatamodel */,
+			);
+			currentVersion = 510D17AA265E746D00A1BEB0 /* TripPlannerModel.xcdatamodel */;
+			path = TripPlannerModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 512B33F1264938F200597957 /* Project object */;
 }

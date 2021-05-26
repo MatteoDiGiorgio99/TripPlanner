@@ -35,14 +35,17 @@
     self.startDate.minimumDate=[NSDate date];
     self.finishDate.minimumDate=[NSDate date];
     
-    self.transportation = @[@"Car", @"Bike", @"Motorbike", @"Train", @"Boat", @"Airplane"];
+    self.transportation = @[@"Car", @"Bike", @"Motorbike", @"Airplane"];
     
     self.selectedTransport = self.transportation[0];
     
     self.meanOfTransport.dataSource = self;
     self.meanOfTransport.delegate = self;
     
+   
     self.protoStage = [[NSMutableArray<Stage> alloc] init];
+    
+  
     
     if(self.trip != nil) {
         // TODO: Carico dati dalla classe alla View
@@ -250,7 +253,7 @@
                 self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",self.destinationCity.text]];
                 self.trip.hotelName=self.hotelName.text;
                 self.trip.meanTransport=self.selectedTransport;
-                self.trip.stages = self.protoStage;
+               // self.trip.stages = self.protoStage;
                
                 [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
                 break;
@@ -266,7 +269,7 @@
                 self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",self.destinationCity.text]];
                 self.trip.hotelName=self.hotelName.text;
                 self.trip.meanTransport=self.selectedTransport;
-                self.trip.stages = self.protoStage;
+               // self.trip.stages = self.protoStage;
                 
                 [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
                 break;

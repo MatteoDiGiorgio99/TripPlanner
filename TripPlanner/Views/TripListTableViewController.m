@@ -29,6 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    sleep(2);
+    
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
         UNAuthorizationOptions options = UNAuthorizationOptionAlert+UNAuthorizationOptionSound;
         [center requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError * _Nullable error) {
@@ -42,7 +44,7 @@
     if (self.dateTripLabel != nil) {
         // TODO: METODO PER ANDARE A VEDERE LA PARTENZA PIU VICINA
     }
-    
+    _imageNextTrip.image =[UIImage imageNamed:[NSString stringWithFormat:@".jpg"]];
     _destinationTripLabel.text=@"No trips saved";
     _dateTripLabel.text=@"-----";
     _MyTripsLabel.text=@"My Trips (0)";
