@@ -7,9 +7,10 @@
 
 #import "TripList.h"
 
+
 @interface TripList()
 
-@property (nonatomic,strong) NSMutableArray *mytrip;
+@property(nonatomic,strong) CoreDataController *coreData;
 
 @end
 
@@ -17,29 +18,29 @@
 
 -(instancetype)init{
     if(self = [super init]){
-        _mytrip = [[NSMutableArray alloc] init];
+        _coreData=[[CoreDataController alloc]init];
     }
     return self;
 }
 
 -(NSArray *)getAll{
-    return self.mytrip;
+    return [self.coreData recoverTrip];
 }
 
 -(void)add:(Trip *)f{
-    [self.mytrip addObject:f];
+    [self.coreData addTrip:f];
 }
 
--(void)remove:(Trip *)f{
-    [self.mytrip removeObject:f];
+-(void)remove:(TripCoreData *)f{
+    [self.coreData removeTrip:f];
 }
 
--(Trip *)getAtIndex:(NSInteger)index{
-    return [self.mytrip objectAtIndex:index];
+-(TripCoreData *)getAtIndex:(NSInteger)index{
+    return [[self.coreData recoverTrip] objectAtIndex:index];
 }
 
 -(long)size{
-    return self.mytrip.count;
+    return [self.coreData recoverTrip].count;
 }
 
 @end

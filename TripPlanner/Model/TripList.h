@@ -7,6 +7,13 @@
 
 #import <Foundation/Foundation.h>
 #import "Trip.h"
+#import "CoreDataController.h"
+#import "TripCoreData.h"
+#import "PoiCoreData.h"
+#import "DisplacementCoreData.h"
+#import "PermanenceCoreData.h"
+#import "StageCoreData.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TripList : NSObject
@@ -14,8 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(long)size;
 -(NSArray *)getAll;
 -(void)add:(Trip *)f;
--(void)remove:(Trip *)f;
--(Trip *)getAtIndex:(NSInteger)index;
+-(void)remove:(TripCoreData *)f;
+-(TripCoreData *)getAtIndex:(NSInteger)index;
 
 @end
 

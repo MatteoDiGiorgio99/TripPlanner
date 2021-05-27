@@ -59,6 +59,7 @@
 		5150E962265F8FBD002549EB /* StageCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5150E961265F8FBD002549EB /* StageCoreData.m */; };
 		5150E965265F8FFC002549EB /* PermanenceCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5150E964265F8FFC002549EB /* PermanenceCoreData.m */; };
 		5150E968265F906F002549EB /* DisplacementCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5150E967265F906F002549EB /* DisplacementCoreData.m */; };
+		5150E96B265F9253002549EB /* CoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5150E96A265F9253002549EB /* CoreDataController.m */; };
 		5165672926593A9700B02108 /* images-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 5165672826593A9700B02108 /* images-40.png */; };
 		5165672B26593E9100B02108 /* Piacenza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5165672A26593E9100B02108 /* Piacenza.jpg */; };
 		51704DD7264A772D004B8A85 /* NewTripTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51704DD6264A772D004B8A85 /* NewTripTableViewController.m */; };
@@ -145,6 +146,8 @@
 		5150E964265F8FFC002549EB /* PermanenceCoreData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PermanenceCoreData.m; sourceTree = "<group>"; };
 		5150E966265F906F002549EB /* DisplacementCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplacementCoreData.h; sourceTree = "<group>"; };
 		5150E967265F906F002549EB /* DisplacementCoreData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisplacementCoreData.m; sourceTree = "<group>"; };
+		5150E969265F9253002549EB /* CoreDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataController.h; sourceTree = "<group>"; };
+		5150E96A265F9253002549EB /* CoreDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataController.m; sourceTree = "<group>"; };
 		5165672826593A9700B02108 /* images-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "images-40.png"; path = "../../../../../../../../../../Users/matteodigiorgio/Desktop/iOS icon/AppIcon.appiconset/images-40.png"; sourceTree = "<group>"; };
 		5165672A26593E9100B02108 /* Piacenza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Piacenza.jpg; sourceTree = "<group>"; };
 		51704DD5264A772D004B8A85 /* NewTripTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewTripTableViewController.h; sourceTree = "<group>"; };
@@ -295,6 +298,8 @@
 				5150E964265F8FFC002549EB /* PermanenceCoreData.m */,
 				5150E966265F906F002549EB /* DisplacementCoreData.h */,
 				5150E967265F906F002549EB /* DisplacementCoreData.m */,
+				5150E969265F9253002549EB /* CoreDataController.h */,
+				5150E96A265F9253002549EB /* CoreDataController.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 				51FE6978265405C100BDA06E /* StagesMapViewController.m in Sources */,
 				512B340F264938F300597957 /* main.m in Sources */,
 				51906EB0264AAEF6000B7522 /* ExampleTripDataSource.m in Sources */,
+				5150E96B265F9253002549EB /* CoreDataController.m in Sources */,
 				512B3401264938F200597957 /* SceneDelegate.m in Sources */,
 				51D966A426526FAA00B6296D /* Displacement.m in Sources */,
 				512B341E264962D200597957 /* TripListTableViewController.m in Sources */,
