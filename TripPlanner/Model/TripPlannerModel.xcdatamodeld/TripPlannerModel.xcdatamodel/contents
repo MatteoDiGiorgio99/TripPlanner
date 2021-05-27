@@ -17,9 +17,7 @@
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="coordinatePoi" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Stage"/>
     </entity>
-    <entity name="Stage" representedClassName="Stage" isAbstract="YES" syncable="YES">
-        <relationship name="stages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TripCoreData"/>
-    </entity>
+    <entity name="Stage" representedClassName="Stage" isAbstract="YES" syncable="YES"/>
     <entity name="TripCoreData" representedClassName="TripCoreData" syncable="YES">
         <attribute name="departure" attributeType="String"/>
         <attribute name="descriptionTrip" optional="YES" attributeType="String"/>
@@ -30,12 +28,13 @@
         <attribute name="meanTransport" optional="YES" attributeType="String"/>
         <attribute name="nameTrip" attributeType="String"/>
         <attribute name="startTrip" attributeType="String"/>
+        <relationship name="stages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Stage"/>
     </entity>
     <elements>
         <element name="Displacement" positionX="189.064208984375" positionY="104.06494140625" width="128" height="103"/>
         <element name="Permanence" positionX="402.3500366210938" positionY="107.6521606445312" width="128" height="103"/>
         <element name="Poi" positionX="112.50390625" positionY="-154.5369720458984" width="128" height="88"/>
-        <element name="Stage" positionX="298.6414794921875" positionY="4.1077880859375" width="128" height="58"/>
-        <element name="TripCoreData" positionX="-70.6995849609375" positionY="-158.3934020996094" width="128" height="164"/>
+        <element name="Stage" positionX="298.6414794921875" positionY="4.1077880859375" width="128" height="43"/>
+        <element name="TripCoreData" positionX="-70.6995849609375" positionY="-158.3934020996094" width="128" height="193"/>
     </elements>
 </model>

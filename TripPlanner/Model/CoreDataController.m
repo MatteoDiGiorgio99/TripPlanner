@@ -18,6 +18,10 @@
     return self;
 }
 
++(CoreDataController *)sharedInstance{
+    return [[CoreDataController alloc] init];
+}
+
 - (void)saveContext {
     NSError *error;
     [self.context save:&error];
@@ -61,14 +65,39 @@
     {
         NSLog(@"%@", error.description);
     }
-
+   
     return result;
 }
 
+-(void)addDisplacement:(TripCoreData *)data
+                      :(DisplacementCoreData *)d {
+    [[data mutableSetValueForKey:@"stages"] addObject:d];
+    [self saveContext];
+}
 
-                    
+-(void)deleteDisplacement:(TripCoreData *)data
+                         :(DisplacementCoreData *)d{
+    [[data mutableSetValueForKey:@"stages"] removeObject:d];
+    [self saveContext];
+}
 
+-(void)updateDisplacement {
+    [self saveContext];
+}
+-(void)addPermanence:(TripCoreData *)data
+                      :(PermanenceCoreData *)p {
+    [[data mutableSetValueForKey:@"stages"] addObject:p];
+    [self saveContext];
+}
 
+-(void)deletePermanence:(TripCoreData *)data
+                         :(PermanenceCoreData *)p{
+    [[data mutableSetValueForKey:@"stages"] removeObject:p];
+    [self saveContext];
+}
 
+-(void)updatePermanence {
+    [self saveContext];
+}
 
 @end
