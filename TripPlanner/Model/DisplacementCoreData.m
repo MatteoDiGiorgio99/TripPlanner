@@ -14,4 +14,30 @@
 @dynamic displacementDate;
 @dynamic meanTransport;
 
+-(NSString *) displayName {
+    return [NSString stringWithFormat:@"%@ - %@", self.departure, self.destination];
+}
+
+-(NSString *) displayDestination {
+    return self.destination;
+}
+
+-(NSString *) displayDate {
+    return [NSString stringWithFormat:@"%@", self.displacementDate];
+}
+
+-(NSDate *) getDateToCompare {
+    return self.displacementDate;
+}
+-(Poi *) coordinate{
+    return nil; //self.coordinatePOI;
+}
+
+- (void) setCoordinates:(Poi *) poi {
+   // self.coordinatePOI = poi;
+}
+-(NSString *) meanofTransportSelected{
+    return self.meanTransport;
+}
+
 @end

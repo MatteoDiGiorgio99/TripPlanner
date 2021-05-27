@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self sortStages];
+    //[self sortStages];
     [self searchLocationStartTrip];
     
     for (NSObject<Stage> *obj in self.stages) {
@@ -32,7 +32,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self sortStages];
+    //[self sortStages];
     
     for (NSObject<Stage> *obj in self.stages) {
         [self searchLocation:obj];
@@ -42,7 +42,7 @@
 }
 
 -(void) sortStages {
-    for (int i = 0; i < [self.stages count]; i++) {
+    /*for (int i = 0; i < [self.stages count]; i++) {
         for (int j = 0; j < [self.stages count] - 1; j++) {
             NSObject<Stage> *a = [self.stages objectAtIndex:j];
             NSObject<Stage> *b = [self.stages objectAtIndex:j + 1];
@@ -60,7 +60,7 @@
                     break;
             }
         }
-    }
+    }*/
 }
 
 -(void)searchLocation:(id<Stage>) stage {
@@ -116,7 +116,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StageCell" forIndexPath:indexPath];
     
-    NSObject<Stage> *stage = [self.stages objectAtIndex:indexPath.row];
+    NSObject<Stage> *stage = self.stages.allObjects[indexPath.row];
     
     cell.textLabel.text = [stage displayName];
     cell.detailTextLabel.text = [stage displayDate];
@@ -143,7 +143,7 @@
             
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
             
-            vc.stage = [self.stages objectAtIndex:indexPath.row];
+            vc.stage = self.stages.allObjects[indexPath.row];
             vc.trip = self.trip;
             vc.stagesList = self.stages;
         }

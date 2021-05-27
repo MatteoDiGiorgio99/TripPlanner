@@ -69,6 +69,10 @@
     return result;
 }
 
+-(NSMutableSet *)recoverStage:(TripCoreData *)data {
+    return [data mutableSetValueForKey:@"stages"];
+}
+
 -(void)addDisplacement:(TripCoreData *)data
                       :(DisplacementCoreData *)d {
     [[data mutableSetValueForKey:@"stages"] addObject:d];

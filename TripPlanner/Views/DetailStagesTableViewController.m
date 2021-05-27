@@ -6,7 +6,7 @@
 //
 
 #import "DetailStagesTableViewController.h"
-#import "Displacement.h"
+#import "DisplacementCoreData.h"
 #import "Permanence.h"
 #import "Stage.h"
 
@@ -67,10 +67,10 @@
            
            
             
-        } else if([self.stage isKindOfClass:[Displacement class]]) {
+        } else if([self.stage isKindOfClass:[DisplacementCoreData class]]) {
             [self setDisplacementSettings];
             
-            Displacement *stage = (Displacement *)self.stage;
+            DisplacementCoreData *stage = (DisplacementCoreData *)self.stage;
             self.destinationCity.text = stage.destination;
             self.departureCity.text = stage.departure;
             self.arrivalDate.date = stage.displacementDate;
@@ -184,8 +184,14 @@
                 [self presentViewController:alertController2 animated:YES completion:nil];
             }
             else{
-                Permanence *stageP= [[Permanence alloc]
-                initWithDestination:self.destinationCity.text ArrivalDate:self.arrivalDate.date DepartureDate:self.startDate.date MeanTransport:@""];
+                CoreDataController *controller = CoreDataController.sharedInstance;
+                
+                PermanenceCoreData *permanence = [[PermanenceCoreData alloc] initWithContext:controller.context];
+                
+                permanence.arrivalDate = self.arrivalDate.date;
+                permanence.departureDate = self.startDate.date;
+                permanence.destination = self.destinationCity.text;
+                permanence.meanTransport = @"";
                 
                 switch(result){
                     case NSOrderedAscending:
@@ -193,14 +199,11 @@
                         [self presentViewController:alertController animated:YES completion:nil];
                         break;
                     case NSOrderedDescending:
-                   
-                        [self.stagesList addObject:stageP];
+                        [controller addPermanence:self.trip:permanence];
                         [self.navigationController popViewControllerAnimated:YES];
-                    
                         break;
                     case NSOrderedSame:
-                
-                        [self.stagesList addObject:stageP];
+                        [controller addPermanence:self.trip:permanence];
                         [self.navigationController popViewControllerAnimated:YES];
                         break;
                 }
@@ -224,10 +227,18 @@
                 [self presentViewController:alertController2 animated:YES completion:nil];
             }
             else{
-               Displacement *stageD = [[Displacement alloc] initWithDeparture:self.departureCity.text Destination:self.destinationCity.text ArrivalDate:self.arrivalDate.date MeanTransport:self.selectedTransport];
-             
-                   [self.stagesList addObject:stageD];
-                   [self.navigationController popViewControllerAnimated:YES];
+                CoreDataController *controller = CoreDataController.sharedInstance;
+                
+                DisplacementCoreData *displacement = [[DisplacementCoreData alloc] initWithContext:controller.context];
+                
+                displacement.departure = self.departureCity.text;
+                displacement.destination = self.destinationCity.text;
+                displacement.displacementDate = self.arrivalDate.date;
+                displacement.meanTransport = self.selectedTransport;
+                
+                [controller addDisplacement:self.trip:displacement];
+                
+                [self.navigationController popViewControllerAnimated:YES];
             }
         }
     } else {
@@ -299,12 +310,8 @@
                 [self presentViewController:alertController2 animated:YES completion:nil];
             }
             else{
+                /// TODO: Aggiornamento
                 
-            Displacement *stageD = [[Displacement alloc] initWithDeparture:self.departureCity.text Destination:self.destinationCity.text ArrivalDate:self.arrivalDate.date MeanTransport:self.selectedTransport];
-                
-                NSInteger index = [self.stagesList indexOfObject:self.stage];
-                
-                [self.stagesList replaceObjectAtIndex:index withObject:stageD];
                 [self.navigationController popViewControllerAnimated:YES];
                     
             }

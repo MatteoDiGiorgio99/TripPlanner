@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E232" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Displacement" representedClassName="Displacement" parentEntity="Stage" syncable="YES">
+    <entity name="DisplacementCoreData" representedClassName="DisplacementCoreData" parentEntity="Stage" syncable="YES">
         <attribute name="departure" attributeType="String"/>
         <attribute name="destination" attributeType="String"/>
         <attribute name="displacementDate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="meanTransport" attributeType="String"/>
     </entity>
-    <entity name="Permanence" representedClassName="Permanence" parentEntity="Stage" syncable="YES">
+    <entity name="PermanenceCoreData" representedClassName="PermanenceCoreData" parentEntity="Stage" syncable="YES">
         <attribute name="arrivalDate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="departureDate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="destination" attributeType="String"/>
@@ -31,8 +31,8 @@
         <relationship name="stages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Stage"/>
     </entity>
     <elements>
-        <element name="Displacement" positionX="189.064208984375" positionY="104.06494140625" width="128" height="103"/>
-        <element name="Permanence" positionX="402.3500366210938" positionY="107.6521606445312" width="128" height="103"/>
+        <element name="DisplacementCoreData" positionX="189.064208984375" positionY="104.06494140625" width="128" height="103"/>
+        <element name="PermanenceCoreData" positionX="402.3500366210938" positionY="107.6521606445312" width="128" height="103"/>
         <element name="Poi" positionX="112.50390625" positionY="-154.5369720458984" width="128" height="88"/>
         <element name="Stage" positionX="298.6414794921875" positionY="4.1077880859375" width="128" height="43"/>
         <element name="TripCoreData" positionX="-70.6995849609375" positionY="-158.3934020996094" width="128" height="193"/>

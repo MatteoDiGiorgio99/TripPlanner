@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)addTrip:(Trip *)Ntrip;
 -(void)removeTrip:(TripCoreData *)Ntrip;
 -(NSArray *)recoverTrip;
+-(NSMutableSet *)recoverStage:(TripCoreData *)data;
 -(void)addDisplacement:(TripCoreData *)data
                       :(DisplacementCoreData *)d;
 -(void)deleteDisplacement:(TripCoreData *)data

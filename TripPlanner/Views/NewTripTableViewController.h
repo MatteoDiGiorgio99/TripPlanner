@@ -7,11 +7,12 @@
 
 #import <UIKit/UIKit.h>
 #import "TripDataSource.h"
-#import "Trip.h"
+#import "TripCoreData.h"
+#import "CoreDataController.h"
 
 @interface NewTripTableViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (nonatomic, strong) id<TripDataSource> tripDataSource;
-@property (nonatomic, strong) Trip *trip;
+@property (nonatomic, strong) TripCoreData *trip;
 
 @end

@@ -13,7 +13,6 @@
 @interface NewTripTableViewController ()
 @property (nonnull, nonatomic, strong) NSArray *transportation;
 @property (nonatomic, strong) NSString *selectedTransport;
-@property (nonatomic, strong) NSMutableArray<Stage> *protoStage;
 
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTrip;
 @property (weak, nonatomic) IBOutlet UITextField *nameTrip;
@@ -41,10 +40,6 @@
     
     self.meanOfTransport.dataSource = self;
     self.meanOfTransport.delegate = self;
-    
-   
-    self.protoStage = [[NSMutableArray<Stage> alloc] init];
-    
   
     
     if(self.trip != nil) {
@@ -182,7 +177,6 @@
                     self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",self.destinationCity.text]];
                     self.trip.hotelName=self.hotelName.text;
                     self.trip.meanTransport=self.selectedTransport;
-                    self.trip.stages = self.protoStage;
                     [[self.tripDataSource getTrips] add:self.trip];
                     [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
                     break;
@@ -198,7 +192,6 @@
                     self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",self.destinationCity.text]];
                     self.trip.hotelName=self.hotelName.text;
                     self.trip.meanTransport=self.selectedTransport;
-                    self.trip.stages = self.protoStage;
                     [[self.tripDataSource getTrips] add:self.trip];
                     [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
                     break;
@@ -284,11 +277,9 @@
         if([segue.destinationViewController isKindOfClass:[StagesTableViewController class]]) {
             StagesTableViewController *vc = (StagesTableViewController *)segue.destinationViewController;
             
-            if(self.trip != nil) {
-                vc.stages = self.trip.stages;
-            } else {
-                vc.stages = self.protoStage;
-            }
+            CoreDataController *controller = CoreDataController.sharedInstance;
+            
+            vc.stages = [controller recoverStage:self.trip];
             
             vc.trip=self.trip;
         }
