@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(long)size;
 -(NSArray *)getAll;
 -(void)add:(Trip *)f;
+-(void)replace:(TripCoreData *)f;
 -(void)remove:(TripCoreData *)f;
 -(TripCoreData *)getAtIndex:(NSInteger)index;
 

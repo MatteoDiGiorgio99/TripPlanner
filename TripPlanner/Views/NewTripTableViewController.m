@@ -129,6 +129,8 @@
 - (IBAction)saveButton:(id)sender {
     if(self.trip == nil) {
         
+        //INSERIMENTO
+        
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
         [formatter setDateStyle:NSDateFormatterShortStyle];
@@ -198,7 +200,8 @@
             }
         }
     } else {
-        //Aggiornamento
+        
+        //AGGIORNAMENTO
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
         [formatter setDateStyle:NSDateFormatterShortStyle];
@@ -246,6 +249,8 @@
                 self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",self.destinationCity.text]];
                 self.trip.hotelName=self.hotelName.text;
                 self.trip.meanTransport=self.selectedTransport;
+                [[self.tripDataSource getTrips] replace:self.trip];
+               // [[self.tripDataSource getTrips]replacementObjectForCoder:self.trip];
                // self.trip.stages = self.protoStage;
                
                 [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
@@ -262,6 +267,8 @@
                 self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",self.destinationCity.text]];
                 self.trip.hotelName=self.hotelName.text;
                 self.trip.meanTransport=self.selectedTransport;
+                
+               // [[self.tripDataSource getTrips]replacementObjectForCoder:self.trip];
                // self.trip.stages = self.protoStage;
                 
                 [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];

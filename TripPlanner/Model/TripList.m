@@ -31,6 +31,10 @@
     [self.coreData addTrip:f];
 }
 
+-(void)replace:(TripCoreData *)f{
+    [self.coreData replaceTrip:f];
+}
+
 -(void)remove:(TripCoreData *)f{
     [self.coreData removeTrip:f];
 }

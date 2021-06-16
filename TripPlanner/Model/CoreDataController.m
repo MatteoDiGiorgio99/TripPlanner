@@ -49,6 +49,16 @@
     [self saveContext];
 }
 
+-(void)replaceTrip:(TripCoreData *)Ntrip{
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"TripCoreData" inManagedObjectContext:self.context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entity];
+
+    
+    [self saveContext];
+}
+
 -(void)removeTrip:(TripCoreData *)Ntrip{
        
     [self.context deleteObject:Ntrip];

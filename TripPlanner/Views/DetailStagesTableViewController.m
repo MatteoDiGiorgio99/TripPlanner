@@ -36,7 +36,8 @@
     [formatter setDateStyle:NSDateFormatterShortStyle];
     [formatter setTimeStyle:NSDateFormatterNoStyle];
     [formatter setDateFormat:@"MM/dd/yy HH:mm"];
-    
+        
+   
     self.startDate.minimumDate= [formatter dateFromString:self.trip.startTrip];
     self.startDate.maximumDate = [formatter dateFromString:self.trip.finishTrip];
     self.arrivalDate.minimumDate= [formatter dateFromString:self.trip.startTrip];

@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(CoreDataController *)sharedInstance;
 
 -(void)addTrip:(Trip *)Ntrip;
+-(void)replaceTrip:(TripCoreData *)Ntrip;
 -(void)removeTrip:(TripCoreData *)Ntrip;
 -(NSArray *)recoverTrip;
 -(NSMutableSet *)recoverStage:(TripCoreData *)data;
