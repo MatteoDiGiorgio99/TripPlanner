@@ -154,13 +154,19 @@
 
 - (IBAction)deleteItemClick:(id)sender {
     if(self.stage != nil) {
-        [self.stagesList removeObject:self.stage];
+        CoreDataController *controller = CoreDataController.sharedInstance;
+    
+        [controller deleteStage:self.trip:self.stage];
+        
+       //TODO:
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
 - (IBAction)saveItem:(id)sender {
     if(self.stage == nil) {
+        
+        //INSERIMENTO
         if(self.chooseTipeStages.on == YES)
         {
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Date not valid"
@@ -187,12 +193,12 @@
             else{
                 CoreDataController *controller = CoreDataController.sharedInstance;
                 
-                PermanenceCoreData *permanence = [[PermanenceCoreData alloc] initWithContext:controller.context];
+                 self.permanence = [[PermanenceCoreData alloc] initWithContext:controller.context];
                 
-                permanence.arrivalDate = self.arrivalDate.date;
-                permanence.departureDate = self.startDate.date;
-                permanence.destination = self.destinationCity.text;
-                permanence.meanTransport = @"";
+                self.permanence.arrivalDate = self.arrivalDate.date;
+                self.permanence.departureDate = self.startDate.date;
+                self.permanence.destination = self.destinationCity.text;
+                self.permanence.meanTransport = @"";
                 
                 switch(result){
                     case NSOrderedAscending:
@@ -200,11 +206,11 @@
                         [self presentViewController:alertController animated:YES completion:nil];
                         break;
                     case NSOrderedDescending:
-                        [controller addPermanence:self.trip:permanence];
+                        [controller addPermanence:self.trip:self.permanence];
                         [self.navigationController popViewControllerAnimated:YES];
                         break;
                     case NSOrderedSame:
-                        [controller addPermanence:self.trip:permanence];
+                        [controller addPermanence:self.trip:self.permanence];
                         [self.navigationController popViewControllerAnimated:YES];
                         break;
                 }
@@ -213,7 +219,7 @@
         }
         else
         {
-            
+         //ADD DISPLACEMENT
             if([self.departureCity.text isEqual:@""] || [self.destinationCity.text isEqual:@""])
             {
                 UIAlertController *alertController2 = [UIAlertController alertControllerWithTitle:@"Information Stage Not Valid"
@@ -230,21 +236,21 @@
             else{
                 CoreDataController *controller = CoreDataController.sharedInstance;
                 
-                DisplacementCoreData *displacement = [[DisplacementCoreData alloc] initWithContext:controller.context];
+                self.displacement = [[DisplacementCoreData alloc] initWithContext:controller.context];
                 
-                displacement.departure = self.departureCity.text;
-                displacement.destination = self.destinationCity.text;
-                displacement.displacementDate = self.arrivalDate.date;
-                displacement.meanTransport = self.selectedTransport;
+                self.displacement.departure = self.departureCity.text;
+                self.displacement.destination = self.destinationCity.text;
+                self.displacement.displacementDate = self.arrivalDate.date;
+                self.displacement.meanTransport = self.selectedTransport;
                 
-                [controller addDisplacement:self.trip:displacement];
+                [controller addDisplacement:self.trip:self.displacement];
                 
                 [self.navigationController popViewControllerAnimated:YES];
             }
         }
     } else {
         
-        //Aggiornamento
+        //AGGIORNAMENTO
         
         if(self.chooseTipeStages.on == YES)
         {
@@ -270,9 +276,14 @@
                 [self presentViewController:alertController2 animated:YES completion:nil];
             }
             else{
+                CoreDataController *controller = CoreDataController.sharedInstance;
                 
-            Permanence *stageP= [[Permanence alloc] initWithDestination:self.destinationCity.text ArrivalDate:self.arrivalDate.date DepartureDate:self.startDate.date MeanTransport:@""];
-                
+                self.permanence.arrivalDate = self.arrivalDate.date;
+                self.permanence.departureDate = self.startDate.date;
+                self.permanence.destination = self.destinationCity.text;
+                self.permanence.meanTransport = self.selectedTransport;
+           
+
                 NSInteger index = [self.stagesList indexOfObject:self.stage];
                 
                 switch(result){
@@ -281,14 +292,13 @@
                         [self presentViewController:alertController animated:YES completion:nil];
                         break;
                     case NSOrderedDescending:
-                   
-                        [self.stagesList replaceObjectAtIndex:index withObject:stageP];
+                        [controller updatePermanence];
                         [self.navigationController popViewControllerAnimated:YES];
                     
                         break;
                     case NSOrderedSame:
                 
-                        [self.stagesList replaceObjectAtIndex:index withObject:stageP];
+                        [self.stagesList replaceObjectAtIndex:index withObject:self.permanence];
                         [self.navigationController popViewControllerAnimated:YES];
                         break;
                 }
@@ -296,8 +306,7 @@
         }
         else
         {
-           
-            if([self.departureCity.text isEqual:@""] || [self.destinationCity.text isEqual:@""])
+           if([self.departureCity.text isEqual:@""] || [self.destinationCity.text isEqual:@""])
             {
                 UIAlertController *alertController2 = [UIAlertController alertControllerWithTitle:@"Information Stage Not Valid"
                                  message:@"You are missed important information of stage"
@@ -311,8 +320,15 @@
                 [self presentViewController:alertController2 animated:YES completion:nil];
             }
             else{
-                /// TODO: Aggiornamento
+                //Aggiornamento Displacement
+                CoreDataController *controller = CoreDataController.sharedInstance;
                 
+                self.displacement.departure = self.departureCity.text;
+                self.displacement.destination = self.destinationCity.text;
+                self.displacement.displacementDate = self.arrivalDate.date;
+                self.displacement.meanTransport = self.selectedTransport;
+                
+                [controller updateDisplacement];
                 [self.navigationController popViewControllerAnimated:YES];
                     
             }

@@ -9,12 +9,13 @@
 #import "Stage.h"
 #import "Trip.h"
 #import <MapKit/MapKit.h>
+#import "TripCoreData.h"
 
 @interface StagesMapViewController : UIViewController<MKMapViewDelegate>
 
 
 @property CLLocationCoordinate2D departureTripCoordinates;
-@property (nonatomic, strong) Trip *trip;
+@property (nonatomic, strong) TripCoreData *trip;
 @property (nonatomic, strong) NSMutableArray<Stage> *stages;
 
 @end

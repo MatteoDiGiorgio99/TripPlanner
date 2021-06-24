@@ -42,9 +42,9 @@
     trip.destination=Ntrip.destination;
     trip.startTrip=Ntrip.startTrip;
     trip.finishTrip=Ntrip.finishTrip;
-    trip.hotelName=trip.hotelName;
-    trip.imageTrip=trip.imageTrip;
-    trip.meanTransport=trip.meanTransport;
+    trip.hotelName=Ntrip.hotelName;
+    trip.imageTrip=Ntrip.imageTrip;
+    trip.meanTransport=Ntrip.meanTransport;
     
     [self saveContext];
 }
@@ -89,9 +89,10 @@
     [self saveContext];
 }
 
--(void)deleteDisplacement:(TripCoreData *)data
-                         :(DisplacementCoreData *)d{
-    [[data mutableSetValueForKey:@"stages"] removeObject:d];
+-(void)deleteStage:(TripCoreData *)data
+                 :(NSManagedObject<Stage> *)d{
+    [[data mutableSetValueForKeyPath:@"stages"] removeObject:d];
+    
     [self saveContext];
 }
 
@@ -101,12 +102,6 @@
 -(void)addPermanence:(TripCoreData *)data
                       :(PermanenceCoreData *)p {
     [[data mutableSetValueForKey:@"stages"] addObject:p];
-    [self saveContext];
-}
-
--(void)deletePermanence:(TripCoreData *)data
-                         :(PermanenceCoreData *)p{
-    [[data mutableSetValueForKey:@"stages"] removeObject:p];
     [self saveContext];
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E232" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="DisplacementCoreData" representedClassName="DisplacementCoreData" parentEntity="Stage" syncable="YES">
         <attribute name="departure" attributeType="String"/>
         <attribute name="destination" attributeType="String"/>
@@ -24,7 +24,7 @@
         <attribute name="destination" attributeType="String"/>
         <attribute name="finishTrip" attributeType="String"/>
         <attribute name="hotelName" optional="YES" attributeType="String"/>
-        <attribute name="imageTrip" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" customClassName="UIImage"/>
+        <attribute name="imageTrip" optional="YES" attributeType="Transformable" allowsExternalBinaryDataStorage="YES" customClassName="UIImage"/>
         <attribute name="meanTransport" optional="YES" attributeType="String"/>
         <attribute name="nameTrip" attributeType="String"/>
         <attribute name="startTrip" attributeType="String"/>

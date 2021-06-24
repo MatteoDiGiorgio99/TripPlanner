@@ -27,13 +27,11 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSMutableSet *)recoverStage:(TripCoreData *)data;
 -(void)addDisplacement:(TripCoreData *)data
                       :(DisplacementCoreData *)d;
--(void)deleteDisplacement:(TripCoreData *)data
-                         :(DisplacementCoreData *)d;
+-(void)deleteStage:(TripCoreData *)data
+                  :(NSManagedObject<Stage> *)d;
 -(void)updateDisplacement;
 -(void)addPermanence:(TripCoreData *)data
                     :(PermanenceCoreData *)p;
--(void)deletePermanence:(TripCoreData *)data
-                       :(PermanenceCoreData *)p;
 -(void)updatePermanence;
 
 -(void)saveContext;

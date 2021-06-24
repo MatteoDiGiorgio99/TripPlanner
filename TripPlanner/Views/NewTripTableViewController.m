@@ -32,7 +32,7 @@
     [super viewDidLoad];
     
     self.startDate.minimumDate=[NSDate date];
-    self.finishDate.minimumDate=[NSDate date];
+    self.finishDate.minimumDate=self.startDate.date;
     
     self.transportation = @[@"Car", @"Bike", @"Motorbike", @"Airplane"];
     
@@ -168,7 +168,7 @@
                        [self presentViewController:alertController animated:YES completion:nil];
                     break;
                 case NSOrderedDescending:
-                            
+                
                     self.trip = [[Trip alloc] init];
                     self.trip.nameTrip = self.nameTrip.text;
                     self.trip.descriptionTrip = self.descriptionTrip.text;
@@ -267,7 +267,7 @@
                 self.trip.imageTrip=[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",self.destinationCity.text]];
                 self.trip.hotelName=self.hotelName.text;
                 self.trip.meanTransport=self.selectedTransport;
-                
+                [[self.tripDataSource getTrips] replace:self.trip];
                // [[self.tripDataSource getTrips]replacementObjectForCoder:self.trip];
                // self.trip.stages = self.protoStage;
                 
