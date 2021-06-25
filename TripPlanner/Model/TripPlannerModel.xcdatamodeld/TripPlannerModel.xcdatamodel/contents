@@ -15,7 +15,7 @@
     <entity name="PoiCoreData" representedClassName="PoiCoreData" syncable="YES">
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="coordinatePoi" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StageCoreData"/>
+        <relationship name="coordinatePoi" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StageCoreData"/>
     </entity>
     <entity name="StageCoreData" representedClassName="StageCoreData" isAbstract="YES" syncable="YES"/>
     <entity name="TripCoreData" representedClassName="TripCoreData" syncable="YES">

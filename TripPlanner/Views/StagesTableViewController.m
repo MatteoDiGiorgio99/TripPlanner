@@ -72,8 +72,8 @@
     [localSearch startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
        
         if (!error) {
-            NSObject<Stage> *stage;
-            for (NSObject<Stage> *currentStage in self.stages) {
+            NSManagedObject<Stage> *stage;
+            for (NSManagedObject<Stage> *currentStage in self.stages) {
                 if([currentStage.displayDestination containsString:response.mapItems.firstObject.name]) {
                     stage = currentStage;
                     break;
