@@ -32,13 +32,7 @@
 -(NSDate *) getDateToCompare {
     return self.departureDate;
 }
--(Poi *) coordinate{
-    return nil;//self.coordinatePOI;
-}
 
-- (void) setCoordinates:(Poi *) poi {
-    //self.coordinatePOI = poi;
-}
 -(NSString *) meanofTransportSelected{
     return self.meanTransport;
 }

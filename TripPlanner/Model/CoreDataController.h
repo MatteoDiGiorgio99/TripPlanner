@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "Trip.h"
+#import "PoiCoreData.h"
 #import "AppDelegate.h"
 #import "DisplacementCoreData.h"
 #import "PermanenceCoreData.h"
@@ -33,6 +34,9 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)addPermanence:(TripCoreData *)data
                     :(PermanenceCoreData *)p;
 -(void)updatePermanence;
+
+-(void)setCoordinate:(NSManagedObject<Stage> *)data
+                    :(PoiCoreData *)poi;
 
 -(void)saveContext;
 

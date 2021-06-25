@@ -10,7 +10,7 @@
 #import "Trip.h"
 #import <MapKit/MapKit.h>
 #import "TripCoreData.h"
-
+#import "StageCoreData.h"
 @interface StagesMapViewController : UIViewController<MKMapViewDelegate>
 
 

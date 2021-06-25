@@ -11,8 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PoiCoreData : NSManagedObject
 
-@property (nonatomic, readonly) double latitude;
-@property (nonatomic, readonly) double longitude;
+@property (nonatomic) double latitude;
+@property (nonatomic) double longitude;
 
 @end
 

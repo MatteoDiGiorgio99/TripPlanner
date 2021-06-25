@@ -92,20 +92,29 @@
 -(void)deleteStage:(TripCoreData *)data
                  :(NSManagedObject<Stage> *)d{
     [[data mutableSetValueForKeyPath:@"stages"] removeObject:d];
-    
+    [self.context deleteObject:d];
     [self saveContext];
 }
 
--(void)updateDisplacement {
-    [self saveContext];
-}
+
 -(void)addPermanence:(TripCoreData *)data
                       :(PermanenceCoreData *)p {
     [[data mutableSetValueForKey:@"stages"] addObject:p];
     [self saveContext];
 }
 
+-(void)updateDisplacement {
+    [self saveContext];
+}
+
 -(void)updatePermanence {
+    [self saveContext];
+}
+
+-(void)setCoordinate:(NSManagedObject<Stage> *)data
+                    :(PoiCoreData *)poi {
+    [[data mutableArrayValueForKey:@"coordinatePoi"] addObject:poi];
+    
     [self saveContext];
 }
 

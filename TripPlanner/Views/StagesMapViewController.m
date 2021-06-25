@@ -8,6 +8,8 @@
 #import "StagesMapViewController.h"
 #import <MapKit/MapKit.h>
 #import "Displacement.h"
+#import "DisplacementCoreData.h"
+#import "CoreDataController.h"
 
 @interface StagesMapViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *stagesMapPoint;
@@ -39,19 +41,18 @@
 }
 
 -(void) drawPOI {
-    CLLocationCoordinate2D points[self.stages.count + 1];
+    CLLocationCoordinate2D points[self.stages.count  + 1];
     NSString *TypeTransport[self.stages.count +1];
     points[0] = self.departureTripCoordinates;
     
     NSInteger i = 1;
     for (NSObject<Stage> *stage in self.stages) {
-        if([stage isKindOfClass:[Displacement class]]) {
-            points[i] = CLLocationCoordinate2DMake(stage.coordinate.latitude, stage.coordinate.longitude);
+        if([stage isKindOfClass:[DisplacementCoreData class]]) {
+        //    points[i] = CLLocationCoordinate2DMake(stage.coordinate.latitude, stage.coordinate.longitude);
             TypeTransport[i] = stage.meanofTransportSelected;
-            NSLog(@"%f", [[stage coordinate] latitude]);
+            //NSLog(@"%f", [[stage coordinate] latitude]);
             
             [self annotationLocation:stage];
-            
             i++;
         }
     }
@@ -103,9 +104,9 @@
 
 -(void) annotationLocation:(NSObject<Stage> *)item {
     CLLocationCoordinate2D location;
-    
-    location.latitude=item.coordinate.latitude;
-    location.longitude=item.coordinate.longitude;
+        
+  //  location.latitude=item.coordinate.latitude;
+    //location.longitude=item.coordinate.longitude;
    
     MKPointAnnotation *annotation =[[MKPointAnnotation alloc] init];
     NSInteger position = [self.stages indexOfObject:item]+1;

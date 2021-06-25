@@ -13,7 +13,7 @@
 
 @interface DetailStagesTableViewController : UITableViewController <UIPickerViewDataSource,UIPickerViewDelegate>
 
-@property (nonatomic, strong) id<Stage> stage;
+@property (nonatomic, strong) NSManagedObject<Stage>* stage;
 @property (nonatomic, strong) NSMutableArray<Stage> *stagesList;
 @property (nonatomic, strong) TripCoreData *trip;
 @property (nonatomic, strong) StageCoreData *stageData;

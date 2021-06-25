@@ -6,7 +6,7 @@
 //
 
 #import <CoreData/CoreData.h>
-#import "Poi.h"
+#import "PoiCoreData.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong) NSString *destination;
 @property(nonatomic, strong) NSDate *displacementDate;
 @property(nonatomic,strong)  NSString *meanTransport;
+@property(nonatomic,strong) PoiCoreData *coordinatePOI;
 
 @end
 

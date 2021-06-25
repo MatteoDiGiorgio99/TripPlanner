@@ -81,7 +81,15 @@
             }
             
             if(response.mapItems.count > 0) {
-                [stage setCoordinates:[[Poi alloc] initWithlatitude:response.mapItems.firstObject.placemark.coordinate.latitude longitude:response.mapItems.firstObject.placemark.coordinate.longitude]];
+                CoreDataController *controller = CoreDataController.sharedInstance;
+
+                PoiCoreData *poiToAdd = [[PoiCoreData alloc] initWithContext:controller.context];
+                
+                poiToAdd.latitude = response.mapItems.firstObject.placemark.coordinate.latitude;
+                
+                poiToAdd.longitude = response.mapItems.firstObject.placemark.coordinate.longitude;
+                
+                [controller setCoordinate:stage:poiToAdd];
             }
         }
     }];
@@ -131,6 +139,7 @@
         if([segue.destinationViewController isKindOfClass:[DetailStagesTableViewController class]]) {
             DetailStagesTableViewController *vc = (DetailStagesTableViewController *)segue.destinationViewController;
             
+           
             vc.stage = nil;
             vc.trip = self.trip;
             vc.stagesList = self.stages;
@@ -143,6 +152,7 @@
             
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
             
+        
             vc.stage = self.stages.allObjects[indexPath.row];
             vc.trip = self.trip;
             vc.stagesList = self.stages;
@@ -153,7 +163,7 @@
             StagesMapViewController *vc = (StagesMapViewController *)segue.destinationViewController;
             
            // NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        
+           
             vc.stages = self.stages;
             vc.trip = self.trip;
             vc.departureTripCoordinates = self.departureTripCoordinates;

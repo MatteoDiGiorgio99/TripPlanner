@@ -57,10 +57,10 @@
     if(self.stage == nil) {
         self.deleteItem.enabled = NO;
     } else {
-        if([self.stage isKindOfClass:[Permanence class]]) {
+        if([self.stage isKindOfClass:[PermanenceCoreData class]]) {
             [self setPermanenceSettings];
             
-            Permanence *stage = (Permanence *)self.stage;
+            PermanenceCoreData *stage = (PermanenceCoreData *)self.stage;
             
             self.destinationCity.text = stage.destination;
             self.startDate.date = stage.departureDate;
@@ -155,7 +155,7 @@
 - (IBAction)deleteItemClick:(id)sender {
     if(self.stage != nil) {
         CoreDataController *controller = CoreDataController.sharedInstance;
-    
+        
         [controller deleteStage:self.trip:self.stage];
         
        //TODO:
@@ -283,8 +283,6 @@
                 self.permanence.destination = self.destinationCity.text;
                 self.permanence.meanTransport = self.selectedTransport;
            
-
-                NSInteger index = [self.stagesList indexOfObject:self.stage];
                 
                 switch(result){
                     case NSOrderedAscending:
@@ -297,9 +295,9 @@
                     
                         break;
                     case NSOrderedSame:
-                
-                        [self.stagesList replaceObjectAtIndex:index withObject:self.permanence];
+                        [controller updatePermanence];
                         [self.navigationController popViewControllerAnimated:YES];
+                        
                         break;
                 }
             }
