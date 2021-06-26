@@ -30,10 +30,14 @@ NS_ASSUME_NONNULL_BEGIN
                       :(DisplacementCoreData *)d;
 -(void)deleteStage:(TripCoreData *)data
                   :(NSManagedObject<Stage> *)d;
--(void)updateDisplacement;
+-(void)updateDisplacement:(TripCoreData *)data
+                         :(NSManagedObject<Stage> *)d
+                         :(DisplacementCoreData *)d2;
 -(void)addPermanence:(TripCoreData *)data
                     :(PermanenceCoreData *)p;
--(void)updatePermanence;
+-(void)updatePermanence:(TripCoreData *)data
+                       :(NSManagedObject<Stage> *)p
+                       :(PermanenceCoreData *)p2;
 
 -(void)setCoordinate:(NSManagedObject<Stage> *)data
                     :(PoiCoreData *)poi;

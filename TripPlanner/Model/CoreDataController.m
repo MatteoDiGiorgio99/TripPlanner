@@ -103,11 +103,23 @@
     [self saveContext];
 }
 
--(void)updateDisplacement {
+-(void)updateDisplacement:(TripCoreData *)data
+                         :(NSManagedObject<Stage> *)d
+                         :(DisplacementCoreData *)d2{
+  
+    [[data mutableSetValueForKeyPath:@"stages"] removeObject:d];
+    [[data mutableSetValueForKey:@"stages"] addObject:d2];
+    [self.context deleteObject:d];
     [self saveContext];
 }
 
--(void)updatePermanence {
+-(void)updatePermanence:(TripCoreData *)data
+                       :(NSManagedObject<Stage> *)p
+                       :(PermanenceCoreData *)p2 {
+    
+    [[data mutableSetValueForKeyPath:@"stages"] removeObject:p];
+    [[data mutableSetValueForKey:@"stages"] addObject:p2];
+    [self.context deleteObject:p];
     [self saveContext];
 }
 

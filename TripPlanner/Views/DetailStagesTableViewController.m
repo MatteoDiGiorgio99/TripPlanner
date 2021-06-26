@@ -278,6 +278,8 @@
             else{
                 CoreDataController *controller = CoreDataController.sharedInstance;
                 
+                self.permanence = [[PermanenceCoreData alloc] initWithContext:controller.context];
+                
                 self.permanence.arrivalDate = self.arrivalDate.date;
                 self.permanence.departureDate = self.startDate.date;
                 self.permanence.destination = self.destinationCity.text;
@@ -290,12 +292,12 @@
                         [self presentViewController:alertController animated:YES completion:nil];
                         break;
                     case NSOrderedDescending:
-                        [controller updatePermanence];
+                        [controller updatePermanence:self.trip:self.stage:self.permanence];
                         [self.navigationController popViewControllerAnimated:YES];
                     
                         break;
                     case NSOrderedSame:
-                        [controller updatePermanence];
+                        [controller updatePermanence:self.trip:self.stage:self.permanence];
                         [self.navigationController popViewControllerAnimated:YES];
                         
                         break;
@@ -321,12 +323,14 @@
                 //Aggiornamento Displacement
                 CoreDataController *controller = CoreDataController.sharedInstance;
                 
+                self.displacement = [[DisplacementCoreData alloc] initWithContext:controller.context];
+                
                 self.displacement.departure = self.departureCity.text;
                 self.displacement.destination = self.destinationCity.text;
                 self.displacement.displacementDate = self.arrivalDate.date;
                 self.displacement.meanTransport = self.selectedTransport;
                 
-                [controller updateDisplacement];
+                [controller updateDisplacement:self.trip:self.stage:self.displacement];
                 [self.navigationController popViewControllerAnimated:YES];
                     
             }
