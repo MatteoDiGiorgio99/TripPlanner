@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    sleep(2);
+    sleep(2); //avvio app
     
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
         UNAuthorizationOptions options = UNAuthorizationOptionAlert+UNAuthorizationOptionSound;
@@ -38,20 +38,15 @@
         }];
     
     self.title=@"My Profile";
-    
     self.tripDataSource = [[ExampleTripDataSource alloc] init];
     
-    if (self.dateTripLabel != nil) {
-        // TODO: METODO PER ANDARE A VEDERE LA PARTENZA PIU VICINA
-    }
     _imageNextTrip.image =[UIImage imageNamed:[NSString stringWithFormat:@".jpg"]];
     _destinationTripLabel.text=@"No trips saved";
     _dateTripLabel.text=@"-----";
     _MyTripsLabel.text=@"My Trips (0)";
     _MyLocationLabel.text=@"My Location";
     
-        
-        if([[self.tripDataSource getTrips] size] > 0) {
+    if([[self.tripDataSource getTrips] size] > 0) {
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"MM/dd/yy"];
             
@@ -157,20 +152,6 @@
         _imageNextTrip.image=nil;
     }
 }
-
-/*
-- (void) loadImage{
-    if(self.thetrip.imageTrip != nil){
-        dispatch_async(dispatch_queue_create("imageDownload", NULL), ^{
-            NSURL *url = [NSURL URLWithString:self.thetrip.imageTrip];
-            NSData *data = [NSData dataWithContentsOfURL:url];
-            UIImage *image = [UIImage imageWithData:data];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.imageNextTrip.image = image;
-            });
-        });
-    }
-}*/
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {

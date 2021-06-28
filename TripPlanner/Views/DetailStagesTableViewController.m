@@ -155,10 +155,8 @@
 - (IBAction)deleteItemClick:(id)sender {
     if(self.stage != nil) {
         CoreDataController *controller = CoreDataController.sharedInstance;
-        
         [controller deleteStage:self.trip:self.stage];
         
-       //TODO:
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

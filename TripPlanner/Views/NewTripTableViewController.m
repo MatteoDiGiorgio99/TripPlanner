@@ -239,7 +239,6 @@
                 break;
             case NSOrderedDescending:
                         
-                
                 self.trip.nameTrip = self.nameTrip.text;
                 self.trip.descriptionTrip = self.descriptionTrip.text;
                 self.trip.departure = self.departureCity.text;
@@ -250,14 +249,11 @@
                 self.trip.hotelName=self.hotelName.text;
                 self.trip.meanTransport=self.selectedTransport;
                 [[self.tripDataSource getTrips] replace:self.trip];
-               // [[self.tripDataSource getTrips]replacementObjectForCoder:self.trip];
-               // self.trip.stages = self.protoStage;
                
                 [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
                 break;
             case NSOrderedSame:
                 
-                
                 self.trip.nameTrip = self.nameTrip.text;
                 self.trip.descriptionTrip = self.descriptionTrip.text;
                 self.trip.departure = self.departureCity.text;
@@ -268,8 +264,6 @@
                 self.trip.hotelName=self.hotelName.text;
                 self.trip.meanTransport=self.selectedTransport;
                 [[self.tripDataSource getTrips] replace:self.trip];
-               // [[self.tripDataSource getTrips]replacementObjectForCoder:self.trip];
-               // self.trip.stages = self.protoStage;
                 
                 [self.navigationController popToViewController:self.navigationController.viewControllers[0] animated:YES];
                 break;

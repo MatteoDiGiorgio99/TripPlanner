@@ -55,6 +55,7 @@
 }
 
 - (void) centerMapToLocation:(CLLocationCoordinate2D)location zoom:(double)zoom{
+   //Posizione corrente
     MKCoordinateRegion mapRegion;
     mapRegion.center = location;
     mapRegion.span.latitudeDelta = zoom;
@@ -73,7 +74,7 @@
 - (void) centerMapToLocationLatitude:(double)locaLat
                         LocationLongitude:(double)locaLon
                         zoom:(double)zoom{
-    
+    //Posizione richiesta
     MKCoordinateRegion mapRegion;
     CLLocationCoordinate2D location;
     MKPointAnnotation *annotation =[[MKPointAnnotation alloc] init];
