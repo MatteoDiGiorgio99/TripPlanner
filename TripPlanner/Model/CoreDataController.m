@@ -123,12 +123,6 @@
     [self saveContext];
 }
 
--(void)setCoordinate:(NSManagedObject<Stage> *)data
-                    :(PoiCoreData *)poi {
-    [[poi mutableSetValueForKey:@"coordinatePoi"] addObject:data];
-   // [self.context insertObject:data];
-    
-    [self saveContext];
-}
+
 
 @end

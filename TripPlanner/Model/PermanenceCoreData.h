@@ -6,7 +6,7 @@
 //
 
 #import <CoreData/CoreData.h>
-#import "Poi.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 

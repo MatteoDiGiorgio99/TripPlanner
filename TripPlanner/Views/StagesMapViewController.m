@@ -48,11 +48,11 @@
     NSInteger i = 1;
     for (NSObject<Stage> *stage in self.stages) {
         if([stage isKindOfClass:[DisplacementCoreData class]]) {
-        //    points[i] = CLLocationCoordinate2DMake(stage.coordinate.latitude, stage.coordinate.longitude);
-            TypeTransport[i] = stage.meanofTransportSelected;
+            //points[i] = CLLocationCoordinate2DMake(stage.coordinate.latitude, stage.coordinate.longitude);
+            //TypeTransport[i] = stage.meanofTransportSelected;
             //NSLog(@"%f", [[stage coordinate] latitude]);
             
-            [self annotationLocation:stage];
+            //[self annotationLocation:stage];
             i++;
         }
     }

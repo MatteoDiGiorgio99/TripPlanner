@@ -14,6 +14,7 @@
 @dynamic arrivalDate;
 @dynamic meanTransport;
 
+
 -(NSString *) displayName {
     return self.destination;
 }
@@ -36,5 +37,7 @@
 -(NSString *) meanofTransportSelected{
     return self.meanTransport;
 }
+
+
 
 @end

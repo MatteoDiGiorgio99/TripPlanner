@@ -9,7 +9,6 @@
 #import "Trip.h"
 #import "CoreDataController.h"
 #import "TripCoreData.h"
-#import "PoiCoreData.h"
 #import "DisplacementCoreData.h"
 #import "PermanenceCoreData.h"
 #import "StageCoreData.h"

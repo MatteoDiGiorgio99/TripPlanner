@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *) displayDate;
 -(NSDate *) getDateToCompare;
 -(NSString *)meanofTransportSelected;
+-(Poi *) coordinate;
 
 @end
 

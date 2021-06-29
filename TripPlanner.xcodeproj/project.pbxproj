@@ -55,7 +55,6 @@
 		514CAC4D2649E47F00F21E6D /* Paris.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 514CAC4C2649E47F00F21E6D /* Paris.jpg */; };
 		5150E959265F8CD8002549EB /* TripCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5150E958265F8CD8002549EB /* TripCoreData.m */; };
 		5150E95C265F8EFF002549EB /* Poi.m in Sources */ = {isa = PBXBuildFile; fileRef = 5150E95B265F8EFF002549EB /* Poi.m */; };
-		5150E95F265F8F69002549EB /* PoiCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5150E95E265F8F69002549EB /* PoiCoreData.m */; };
 		5150E962265F8FBD002549EB /* StageCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5150E961265F8FBD002549EB /* StageCoreData.m */; };
 		5150E965265F8FFC002549EB /* PermanenceCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5150E964265F8FFC002549EB /* PermanenceCoreData.m */; };
 		5150E968265F906F002549EB /* DisplacementCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5150E967265F906F002549EB /* DisplacementCoreData.m */; };
@@ -137,8 +136,6 @@
 		5150E958265F8CD8002549EB /* TripCoreData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TripCoreData.m; sourceTree = "<group>"; };
 		5150E95A265F8EFF002549EB /* Poi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Poi.h; sourceTree = "<group>"; };
 		5150E95B265F8EFF002549EB /* Poi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Poi.m; sourceTree = "<group>"; };
-		5150E95D265F8F69002549EB /* PoiCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoiCoreData.h; sourceTree = "<group>"; };
-		5150E95E265F8F69002549EB /* PoiCoreData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PoiCoreData.m; sourceTree = "<group>"; };
 		5150E960265F8FBD002549EB /* StageCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StageCoreData.h; sourceTree = "<group>"; };
 		5150E961265F8FBD002549EB /* StageCoreData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StageCoreData.m; sourceTree = "<group>"; };
 		5150E963265F8FFC002549EB /* PermanenceCoreData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PermanenceCoreData.h; sourceTree = "<group>"; };
@@ -188,8 +185,6 @@
 			children = (
 				5150E957265F8CD8002549EB /* TripCoreData.h */,
 				5150E958265F8CD8002549EB /* TripCoreData.m */,
-				5150E95D265F8F69002549EB /* PoiCoreData.h */,
-				5150E95E265F8F69002549EB /* PoiCoreData.m */,
 				5150E960265F8FBD002549EB /* StageCoreData.h */,
 				5150E961265F8FBD002549EB /* StageCoreData.m */,
 				5150E963265F8FFC002549EB /* PermanenceCoreData.h */,
@@ -442,7 +437,6 @@
 				512B3404264938F200597957 /* ViewController.m in Sources */,
 				51D96699265269F500B6296D /* StagesTableViewController.m in Sources */,
 				51D966A126526BCE00B6296D /* Permanence.m in Sources */,
-				5150E95F265F8F69002549EB /* PoiCoreData.m in Sources */,
 				512B33FE264938F200597957 /* AppDelegate.m in Sources */,
 				514CAC452649D70C00F21E6D /* TripList.m in Sources */,
 				5150E95C265F8EFF002549EB /* Poi.m in Sources */,

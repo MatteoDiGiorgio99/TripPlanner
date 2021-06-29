@@ -13,7 +13,7 @@
 @dynamic destination;
 @dynamic displacementDate;
 @dynamic meanTransport;
-@dynamic coordinatePOI;
+
 
 -(NSString *) displayName {
     return [NSString stringWithFormat:@"%@ - %@", self.departure, self.destination];
@@ -34,5 +34,7 @@
 -(NSString *) meanofTransportSelected{
     return self.meanTransport;
 }
+
+
 
 @end

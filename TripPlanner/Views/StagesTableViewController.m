@@ -83,13 +83,13 @@
             if(response.mapItems.count > 0) {
                 CoreDataController *controller = CoreDataController.sharedInstance;
 
-                PoiCoreData *poiToAdd = [[PoiCoreData alloc] initWithContext:controller.context];
+                //PoiCoreData *poiToAdd = [[PoiCoreData alloc] initWithContext:controller.context];
                 
-                poiToAdd.latitude = response.mapItems.firstObject.placemark.coordinate.latitude;
+                //poiToAdd.latitude = response.mapItems.firstObject.placemark.coordinate.latitude;
                 
-                poiToAdd.longitude = response.mapItems.firstObject.placemark.coordinate.longitude;
+                //poiToAdd.longitude = response.mapItems.firstObject.placemark.coordinate.longitude;
                 
-                [controller setCoordinate:stage:poiToAdd];
+           //     [controller setCoordinate:stage:poiToAdd];
             }
         }
     }];
