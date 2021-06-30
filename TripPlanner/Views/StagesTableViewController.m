@@ -20,11 +20,6 @@
     [super viewDidLoad];
     
     //[self sortStages];
-    [self searchLocationStartTrip];
-    
-    for (NSObject<Stage> *obj in self.stages) {
-        [self searchLocation:obj];
-    }
     
     self.title=@"Stages";
 }
@@ -33,10 +28,6 @@
     [super viewWillAppear:animated];
     
     //[self sortStages];
-    
-    for (NSObject<Stage> *obj in self.stages) {
-        [self searchLocation:obj];
-    }
     
     [self.tableView reloadData];
 }
@@ -61,53 +52,6 @@
             }
         }
     }*/
-}
-
--(void)searchLocation:(id<Stage>) stage {
-    
-    MKLocalSearchRequest *searchRequest = [[MKLocalSearchRequest alloc] init];
-    [searchRequest setNaturalLanguageQuery:stage.displayDestination];
-   
-    MKLocalSearch *localSearch = [[MKLocalSearch alloc] initWithRequest:searchRequest];
-    [localSearch startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
-       
-        if (!error) {
-            NSManagedObject<Stage> *stage;
-            for (NSManagedObject<Stage> *currentStage in self.stages) {
-                if([currentStage.displayDestination containsString:response.mapItems.firstObject.name]) {
-                    stage = currentStage;
-                    break;
-                }
-            }
-            
-            if(response.mapItems.count > 0) {
-                CoreDataController *controller = CoreDataController.sharedInstance;
-
-                //PoiCoreData *poiToAdd = [[PoiCoreData alloc] initWithContext:controller.context];
-                
-                //poiToAdd.latitude = response.mapItems.firstObject.placemark.coordinate.latitude;
-                
-                //poiToAdd.longitude = response.mapItems.firstObject.placemark.coordinate.longitude;
-                
-           //     [controller setCoordinate:stage:poiToAdd];
-            }
-        }
-    }];
-}
-
--(void)searchLocationStartTrip {
-    MKLocalSearchRequest *searchRequest = [[MKLocalSearchRequest alloc] init];
-    [searchRequest setNaturalLanguageQuery:self.trip.departure];
-   
-    MKLocalSearch *localSearch = [[MKLocalSearch alloc] initWithRequest:searchRequest];
-    [localSearch startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
-       
-        if (!error) {
-            if(response.mapItems.count > 0) {
-                self.departureTripCoordinates = response.mapItems.firstObject.placemark.coordinate;
-            }
-        }
-    }];
 }
 
 #pragma mark - Table view data source
@@ -166,7 +110,6 @@
            
             vc.stages = self.stages;
             vc.trip = self.trip;
-            vc.departureTripCoordinates = self.departureTripCoordinates;
         }
         
     }

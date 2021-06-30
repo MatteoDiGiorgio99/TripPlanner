@@ -7,15 +7,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Stage.h"
-#import "Trip.h"
+#import "Poi.h"
 #import <MapKit/MapKit.h>
 #import "TripCoreData.h"
 #import "StageCoreData.h"
 @interface StagesMapViewController : UIViewController<MKMapViewDelegate>
 
-
-@property CLLocationCoordinate2D departureTripCoordinates;
+@property (nonatomic, strong) NSMutableArray<Poi *> *stagesPosition;
 @property (nonatomic, strong) TripCoreData *trip;
-@property (nonatomic, strong) NSMutableArray<Stage> *stages;
+@property (nonatomic, strong) NSMutableSet<Stage> *stages;
 
 @end

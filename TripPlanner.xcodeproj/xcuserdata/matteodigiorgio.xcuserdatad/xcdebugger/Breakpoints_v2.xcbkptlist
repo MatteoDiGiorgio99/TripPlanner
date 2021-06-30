@@ -119,54 +119,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "26B2C8C5-F75D-49A1-A047-C32E87AB6BEC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TripPlanner/Views/StagesTableViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "26B2C8C5-F75D-49A1-A047-C32E87AB6BEC - d2f1e9d3c8ed8205"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[StagesTableViewController viewDidLoad]"
-                  moduleName = "TripPlanner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Transcend/UNIPR/3%20ANNO/PROGRAMMAZIONE%20MOBILE%20(Ciriani)/IOS/Project/TripPlanner/TripPlanner/Views/StagesTableViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "134">
-               </Location>
-               <Location
-                  uuid = "26B2C8C5-F75D-49A1-A047-C32E87AB6BEC - d2f1e9d3c8ed8205"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[StagesTableViewController viewDidLoad]"
-                  moduleName = "TripPlanner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Transcend/UNIPR/3%20ANNO/PROGRAMMAZIONE%20MOBILE%20(Ciriani)/IOS/Project/TripPlanner/TripPlanner/Views/StagesTableViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "154">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4EF09FF6-C0AB-4952-BB70-4E91EEE3FBA6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -327,86 +279,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C7082CFF-15BB-4428-9759-19F0D2262FD6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TripPlanner/Views/StagesTableViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "354E99D0-58E5-4CC5-90BC-628475FA8FB1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TripPlanner/Views/StagesTableViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "-searchLocation:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "354E99D0-58E5-4CC5-90BC-628475FA8FB1 - 51cbe0c34c85d64d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[StagesTableViewController searchLocation:]"
-                  moduleName = "TripPlanner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Transcend/UNIPR/3%20ANNO/PROGRAMMAZIONE%20MOBILE%20(Simone%20Ciriani)/IOS/Project/TripPlanner/TripPlanner/Views/StagesTableViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "188">
-               </Location>
-               <Location
-                  uuid = "354E99D0-58E5-4CC5-90BC-628475FA8FB1 - 6eba6b7f61ae1eaf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__44-[StagesTableViewController searchLocation:]_block_invoke"
-                  moduleName = "TripPlanner"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Transcend/UNIPR/3%20ANNO/PROGRAMMAZIONE%20MOBILE%20(Simone%20Ciriani)/IOS/Project/TripPlanner/TripPlanner/Views/StagesTableViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "122">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2755A3C8-6DDF-41DC-BAFD-A5BFC306AFC1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TripPlanner/Views/StagesTableViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "-searchLocation:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "44B43A52-578E-4B15-A1EC-75233D5AF3BF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -519,16 +391,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F7B8279E-42A6-41AA-B339-94531E50E123"
-            shouldBeEnabled = "Yes"
+            uuid = "CEEBF907-4A4D-450D-9201-88A8882B480E"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TripPlanner/Views/StagesMapViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "-drawPOI"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "631A87B9-6235-4948-90F9-D5B436B1E78C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TripPlanner/Views/StagesMapViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "-searchLocation::"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

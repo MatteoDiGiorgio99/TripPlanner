@@ -26,35 +26,77 @@
   
     self.title=@"Stages Map";
     
+    self.stagesPosition = [[NSMutableArray<Poi *> alloc] init];
+    [self searchLocationStartTrip];
+    
     [self.stagesMapPoint removeOverlay:self.polyline];
     [self.stagesMapPoint removeOverlay:self.polyline2];
     self.stagesMapPoint.delegate = self;
-    
-    MKPointAnnotation *annotation =[[MKPointAnnotation alloc] init];
-    
-    annotation.coordinate=self.departureTripCoordinates;
-    annotation.title= [NSString stringWithFormat:@"%@",self.trip.departure];
+}
 
-    [self.stagesMapPoint addAnnotation:annotation];
-    
-    [self drawPOI];
+-(void)searchLocation:(id<Stage>) stage
+                     :(NSInteger) index {
+    MKLocalSearchRequest *searchRequest = [[MKLocalSearchRequest alloc] init];
+    [searchRequest setNaturalLanguageQuery:stage.displayDestination];
+   
+    MKLocalSearch *localSearch = [[MKLocalSearch alloc] initWithRequest:searchRequest];
+    [localSearch startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+       
+        if (!error) {
+            if(response.mapItems.count > 0) {
+                Poi *poi = [[Poi alloc] initWithlatitude:response.mapItems.firstObject.placemark.location.coordinate.latitude longitude:response.mapItems.firstObject.placemark.location.coordinate.longitude];
+                
+                [self.stagesPosition insertObject:poi atIndex:(index + 1)];
+                
+                if(self.stagesPosition.count == (self.stages.count + 1)) {
+                    [self drawPOI];
+                }
+            }
+        }
+    }];
+}
+
+-(void)searchLocationStartTrip {
+    MKLocalSearchRequest *searchRequest = [[MKLocalSearchRequest alloc] init];
+    [searchRequest setNaturalLanguageQuery:self.trip.departure];
+   
+    MKLocalSearch *localSearch = [[MKLocalSearch alloc] initWithRequest:searchRequest];
+    [localSearch startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+       
+        if (!error) {
+            if(response.mapItems.count > 0) {
+                Poi *poi = [[Poi alloc] initWithlatitude:response.mapItems.firstObject.placemark.location.coordinate.latitude longitude:response.mapItems.firstObject.placemark.location.coordinate.longitude];
+                
+                [self.stagesPosition insertObject:poi atIndex:0];
+            }
+            
+            NSInteger kIndex = 0;
+            for (NSObject<Stage> *obj in self.stages) {
+                [self searchLocation:obj:kIndex];
+                kIndex++;
+            }
+        }
+    }];
 }
 
 -(void) drawPOI {
-    CLLocationCoordinate2D points[self.stages.count  + 1];
-    NSString *TypeTransport[self.stages.count +1];
-    points[0] = self.departureTripCoordinates;
+    CLLocationCoordinate2D points[self.stages.count + 1];
+    NSString *TypeTransport[self.stages.count + 1];
     
-    NSInteger i = 1;
-    for (NSObject<Stage> *stage in self.stages) {
-        if([stage isKindOfClass:[DisplacementCoreData class]]) {
-            //points[i] = CLLocationCoordinate2DMake(stage.coordinate.latitude, stage.coordinate.longitude);
-            //TypeTransport[i] = stage.meanofTransportSelected;
-            //NSLog(@"%f", [[stage coordinate] latitude]);
-            
-            //[self annotationLocation:stage];
-            i++;
-        }
+    NSInteger i = 0;
+    NSInteger k = 0;
+    for (Poi *poi in self.stagesPosition) {
+        points[i] = CLLocationCoordinate2DMake(poi.latitude, poi.longitude);
+        
+        if(i > 0)
+            TypeTransport[i] = [[self.stages allObjects] objectAtIndex:(k)];
+        
+        [self annotationLocation:poi:i];
+        
+        if(i > 0)
+            k++;
+        
+        i++;
     }
     
     for (NSInteger k=1; k < i; k++) {
@@ -102,17 +144,24 @@
     }
 }
 
--(void) annotationLocation:(NSObject<Stage> *)item {
+-(void) annotationLocation:(Poi *)item
+                          :(NSInteger) index{
     CLLocationCoordinate2D location;
         
-  //  location.latitude=item.coordinate.latitude;
-    //location.longitude=item.coordinate.longitude;
+    location.latitude=item.latitude;
+    location.longitude=item.longitude;
    
     MKPointAnnotation *annotation =[[MKPointAnnotation alloc] init];
-    NSInteger position = [self.stages indexOfObject:item]+1;
-    
-    annotation.coordinate=location;
-    annotation.title= [NSString stringWithFormat:@"%li-%@",(long)position,item.displayName];
+
+    if(index > 0) {
+        NSObject<Stage> *stage = [[self.stages allObjects] objectAtIndex:(index - 1)];
+        
+        annotation.coordinate=location;
+        annotation.title= [NSString stringWithFormat:@"%li-%@",(long)index, stage.displayName];
+    } else {
+        annotation.coordinate=location;
+        annotation.title= [NSString stringWithFormat:@"%li-%@",(long)index, self.trip.departure];
+    }
 
     [self.stagesMapPoint addAnnotation:annotation];
 }
@@ -131,8 +180,7 @@
     return view;
 }
 
-- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
-{
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
     if(![overlay.title isEqual:@"Retta"])
     {
         MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithOverlay:overlay];
