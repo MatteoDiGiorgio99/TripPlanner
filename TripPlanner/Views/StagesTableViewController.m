@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //[self sortStages];
+   [self sortStages];
     
     self.title=@"Stages";
 }
@@ -27,16 +27,20 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    //[self sortStages];
+    [self sortStages];
     
     [self.tableView reloadData];
 }
 
 -(void) sortStages {
-    /*for (int i = 0; i < [self.stages count]; i++) {
+    
+
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"self" ascending:YES];
+    [self.stages sortUsingDescriptors:@[sortDescriptor]];
+  /*  for (int i = 0; i < [self.stages count]; i++) {
         for (int j = 0; j < [self.stages count] - 1; j++) {
-            NSObject<Stage> *a = [self.stages objectAtIndex:j];
-            NSObject<Stage> *b = [self.stages objectAtIndex:j + 1];
+            NSObject<Stage> *a = [[self.stages allObjects] objectAtIndex:(j)];
+            NSObject<Stage> *b = [[self.stages allObjects] objectAtIndex:(j + 1)];
             
             NSComparisonResult result = [a.getDateToCompare compare:b.getDateToCompare];
             
@@ -44,8 +48,8 @@
                 case NSOrderedAscending:
                     break;
                 case NSOrderedDescending:
-                    self.stages[j] = b;
-                    self.stages[j + 1] = a;
+                    [[[self.stages allObjects] objectAtIndex:(j)] addObject:b];
+                    [[[self.stages allObjects] objectAtIndex:(j+1)]addObject:a];
                     break;
                 case NSOrderedSame:
                     break;

@@ -89,7 +89,7 @@
         points[i] = CLLocationCoordinate2DMake(poi.latitude, poi.longitude);
         
         if(i > 0)
-            TypeTransport[i] = [[self.stages allObjects] objectAtIndex:(k)];
+            TypeTransport[i] = [[[self.stages allObjects] objectAtIndex:(k)]meanofTransportSelected];
         
         [self annotationLocation:poi:i];
         

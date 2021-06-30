@@ -8,11 +8,11 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "TripCoreData.h"
-#import "StageCoreData.h"
+#import "Stage.h"
 
 @interface StagesTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSMutableSet *stages;
+@property (nonatomic, strong) NSMutableOrderedSet<Stage> *stages;
 @property (nonatomic, strong) TripCoreData *trip;
 @property CLLocationCoordinate2D departureTripCoordinates;
 
