@@ -72,8 +72,10 @@
             
             NSInteger kIndex = 0;
             for (NSObject<Stage> *obj in self.stages) {
-                [self searchLocation:obj:kIndex];
-                kIndex++;
+                if([obj isKindOfClass:[DisplacementCoreData class]]) {
+                    [self searchLocation:obj:kIndex];
+                    kIndex++;
+                }
             }
         }
     }];

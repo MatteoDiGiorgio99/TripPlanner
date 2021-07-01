@@ -33,14 +33,17 @@
 }
 
 -(void) sortStages {
+    self.OrderList = [[NSMutableArray<Stage> alloc] init];
     
-
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"self" ascending:YES];
-    [self.stages sortUsingDescriptors:@[sortDescriptor]];
-  /*  for (int i = 0; i < [self.stages count]; i++) {
-        for (int j = 0; j < [self.stages count] - 1; j++) {
-            NSObject<Stage> *a = [[self.stages allObjects] objectAtIndex:(j)];
-            NSObject<Stage> *b = [[self.stages allObjects] objectAtIndex:(j + 1)];
+    NSArray *oldArray = [self.stages allObjects];
+    for(int i = 0; i < oldArray.count; i++) {
+        [self.OrderList addObject:[oldArray objectAtIndex:i]];
+    }
+    
+    for (int i = 0; i < [self.OrderList count]; i++) {
+        for (int j = 0; j < [self.OrderList count] - 1; j++) {
+            NSManagedObject<Stage> *a = [self.OrderList objectAtIndex:(j)];
+            NSManagedObject<Stage> *b = [self.OrderList objectAtIndex:(j + 1)];
             
             NSComparisonResult result = [a.getDateToCompare compare:b.getDateToCompare];
             
@@ -48,14 +51,14 @@
                 case NSOrderedAscending:
                     break;
                 case NSOrderedDescending:
-                    [[[self.stages allObjects] objectAtIndex:(j)] addObject:b];
-                    [[[self.stages allObjects] objectAtIndex:(j+1)]addObject:a];
+                   self.OrderList[j] = b;
+                   self.OrderList[j + 1] = a;
                     break;
                 case NSOrderedSame:
                     break;
             }
         }
-    }*/
+    }
 }
 
 #pragma mark - Table view data source
@@ -72,7 +75,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StageCell" forIndexPath:indexPath];
     
-    NSObject<Stage> *stage = self.stages.allObjects[indexPath.row];
+    NSObject<Stage> *stage = [self.OrderList objectAtIndex:indexPath.row];
     
     cell.textLabel.text = [stage displayName];
     cell.detailTextLabel.text = [stage displayDate];

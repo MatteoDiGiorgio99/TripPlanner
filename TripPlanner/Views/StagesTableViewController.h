@@ -12,7 +12,8 @@
 
 @interface StagesTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSMutableOrderedSet<Stage> *stages;
+@property (nonatomic, strong) NSMutableSet<Stage> *stages;
+@property (nonatomic,strong) NSMutableArray<Stage> *OrderList;
 @property (nonatomic, strong) TripCoreData *trip;
 @property CLLocationCoordinate2D departureTripCoordinates;
 
