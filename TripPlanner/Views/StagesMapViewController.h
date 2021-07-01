@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) NSMutableArray<Poi *> *stagesPosition;
 @property (nonatomic, strong) TripCoreData *trip;
-@property (nonatomic, strong) NSMutableSet<Stage> *stages;
+@property (nonatomic, strong) NSMutableArray<Stage> *stages;
+@property (nonatomic, strong) NSMutableArray<Stage> *mapStages;
 
 @end

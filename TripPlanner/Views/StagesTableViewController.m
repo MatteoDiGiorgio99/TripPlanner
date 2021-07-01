@@ -93,7 +93,7 @@
            
             vc.stage = nil;
             vc.trip = self.trip;
-            vc.stagesList = self.stages;
+            vc.stagesList = self.OrderList;
         }
     }
     
@@ -104,9 +104,9 @@
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
             
         
-            vc.stage = self.stages.allObjects[indexPath.row];
+            vc.stage = self.OrderList[indexPath.row];
             vc.trip = self.trip;
-            vc.stagesList = self.stages;
+            vc.stagesList = self.OrderList;
         }
     }
     if([segue.identifier isEqualToString:@"ShowMap"]){
@@ -115,7 +115,7 @@
             
            // NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
            
-            vc.stages = self.stages;
+            vc.stages = self.OrderList;
             vc.trip = self.trip;
         }
         

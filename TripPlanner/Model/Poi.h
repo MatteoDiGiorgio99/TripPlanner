@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype) initWithlatitude:(double)latitude
                     longitude:(double)longitude;
 
+@property (nonatomic) NSInteger index;
 @property (nonatomic, readonly) double latitude;
 @property (nonatomic, readonly) double longitude;
 

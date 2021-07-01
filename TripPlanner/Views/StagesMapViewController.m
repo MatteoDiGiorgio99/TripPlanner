@@ -27,11 +27,19 @@
     self.title=@"Stages Map";
     
     self.stagesPosition = [[NSMutableArray<Poi *> alloc] init];
-    [self searchLocationStartTrip];
+    self.mapStages = [[NSMutableArray<Stage> alloc] init];
     
     [self.stagesMapPoint removeOverlay:self.polyline];
     [self.stagesMapPoint removeOverlay:self.polyline2];
     self.stagesMapPoint.delegate = self;
+    
+    for (NSObject<Stage> *obj in self.stages) {
+        if([obj isKindOfClass:[DisplacementCoreData class]]) {
+            [self.mapStages addObject:obj];
+        }
+    }
+    
+    [self searchLocationStartTrip];
 }
 
 -(void)searchLocation:(id<Stage>) stage
@@ -46,9 +54,11 @@
             if(response.mapItems.count > 0) {
                 Poi *poi = [[Poi alloc] initWithlatitude:response.mapItems.firstObject.placemark.location.coordinate.latitude longitude:response.mapItems.firstObject.placemark.location.coordinate.longitude];
                 
-                [self.stagesPosition insertObject:poi atIndex:(index + 1)];
+                poi.index = (index + 1);
                 
-                if(self.stagesPosition.count == (self.stages.count + 1)) {
+                [self.stagesPosition addObject:poi];
+                
+                if(self.stagesPosition.count == (self.mapStages.count + 1)) {
                     [self drawPOI];
                 }
             }
@@ -67,11 +77,13 @@
             if(response.mapItems.count > 0) {
                 Poi *poi = [[Poi alloc] initWithlatitude:response.mapItems.firstObject.placemark.location.coordinate.latitude longitude:response.mapItems.firstObject.placemark.location.coordinate.longitude];
                 
-                [self.stagesPosition insertObject:poi atIndex:0];
+                poi.index = 0;
+                
+                [self.stagesPosition addObject:poi];
             }
             
             NSInteger kIndex = 0;
-            for (NSObject<Stage> *obj in self.stages) {
+            for (NSObject<Stage> *obj in self.mapStages) {
                 if([obj isKindOfClass:[DisplacementCoreData class]]) {
                     [self searchLocation:obj:kIndex];
                     kIndex++;
@@ -82,26 +94,21 @@
 }
 
 -(void) drawPOI {
-    CLLocationCoordinate2D points[self.stages.count + 1];
-    NSString *TypeTransport[self.stages.count + 1];
+    CLLocationCoordinate2D points[self.mapStages.count + 1];
+    NSString *TypeTransport[self.mapStages.count + 1];
     
-    NSInteger i = 0;
-    NSInteger k = 0;
+    [self sortPoi];
+    
     for (Poi *poi in self.stagesPosition) {
-        points[i] = CLLocationCoordinate2DMake(poi.latitude, poi.longitude);
+        points[poi.index] = CLLocationCoordinate2DMake(poi.latitude, poi.longitude);
         
-        if(i > 0)
-            TypeTransport[i] = [[[self.stages allObjects] objectAtIndex:(k)]meanofTransportSelected];
+        if(poi.index > 0)
+            TypeTransport[poi.index] = [[self.mapStages objectAtIndex:(poi.index - 1)]meanofTransportSelected];
         
-        [self annotationLocation:poi:i];
-        
-        if(i > 0)
-            k++;
-        
-        i++;
+        [self annotationLocation:poi:poi.index];
     }
     
-    for (NSInteger k=1; k < i; k++) {
+    for (NSInteger k=1; k < self.stagesPosition.count; k++) {
         if([TypeTransport[k] isEqual:@"Car"] ||[TypeTransport[k] isEqual:@"Bike"] || [TypeTransport[k] isEqual:@"Motorbike"] )
         {
             MKDirectionsRequest *directions = [[MKDirectionsRequest alloc] init];
@@ -146,6 +153,21 @@
     }
 }
 
+-(void) sortPoi {
+    for (int i = 0; i < [self.stagesPosition count]; i++) {
+        for (int j = 0; j < [self.stagesPosition count] - 1; j++) {
+            Poi *a = [self.stagesPosition objectAtIndex:(j)];
+            Poi *b = [self.stagesPosition objectAtIndex:(j + 1)];
+            
+            if(a.index > b.index) {
+                self.stagesPosition[j] = b;
+                self.stagesPosition[j + 1] = a;
+            }
+        }
+    }
+}
+
+
 -(void) annotationLocation:(Poi *)item
                           :(NSInteger) index{
     CLLocationCoordinate2D location;
@@ -156,7 +178,7 @@
     MKPointAnnotation *annotation =[[MKPointAnnotation alloc] init];
 
     if(index > 0) {
-        NSObject<Stage> *stage = [[self.stages allObjects] objectAtIndex:(index - 1)];
+        NSObject<Stage> *stage = [self.mapStages objectAtIndex:(index - 1)];
         
         annotation.coordinate=location;
         annotation.title= [NSString stringWithFormat:@"%li-%@",(long)index, stage.displayName];
